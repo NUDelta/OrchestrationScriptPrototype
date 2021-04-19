@@ -1,6 +1,44 @@
 import Blockly from 'blockly';
 import 'blockly/python';
 
+Blockly.Blocks['if'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("If");
+      this.appendValueInput("if")
+          .setCheck("Boolean")
+          .appendField("(input: condition)");
+      this.appendValueInput("do")
+          .setCheck(null)
+          .appendField("(input: action)");
+      this.setOutput(true, "event");
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+};
+
+Blockly.Python['if'] = function (block) { 
+    return "...";
+};
+
+Blockly.Blocks['not'] = {
+  init: function() {
+    this.appendValueInput("not")
+        .setCheck(null)
+        .appendField("not");
+    this.setOutput(true, "Boolean");
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Python['not'] = function (block) { 
+    return "...";
+};
+
+
 Blockly.Blocks['new_boundary_function'] = {
     init: function () {
         this.appendDummyInput()

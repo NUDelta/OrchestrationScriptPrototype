@@ -30,7 +30,8 @@ Blockly.Blocks['person'] = {
     this.appendDummyInput()
         .appendField("Recipient: Person");
     this.appendValueInput("name")
-        .setCheck("String");
+        .setCheck("String")
+        .appendField("(input: name)");
     this.setOutput(true, "recipient");
     this.setColour(20);
  this.setTooltip("");
@@ -46,8 +47,9 @@ Blockly.Blocks['email_address'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Recipient: Email Address");
-    this.appendValueInput("name")
-        .setCheck("String");
+    this.appendValueInput("email")
+        .setCheck("String")
+        .appendField("(input: email)");
     this.setOutput(true, "recipient");
     this.setColour(20);
  this.setTooltip("");
@@ -64,7 +66,8 @@ Blockly.Blocks['slack_channel'] = {
     this.appendDummyInput()
         .appendField("Recipient: Slack Channel");
     this.appendValueInput("name")
-        .setCheck("String");
+        .setCheck("String")
+        .appendField("(input: channel)");
     this.setOutput(true, "recipient");
     this.setColour(20);
  this.setTooltip("");

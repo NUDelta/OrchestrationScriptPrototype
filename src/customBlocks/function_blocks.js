@@ -80,3 +80,48 @@ Blockly.Blocks['fullfillment'] = {
 Blockly.Python['fullfillment'] = function (block) { 
     return "...";
 };
+
+Blockly.Blocks['timestamp'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("Timestamps when updated(output: list of timestamps)");
+      this.appendDummyInput()
+          .appendField("(output: list of timestamps)");
+      this.appendValueInput("resource")
+          .setCheck("resource")
+          .appendField("(input: resource)");
+      this.appendValueInput("start")
+          .setCheck("time")
+          .appendField("(input: start time)");
+      this.appendValueInput("end")
+          .setCheck("time")
+          .appendField("(input: end time)");
+      this.setOutput(true, "list");
+      this.setColour(120);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+Blockly.Python['timestamp'] = function (block) { 
+    return "...";
+};
+
+Blockly.Blocks['distinct'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Count distinct days(output: number)");
+    this.appendDummyInput()
+        .appendField("(output: number)");
+    this.appendValueInput("list")
+        .setCheck("list")
+        .appendField("(input: list of timestamps)");
+    this.setOutput(true, "Number");
+    this.setColour(120);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Python['distinct'] = function (block) { 
+    return "...";
+};

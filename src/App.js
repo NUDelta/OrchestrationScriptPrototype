@@ -15,7 +15,8 @@ export default function App() {
       name: 'Logic',
       colour: '#5C81A6',
       blocks: [
-        {type: 'controls_if'},
+        {type: 'if'},
+        {type: 'not'},
         {type: 'logic_compare'},
       ]
     },
@@ -108,6 +109,8 @@ export default function App() {
         {type: 'wasUpdated'},
         {type: 'At'},
         {type: 'fullfillment'},
+        {type: 'timestamp'},
+        {type: 'distinct'},
       ]
     },
   ]
