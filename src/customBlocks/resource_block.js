@@ -21,7 +21,7 @@ Blockly.Blocks['sprint_log'] = {
         .appendField("Sprint Log");
     this.appendValueInput("section")
         .setCheck("Number")
-        .appendField("(input: section#)");
+        .appendField("(input: sprint number)");
     this.setOutput(true, "resource");
     this.setColour(290);
  this.setTooltip("");

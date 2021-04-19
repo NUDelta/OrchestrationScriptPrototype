@@ -2,21 +2,24 @@ import Blockly from 'blockly';
 import 'blockly/python';
 
 Blockly.Blocks['send'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("send");
-    this.appendValueInput("message")
-        .setCheck("String");
-    this.appendValueInput("recipient")
-        .setCheck("recipient");
-    this.appendValueInput("medium")
-        .setCheck("medium");
-    this.setOutput(true, "event");
-    this.setColour(20);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
+    init: function() {
+      this.appendDummyInput()
+          .appendField("send");
+      this.appendValueInput("message")
+          .setCheck("String")
+          .appendField("(input: message)");
+      this.appendValueInput("recipient")
+          .setCheck("recipient")
+          .appendField("(input: recipient)");
+      this.appendValueInput("medium")
+          .setCheck("medium")
+          .appendField("(input: medium)");
+      this.setOutput(true, "event");
+      this.setColour(20);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 
 Blockly.Python['send'] = function (block) { 
     return "...";

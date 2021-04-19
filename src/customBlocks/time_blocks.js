@@ -6,14 +6,17 @@ Blockly.Blocks['time'] = {
       this.appendDummyInput()
           .appendField("time");
       this.appendValueInput("Modifier")
-          .setCheck("modifier");
+          .setCheck("modifier")
+          .appendField("(input: modifier)");
       this.appendValueInput("Event")
-          .setCheck("event");
-      this.setOutput(true, "time");
+          .setCheck("event")
+          .appendField("(input: event)");
+      this.setOutput(true, null);
       this.setColour(330);
    this.setTooltip("");
-   }
-};
+   this.setHelpUrl("");
+    }
+  };
 
 Blockly.Python['time'] = function (block) {
     
@@ -23,7 +26,7 @@ Blockly.Python['time'] = function (block) {
 Blockly.Blocks['after'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("after");
+          .appendField("Modifier: After");
       this.setOutput(true, "modifier");
       this.setColour(330);
    this.setTooltip("");
@@ -38,7 +41,7 @@ Blockly.Python['after'] = function (block) {
 Blockly.Blocks['before'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("before");
+        .appendField("Modifier: Before");
     this.setOutput(true, "modifier");
     this.setColour(330);
  this.setTooltip("");
@@ -53,7 +56,7 @@ Blockly.Python['before'] = function (block) {
 Blockly.Blocks['during'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("during");
+        .appendField("Modifier: During");
     this.setOutput(true, "modifier");
     this.setColour(330);
  this.setTooltip("");
@@ -68,7 +71,7 @@ Blockly.Python['during'] = function (block) {
 Blockly.Blocks['at'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("at");
+        .appendField("Modifier: At");
     this.setOutput(true, "modifier");
     this.setColour(330);
  this.setTooltip("");
@@ -83,7 +86,7 @@ Blockly.Python['at'] = function (block) {
 Blockly.Blocks['sig'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("SIG");
+        .appendField("Event: SIG");
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");
@@ -98,9 +101,10 @@ Blockly.Python['sig'] = function (block) {
 Blockly.Blocks['sprint'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Sprint");
+        .appendField("Event: Sprint");
     this.appendValueInput("number")
-        .setCheck("Number");
+        .setCheck("Number")
+        .appendField("(input: sprint number)");
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");
@@ -115,7 +119,7 @@ Blockly.Python['sprint'] = function (block) {
 Blockly.Blocks['days_of_the_week'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Days of the week");
+        .appendField("Event: Days of the week");
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");
@@ -130,7 +134,7 @@ Blockly.Python['days_of_the_week'] = function (block) {
 Blockly.Blocks['mysore'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Mysore");
+        .appendField("Event: Mysore");
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");
@@ -145,7 +149,7 @@ Blockly.Python['mysore'] = function (block) {
 Blockly.Blocks['office_hour'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Office hours");
+        .appendField("Event: Office hours");
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");
@@ -160,7 +164,7 @@ Blockly.Python['office_hour'] = function (block) {
 Blockly.Blocks['studio'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Studio");
+        .appendField("Event: Studio");
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");
@@ -175,9 +179,10 @@ Blockly.Python['studio'] = function (block) {
 Blockly.Blocks['week'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("week");
+        .appendField("Event: week");
     this.appendValueInput("number_of_week")
-        .setCheck("Number");
+        .setCheck("Number")
+        .appendField("(input: week number)");
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");
