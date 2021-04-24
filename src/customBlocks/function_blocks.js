@@ -29,6 +29,10 @@ Blockly.Blocks['wasUpdated'] = {
     this.appendValueInput("time")
         .setCheck("resource")
         .appendField("(input: resource)");
+    this.appendValueInput("venue")
+        .appendField("(input: venue)");
+    this.appendValueInput("time")
+        .appendField("(input: time elapsed since venue)");
     this.setOutput(true, "Boolean");
     this.setColour(120);
  this.setTooltip("");
@@ -37,6 +41,28 @@ Blockly.Blocks['wasUpdated'] = {
 };
 
 Blockly.Python['wasUpdated'] = function (block) { 
+    return "...";
+};
+
+
+Blockly.Blocks['wasupdatedv1'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("wasUpdated");
+    this.appendValueInput("resource")
+        .setCheck("resource")
+        .appendField("(input: resource)");
+    this.appendValueInput("time_period")
+        .setCheck(null)
+        .appendField("(input: time period)");
+    this.setOutput(true, "Boolean");
+    this.setColour(120);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Python['wasupdatedv1'] = function (block) { 
     return "...";
 };
 

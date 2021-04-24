@@ -193,3 +193,53 @@ Blockly.Blocks['week'] = {
 Blockly.Python['week'] = function (block) { 
     return "...";
 };
+
+Blockly.Blocks['time_elapsed'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["5","5"], ["10","10"]]), "weeks");
+    this.appendDummyInput()
+        .appendField("weeks");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"]]), "days");
+    this.appendDummyInput()
+        .appendField("days");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["6","6"], ["12","12"]]), "hours");
+    this.appendDummyInput()
+        .appendField("hours");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["0","0"], ["5","5"], ["15","15"], ["30","30"], ["45","45"]]), "minutes");
+    this.appendDummyInput()
+        .appendField("minutes");
+    this.setOutput(true, null);
+    this.setColour(330);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Python['time_elapsed'] = function (block) { 
+  return "...";
+};
+
+Blockly.Blocks['time_period'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Time period");
+    this.appendValueInput("start")
+        .setCheck(null)
+        .appendField("(input: start time)");
+    this.appendValueInput("end")
+        .setCheck(null)
+        .appendField("(input: end time)");
+    this.setOutput(true, "Boolean");
+    this.setColour(330);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Python['time_period'] = function (block) { 
+  return "...";
+};

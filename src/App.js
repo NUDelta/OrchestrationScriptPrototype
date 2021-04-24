@@ -17,7 +17,10 @@ export default function App() {
       blocks: [
         {type: 'if'},
         {type: 'not'},
+        {type: 'and'},
+        {type: 'or'},
         {type: 'logic_compare'},
+
       ]
     },
     {
@@ -32,7 +35,8 @@ export default function App() {
       colour: '#ACAEEA',
       blocks: [
         {type: 'math_round'},
-        {type: 'math_number'}
+        {type: 'math_number'},
+        {type: 'addition'}
       ]
     },
     {
@@ -40,6 +44,8 @@ export default function App() {
       colour: '#F08080',
       blocks: [
         {type: 'time'},
+        {type: 'time_elapsed'},
+        {type: 'time_period'},
       ]
     },
     {
@@ -106,11 +112,17 @@ export default function App() {
       colour: '#D3FFCE',
       blocks: [
         {type: 'every'},
-        {type: 'wasUpdated'},
+        {type: 'wasupdatedv1'},
         {type: 'At'},
         {type: 'fullfillment'},
-        {type: 'timestamp'},
-        {type: 'distinct'},
+      ]
+    },
+    {
+      name: 'Concepts',
+      colour: '#D3FFCE',
+      blocks: [
+        {type: 'set'},
+        {type: 'concept_variable'},
       ]
     },
   ]
@@ -140,7 +152,7 @@ export default function App() {
       />
       <pre id="generated-xml">
       </pre>
-      <textarea id="code" style={{ height: "200px", width: "400px" }} value=""></textarea>
+      {/*<textarea id="code" style={{ height: "200px", width: "400px" }} value=""></textarea>*/}
     </>
   )
 }

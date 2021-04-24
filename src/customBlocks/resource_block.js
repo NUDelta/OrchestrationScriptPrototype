@@ -19,9 +19,9 @@ Blockly.Blocks['sprint_log'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Sprint Log");
-    this.appendValueInput("section")
-        .setCheck("Number")
-        .appendField("(input: sprint number)");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["current","current"], ["previous","previous"], ["next","next"]]), "NAME");
+    this.setInputsInline(true);
     this.setOutput(true, "resource");
     this.setColour(290);
  this.setTooltip("");

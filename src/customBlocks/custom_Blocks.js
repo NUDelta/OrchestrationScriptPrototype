@@ -80,10 +80,84 @@ Blockly.Python['return'] = function (block) {
     return code;
 };
 
+Blockly.Blocks['set'] = {
+    init: function() {
+      this.appendValueInput("name")
+          .setCheck(null)
+          .appendField("set");
+      this.appendValueInput("set")
+          .setCheck(null)
+          .appendField("to");
+      this.setInputsInline(true);
+      this.setColour(160);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
 
+Blockly.Python['set'] = function (block) {return "";};
 
+Blockly.Blocks['concept_variable'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Concept Variable");
+    this.appendValueInput("set")
+        .setCheck("String");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(160);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 
+Blockly.Python['concept_variable'] = function (block) {return "";};
 
+Blockly.Blocks['and'] = {
+  init: function() {
+    this.appendValueInput("left")
+    this.appendValueInput("right")
+        .appendField("AND");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 
+Blockly.Python['and'] = function (block) {return "";};
 
+Blockly.Blocks['or'] = {
+  init: function() {
+    this.appendValueInput("left")
+        .setCheck(null);
+    this.appendValueInput("right")
+        .setCheck(null)
+        .appendField("OR");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 
+Blockly.Python['or'] = function (block) {return "";};
+
+Blockly.Blocks['addition'] = {
+  init: function() {
+    this.appendValueInput("left")
+        .setCheck(null);
+    this.appendValueInput("right")
+        .setCheck(null)
+        .appendField("+");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Python['addition'] = function (block) {return "";};
