@@ -8,9 +8,11 @@ Blockly.Blocks['send'] = {
       this.appendValueInput("message")
           .setCheck("String")
           .appendField("(input: message)");
+    /*
       this.appendValueInput("recipient")
           .setCheck("recipient")
           .appendField("(input: recipient)");
+    */
       this.appendValueInput("medium")
           .setCheck("medium")
           .appendField("(input: medium)");

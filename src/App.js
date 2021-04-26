@@ -7,6 +7,9 @@ import './customBlocks/communication_blocks';
 import './customBlocks/function_blocks';
 import './customBlocks/time_blocks';
 import './customBlocks/resource_block';
+import {makeStyles} from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 export default function App() {
   const initialXml = '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="text" x="70" y="30"><field name="TEXT"></field></block></xml>';
@@ -40,6 +43,38 @@ export default function App() {
       ]
     },
     {
+      name: 'Resources',
+      colour: '#CEABFA',
+      blocks: [
+        {type: 'ipm'},
+        {type: 'sprint_log'},
+        {type: 'rrc'},
+        {type: 'prc'},
+        {type: 'lip_signup'},
+        {type: 'dtr_meeting_log'},
+      ]
+    },
+    {
+      name: 'Functions',
+      colour: '#D3FFCE',
+      blocks: [
+        {type: 'every'},
+        {type: 'wasupdatedv1'},
+        {type: 'At'},
+        {type: 'fullfillment'},
+      ]
+    },
+    {
+      name: 'Concepts',
+      colour: '#D3FFCE',
+      blocks: [
+        {type: 'set'},
+        {type: 'concept_variable'},
+      ]
+    },
+  ]
+  const timeToolbox = [
+    {
       name: 'Time',
       colour: '#F08080',
       blocks: [
@@ -72,15 +107,31 @@ export default function App() {
       ]
     },
     {
-      name: 'Resources',
-      colour: '#CEABFA',
+      name: 'Math',
+      colour: '#ACAEEA',
       blocks: [
-        {type: 'ipm'},
-        {type: 'sprint_log'},
-        {type: 'rrc'},
-        {type: 'prc'},
-        {type: 'lip_signup'},
-        {type: 'dtr_meeting_log'},
+        {type: 'math_round'},
+        {type: 'math_number'},
+        {type: 'addition'}
+      ]
+    },
+  ]
+  const audienceToolbox = [
+      {
+        name: 'audience',
+        colour: '#68DEC2',
+        blocks: [
+          {type: 'individual'},
+          {type: 'project_group'},
+        ]
+      },
+  ]
+  const actionToolbox = [
+    {
+      name: 'Text',
+      colour: '#68DEC2',
+      blocks: [
+        {type: 'text'}
       ]
     },
     {
@@ -91,15 +142,6 @@ export default function App() {
       ]
     },
     {
-      name: 'Recipient',
-      colour: '#998362',
-      blocks: [
-        {type: 'person'},
-        {type: 'email_address'},
-        {type: 'slack_channel'},
-      ]
-    },
-    {
       name: 'Medium',
       colour: '#998362',
       blocks: [
@@ -107,39 +149,29 @@ export default function App() {
         {type: 'email'},
       ]
     },
-    {
-      name: 'Functions',
-      colour: '#D3FFCE',
-      blocks: [
-        {type: 'every'},
-        {type: 'wasupdatedv1'},
-        {type: 'At'},
-        {type: 'fullfillment'},
-      ]
-    },
-    {
-      name: 'Concepts',
-      colour: '#D3FFCE',
-      blocks: [
-        {type: 'set'},
-        {type: 'concept_variable'},
-      ]
-    },
   ]
+
   function workspaceDidChange(workspace) {
     const newXml = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(workspace));
-    document.getElementById('generated-xml').innerText = newXml;
 
+    //document.getElementById('generated-xml').innerText = newXml;
+    
+    /*
     const code = Blockly.Python.workspaceToCode(workspace);
     document.getElementById('code').value = code;
+    */
   }
 
   return (
     <>
+    <Grid container spacing = {3}>
+
+      <Grid item xs = {9}>
+      <label>Situation Detector: what to detect</label>
       <ReactBlockly
         toolboxCategories={toolboxCategories}
         initialXml={initialXml}
-        wrapperDivClassName="fill-height"
+        wrapperDivClassName="one-third"
         workspaceConfiguration={{
           grid: {
             spacing: 20,
@@ -150,9 +182,63 @@ export default function App() {
         }}
         workspaceDidChange={workspaceDidChange}
       />
-      <pre id="generated-xml">
-      </pre>
+      <label>Monitoring Condition: when to detect</label>
+      <ReactBlockly
+        toolboxCategories={timeToolbox}
+        initialXml={initialXml}
+        wrapperDivClassName="one-third"
+        workspaceConfiguration={{
+          grid: {
+            spacing: 20,
+            length: 3,
+            colour: '#ccc',
+            snap: true,
+          },
+        }}
+        workspaceDidChange={workspaceDidChange}
+      />
+      <label>Applicable Set: who to detect</label>
+      <ReactBlockly
+        toolboxCategories={audienceToolbox}
+        initialXml={initialXml}
+        wrapperDivClassName="one-third"
+        workspaceConfiguration={{
+          grid: {
+            spacing: 20,
+            length: 3,
+            colour: '#ccc',
+            snap: true,
+          },
+        }}
+        workspaceDidChange={workspaceDidChange}
+      />
+      <label>Action Set</label>
+      <ReactBlockly
+        toolboxCategories={actionToolbox}
+        initialXml={initialXml}
+        wrapperDivClassName="one-third"
+        workspaceConfiguration={{
+          grid: {
+            spacing: 20,
+            length: 3,
+            colour: '#ccc',
+            snap: true,
+          },
+        }}
+        workspaceDidChange={workspaceDidChange}
+      />
+      {/*<pre id="generated-xml"></pre>*/}
+      
+      </Grid>
+
+
       {/*<textarea id="code" style={{ height: "200px", width: "400px" }} value=""></textarea>*/}
+      <Grid item xs = {3}>
+        <label>Note Section</label>
+        <textarea style = {{height: "100%", width: "100%"}}></textarea>
+      </Grid>
+      
+    </Grid>
     </>
   )
 }

@@ -52,9 +52,11 @@ Blockly.Blocks['wasupdatedv1'] = {
     this.appendValueInput("resource")
         .setCheck("resource")
         .appendField("(input: resource)");
+    /*
     this.appendValueInput("time_period")
         .setCheck(null)
         .appendField("(input: time period)");
+    */
     this.setOutput(true, "Boolean");
     this.setColour(120);
  this.setTooltip("");
