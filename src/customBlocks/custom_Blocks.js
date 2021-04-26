@@ -161,3 +161,35 @@ Blockly.Blocks['addition'] = {
 };
 
 Blockly.Python['addition'] = function (block) {return "";};
+
+Blockly.Blocks['individual'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("student");
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown([["Aimee","Aimee"], ["Ariella","Ariella"], ["Ava","Ava"], ["Charlotte","Charlotte"], ["Gobi","Gobi"], ["Grace","Grace"], ["Hang","Hang"], ["Harrison","Harrison"], ["Jason","Jason"], ["Jonathan","Jonathan"], ["Kapil","Kapil"], ["Kevin","Kevin"], ["Leesha","Leesha"], ["Mason","Mason"], ["Molly","Molly"], ["Neha","Neha"], ["Nina","Nina"], ["Roxy","Roxy"], ["Ryan","Ryan"]]), "student_name");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(260);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Python['individual'] = function (block) {return "";};
+
+  Blockly.Blocks['project_group'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("project");
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown([["Knowledge Maps","Knowledge Maps"], ["Scaffolded Exercises","Scaffolded Exercises"], ["Weekly","Weekly"], ["Skill Tracking","Skill Tracking"]]), "project");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(260);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Python['project_group'] = function (block) {return "";};

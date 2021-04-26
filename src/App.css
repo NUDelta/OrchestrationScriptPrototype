@@ -5,3 +5,13 @@
 .one-third {
   height: calc((100vh - 114px) / 3);
 }
+
+textarea {
+  font-size: 20pt;
+  font-family: Arial;
+}
+
+label {
+  font-size: 20pt;
+  font-family: Arial;
+}

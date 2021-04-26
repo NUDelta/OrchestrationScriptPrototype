@@ -86,7 +86,7 @@ Blockly.Python['at'] = function (block) {
 Blockly.Blocks['sig'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Event: SIG");
+        .appendField("Event: SIG(Wednesday)");
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");
@@ -164,7 +164,7 @@ Blockly.Python['office_hour'] = function (block) {
 Blockly.Blocks['studio'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Event: Studio");
+        .appendField("Event: Studio(Friday)");
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");

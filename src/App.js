@@ -7,6 +7,9 @@ import './customBlocks/communication_blocks';
 import './customBlocks/function_blocks';
 import './customBlocks/time_blocks';
 import './customBlocks/resource_block';
+import {makeStyles} from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 export default function App() {
   const initialXml = '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="text" x="70" y="30"><field name="TEXT"></field></block></xml>';
@@ -49,30 +52,6 @@ export default function App() {
         {type: 'prc'},
         {type: 'lip_signup'},
         {type: 'dtr_meeting_log'},
-      ]
-    },
-    {
-      name: 'Communication',
-      colour: '#998362',
-      blocks: [
-        {type: 'send'},
-      ]
-    },
-    {
-      name: 'Recipient',
-      colour: '#998362',
-      blocks: [
-        {type: 'person'},
-        {type: 'email_address'},
-        {type: 'slack_channel'},
-      ]
-    },
-    {
-      name: 'Medium',
-      colour: '#998362',
-      blocks: [
-        {type: 'slack'},
-        {type: 'email'},
       ]
     },
     {
@@ -137,43 +116,45 @@ export default function App() {
       ]
     },
   ]
-    const audienceToolbox = [
+  const audienceToolbox = [
       {
-        name: 'Text',
+        name: 'audience',
         colour: '#68DEC2',
         blocks: [
-          {type: 'text'}
+          {type: 'individual'},
+          {type: 'project_group'},
         ]
       },
-      {
-        name: 'Communication',
-        colour: '#998362',
-        blocks: [
-          {type: 'send'},
-        ]
-      },
-      {
-        name: 'Recipient',
-        colour: '#998362',
-        blocks: [
-          {type: 'person'},
-          {type: 'email_address'},
-          {type: 'slack_channel'},
-        ]
-      },
-      {
-        name: 'Medium',
-        colour: '#998362',
-        blocks: [
-          {type: 'slack'},
-          {type: 'email'},
-        ]
-      },
-    ]
+  ]
+  const actionToolbox = [
+    {
+      name: 'Text',
+      colour: '#68DEC2',
+      blocks: [
+        {type: 'text'}
+      ]
+    },
+    {
+      name: 'Communication',
+      colour: '#998362',
+      blocks: [
+        {type: 'send'},
+      ]
+    },
+    {
+      name: 'Medium',
+      colour: '#998362',
+      blocks: [
+        {type: 'slack'},
+        {type: 'email'},
+      ]
+    },
+  ]
 
   function workspaceDidChange(workspace) {
     const newXml = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(workspace));
-    document.getElementById('generated-xml').innerText = newXml;
+
+    //document.getElementById('generated-xml').innerText = newXml;
     
     /*
     const code = Blockly.Python.workspaceToCode(workspace);
@@ -183,6 +164,9 @@ export default function App() {
 
   return (
     <>
+    <Grid container spacing = {3}>
+
+      <Grid item xs = {9}>
       <label>Situation Detector: what to detect</label>
       <ReactBlockly
         toolboxCategories={toolboxCategories}
@@ -228,9 +212,33 @@ export default function App() {
         }}
         workspaceDidChange={workspaceDidChange}
       />
-      <pre id="generated-xml">
-      </pre>
+      <label>Action Set</label>
+      <ReactBlockly
+        toolboxCategories={actionToolbox}
+        initialXml={initialXml}
+        wrapperDivClassName="one-third"
+        workspaceConfiguration={{
+          grid: {
+            spacing: 20,
+            length: 3,
+            colour: '#ccc',
+            snap: true,
+          },
+        }}
+        workspaceDidChange={workspaceDidChange}
+      />
+      {/*<pre id="generated-xml"></pre>*/}
+      
+      </Grid>
+
+
       {/*<textarea id="code" style={{ height: "200px", width: "400px" }} value=""></textarea>*/}
+      <Grid item xs = {3}>
+        <label>Note Section</label>
+        <textarea style = {{height: "100%", width: "100%"}}></textarea>
+      </Grid>
+      
+    </Grid>
     </>
   )
 }
