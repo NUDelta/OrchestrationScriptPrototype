@@ -216,6 +216,7 @@ Blockly.Blocks['time_elapsed'] = {
     this.setColour(330);
  this.setTooltip("");
  this.setHelpUrl("");
+ this.setInputsInline(true);
   }
 };
 

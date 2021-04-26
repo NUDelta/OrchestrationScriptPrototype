@@ -40,38 +40,6 @@ export default function App() {
       ]
     },
     {
-      name: 'Time',
-      colour: '#F08080',
-      blocks: [
-        {type: 'time'},
-        {type: 'time_elapsed'},
-        {type: 'time_period'},
-      ]
-    },
-    {
-      name: 'Modifier',
-      colour: '#F08080',
-      blocks: [
-        {type: 'after'},
-        {type: 'before'},
-        {type: 'during'},
-        {type: 'at'},
-      ]
-    },
-    {
-      name: 'Event',
-      colour: '#F08080',
-      blocks: [
-        {type: 'sig'},
-        {type: 'sprint'},
-        {type: 'days_of_the_week'},
-        {type: 'mysore'},
-        {type: 'office_hour'},
-        {type: 'studio'},
-        {type: 'week'},
-      ]
-    },
-    {
       name: 'Resources',
       colour: '#CEABFA',
       blocks: [
@@ -126,20 +94,130 @@ export default function App() {
       ]
     },
   ]
+  const timeToolbox = [
+    {
+      name: 'Time',
+      colour: '#F08080',
+      blocks: [
+        {type: 'time'},
+        {type: 'time_elapsed'},
+        {type: 'time_period'},
+      ]
+    },
+    {
+      name: 'Modifier',
+      colour: '#F08080',
+      blocks: [
+        {type: 'after'},
+        {type: 'before'},
+        {type: 'during'},
+        {type: 'at'},
+      ]
+    },
+    {
+      name: 'Event',
+      colour: '#F08080',
+      blocks: [
+        {type: 'sig'},
+        {type: 'sprint'},
+        {type: 'days_of_the_week'},
+        {type: 'mysore'},
+        {type: 'office_hour'},
+        {type: 'studio'},
+        {type: 'week'},
+      ]
+    },
+    {
+      name: 'Math',
+      colour: '#ACAEEA',
+      blocks: [
+        {type: 'math_round'},
+        {type: 'math_number'},
+        {type: 'addition'}
+      ]
+    },
+  ]
+    const audienceToolbox = [
+      {
+        name: 'Text',
+        colour: '#68DEC2',
+        blocks: [
+          {type: 'text'}
+        ]
+      },
+      {
+        name: 'Communication',
+        colour: '#998362',
+        blocks: [
+          {type: 'send'},
+        ]
+      },
+      {
+        name: 'Recipient',
+        colour: '#998362',
+        blocks: [
+          {type: 'person'},
+          {type: 'email_address'},
+          {type: 'slack_channel'},
+        ]
+      },
+      {
+        name: 'Medium',
+        colour: '#998362',
+        blocks: [
+          {type: 'slack'},
+          {type: 'email'},
+        ]
+      },
+    ]
+
   function workspaceDidChange(workspace) {
     const newXml = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(workspace));
     document.getElementById('generated-xml').innerText = newXml;
-
+    
+    /*
     const code = Blockly.Python.workspaceToCode(workspace);
     document.getElementById('code').value = code;
+    */
   }
 
   return (
     <>
+      <label>Situation Detector: what to detect</label>
       <ReactBlockly
         toolboxCategories={toolboxCategories}
         initialXml={initialXml}
-        wrapperDivClassName="fill-height"
+        wrapperDivClassName="one-third"
+        workspaceConfiguration={{
+          grid: {
+            spacing: 20,
+            length: 3,
+            colour: '#ccc',
+            snap: true,
+          },
+        }}
+        workspaceDidChange={workspaceDidChange}
+      />
+      <label>Monitoring Condition: when to detect</label>
+      <ReactBlockly
+        toolboxCategories={timeToolbox}
+        initialXml={initialXml}
+        wrapperDivClassName="one-third"
+        workspaceConfiguration={{
+          grid: {
+            spacing: 20,
+            length: 3,
+            colour: '#ccc',
+            snap: true,
+          },
+        }}
+        workspaceDidChange={workspaceDidChange}
+      />
+      <label>Applicable Set: who to detect</label>
+      <ReactBlockly
+        toolboxCategories={audienceToolbox}
+        initialXml={initialXml}
+        wrapperDivClassName="one-third"
         workspaceConfiguration={{
           grid: {
             spacing: 20,

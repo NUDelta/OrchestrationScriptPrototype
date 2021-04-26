@@ -12,7 +12,7 @@ Blockly.Blocks['if'] = {
           .setCheck(null)
           .appendField("(input: action)");
       this.setOutput(true, "event");
-      this.setColour(230);
+      this.setColour(210);
    this.setTooltip("");
    this.setHelpUrl("");
     }
@@ -28,7 +28,7 @@ Blockly.Blocks['not'] = {
         .setCheck(null)
         .appendField("not");
     this.setOutput(true, "Boolean");
-    this.setColour(230);
+    this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -121,8 +121,8 @@ Blockly.Blocks['and'] = {
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(210);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 
@@ -154,7 +154,7 @@ Blockly.Blocks['addition'] = {
         .appendField("+");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(210);
+    this.setColour(230);
  this.setTooltip("");
  this.setHelpUrl("");
   }
