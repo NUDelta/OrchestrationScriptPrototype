@@ -102,14 +102,14 @@ Blockly.Blocks['sprint'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Event: Sprint");
-    this.appendValueInput("number")
-        .setCheck("Number")
-        .appendField("(input: sprint number)");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["current","current"], ["last","last"], ["next","next"]]), "which_sprint");
+    this.setInputsInline(true);
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");
  this.setHelpUrl("");
-    }
+  }
 };
 
 Blockly.Python['sprint'] = function (block) { 
@@ -149,7 +149,7 @@ Blockly.Python['mysore'] = function (block) {
 Blockly.Blocks['office_hour'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Event: Office hours");
+        .appendField("Event: Office hours(Monday)");
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");

@@ -3,7 +3,7 @@
 }
 
 .one-third {
-  height: calc((100vh - 114px) / 3);
+  height: calc((100vh - 114px) / 2);
 }
 
 textarea {

@@ -10,6 +10,9 @@ import './customBlocks/resource_block';
 import {makeStyles} from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import DarkTheme from '@blockly/theme-dark';
+import MyTimeline from './Timeline';
+import HorizontalLabelPositionBelowStepper from './Stepper';
 
 export default function App() {
   const initialXml = '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="text" x="70" y="30"><field name="TEXT"></field></block></xml>';
@@ -100,7 +103,6 @@ export default function App() {
         {type: 'sig'},
         {type: 'sprint'},
         {type: 'days_of_the_week'},
-        {type: 'mysore'},
         {type: 'office_hour'},
         {type: 'studio'},
         {type: 'week'},
@@ -163,37 +165,45 @@ export default function App() {
   }
 
   return (
-    <>
-    <Grid container spacing = {3}>
-
-      <Grid item xs = {9}>
-      <label>Situation Detector: what to detect</label>
+    
+    
+    <div
+      style={{
+        //backgroundColor: '#1e1e1e',
+      }}>
+    
+    <Grid container spacing = {1}>
+      <Grid item xs = {2}>
+        <MyTimeline></MyTimeline>
+      </Grid>
+      
+      
+      <Grid item xs = {8}>
+      <label style = {{}}>Situation Detector: what to detect</label>
       <ReactBlockly
         toolboxCategories={toolboxCategories}
         initialXml={initialXml}
         wrapperDivClassName="one-third"
         workspaceConfiguration={{
-          grid: {
+          /*grid: {
             spacing: 20,
             length: 3,
             colour: '#ccc',
             snap: true,
           },
+          */
+          //theme: DarkTheme,
         }}
         workspaceDidChange={workspaceDidChange}
       />
+      {/*
       <label>Monitoring Condition: when to detect</label>
       <ReactBlockly
         toolboxCategories={timeToolbox}
         initialXml={initialXml}
         wrapperDivClassName="one-third"
         workspaceConfiguration={{
-          grid: {
-            spacing: 20,
-            length: 3,
-            colour: '#ccc',
-            snap: true,
-          },
+          theme: DarkTheme,
         }}
         workspaceDidChange={workspaceDidChange}
       />
@@ -203,27 +213,21 @@ export default function App() {
         initialXml={initialXml}
         wrapperDivClassName="one-third"
         workspaceConfiguration={{
-          grid: {
-            spacing: 20,
-            length: 3,
-            colour: '#ccc',
-            snap: true,
-          },
+          theme: DarkTheme,
         }}
         workspaceDidChange={workspaceDidChange}
       />
-      <label>Action Set</label>
+      */}
+
+      {/*<HorizontalLabelPositionBelowStepper></HorizontalLabelPositionBelowStepper>*/}
+
+      <label style = {{}}>Action Set</label>
       <ReactBlockly
         toolboxCategories={actionToolbox}
         initialXml={initialXml}
         wrapperDivClassName="one-third"
         workspaceConfiguration={{
-          grid: {
-            spacing: 20,
-            length: 3,
-            colour: '#ccc',
-            snap: true,
-          },
+          //theme: DarkTheme,
         }}
         workspaceDidChange={workspaceDidChange}
       />
@@ -233,12 +237,19 @@ export default function App() {
 
 
       {/*<textarea id="code" style={{ height: "200px", width: "400px" }} value=""></textarea>*/}
-      <Grid item xs = {3}>
+
+      
+      
+      
+      <Grid item xs = {2}>
         <label>Note Section</label>
         <textarea style = {{height: "100%", width: "100%"}}></textarea>
       </Grid>
       
+      
     </Grid>
-    </>
+
+    </div>
+    
   )
 }
