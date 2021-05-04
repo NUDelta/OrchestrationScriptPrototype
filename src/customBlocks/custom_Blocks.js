@@ -4,11 +4,17 @@ import 'blockly/python';
 Blockly.Blocks['if'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField("If");
-      this.appendValueInput("if")
+          .appendField("If: ");
+      this.appendValueInput("condition")
           .setCheck("Boolean")
           .appendField("(input: condition)");
-      this.appendValueInput("do")
+      this.appendValueInput("do1")
+          .setCheck(null)
+          .appendField("(input: action)");
+      this.appendValueInput("else")
+          .setCheck(null)
+          .appendField("else: ");
+      this.appendValueInput("do2")
           .setCheck(null)
           .appendField("(input: action)");
       this.setOutput(true, "event");
@@ -16,7 +22,7 @@ Blockly.Blocks['if'] = {
    this.setTooltip("");
    this.setHelpUrl("");
     }
-};
+  };
 
 Blockly.Python['if'] = function (block) { 
     return "...";
@@ -193,3 +199,40 @@ Blockly.Blocks['individual'] = {
   };
 
   Blockly.Python['project_group'] = function (block) {return "";};
+
+  Blockly.Blocks['situation'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("Situation(boolean)");
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"]]), "NAME");
+      this.appendValueInput("NAME")
+          .setCheck(null);
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(120);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Python['situation'] = function (block) {return "";};
+
+  Blockly.Blocks['situation_instance'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("Situation");
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"]]), "NAME");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(120);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+  Blockly.Python['situation_instance'] = function (block) {return "";};
+
+
+

@@ -13,22 +13,18 @@ import Grid from '@material-ui/core/Grid';
 import DarkTheme from '@blockly/theme-dark';
 import MyTimeline from './Timeline';
 import HorizontalLabelPositionBelowStepper from './Stepper';
+import Select from 'react-select';
+
+const options = [
+  {value: "km",label: "Knowledge Maps"},
+  {value: "se",label: "Scaffolded Exercises"},
+  {value: "we",label: "Weekly"},
+  {value: "st",label: "Skill Tracking"},];
 
 export default function App() {
   const initialXml = '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="text" x="70" y="30"><field name="TEXT"></field></block></xml>';
   const toolboxCategories = [
-    {
-      name: 'Logic',
-      colour: '#5C81A6',
-      blocks: [
-        {type: 'if'},
-        {type: 'not'},
-        {type: 'and'},
-        {type: 'or'},
-        {type: 'logic_compare'},
-
-      ]
-    },
+    
     {
       name: 'Text',
       colour: '#68DEC2',
@@ -61,10 +57,10 @@ export default function App() {
       name: 'Functions',
       colour: '#D3FFCE',
       blocks: [
-        {type: 'every'},
+        //{type: 'every'},
         {type: 'wasupdatedv1'},
-        {type: 'At'},
-        {type: 'fullfillment'},
+        //{type: 'At'},
+        //{type: 'fullfillment'},
       ]
     },
     {
@@ -73,6 +69,13 @@ export default function App() {
       blocks: [
         {type: 'set'},
         {type: 'concept_variable'},
+      ]
+    },
+    {
+      name: 'Situation',
+      colour: '#5C81A6',
+      blocks: [
+        {type: 'situation'},
       ]
     },
   ]
@@ -130,6 +133,25 @@ export default function App() {
   ]
   const actionToolbox = [
     {
+      name: 'Logic',
+      colour: '#5C81A6',
+      blocks: [
+        {type: 'if'},
+        {type: 'not'},
+        {type: 'and'},
+        {type: 'or'},
+        {type: 'logic_compare'},
+
+      ]
+    },
+    {
+      name: 'Situation',
+      colour: '#5C81A6',
+      blocks: [
+        {type: 'situation_instance'},
+      ]
+    },
+    {
       name: 'Text',
       colour: '#68DEC2',
       blocks: [
@@ -151,6 +173,7 @@ export default function App() {
         {type: 'email'},
       ]
     },
+
   ]
 
   function workspaceDidChange(workspace) {
@@ -173,12 +196,14 @@ export default function App() {
       }}>
     
     <Grid container spacing = {1}>
+      {/*
       <Grid item xs = {2}>
         <MyTimeline></MyTimeline>
       </Grid>
+      */}
       
+      <Grid item xs = {9}>
       
-      <Grid item xs = {8}>
       <label style = {{}}>Situation Detector: what to detect</label>
       <ReactBlockly
         toolboxCategories={toolboxCategories}
@@ -241,7 +266,9 @@ export default function App() {
       
       
       
-      <Grid item xs = {2}>
+      <Grid item xs = {3}>
+      <label>Applicable Set: who to detect</label>
+        <Select options = {options} placeholder = "Choose a project group" isMulti/>
         <label>Note Section</label>
         <textarea style = {{height: "100%", width: "100%"}}></textarea>
       </Grid>
