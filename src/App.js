@@ -14,6 +14,7 @@ import DarkTheme from '@blockly/theme-dark';
 import MyTimeline from './Timeline';
 import HorizontalLabelPositionBelowStepper from './Stepper';
 import Select from 'react-select';
+import DiscreteSlider from './Slider';
 
 const options = [
   {value: "km",label: "Knowledge Maps"},
@@ -176,6 +177,7 @@ export default function App() {
 
   ]
 
+  // not in use
   function workspaceDidChange(workspace) {
     const newXml = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(workspace));
 
@@ -194,6 +196,8 @@ export default function App() {
       style={{
         //backgroundColor: '#1e1e1e',
       }}>
+
+    <DiscreteSlider/>
     
     <Grid container spacing = {1}>
       {/*
