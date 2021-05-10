@@ -153,3 +153,42 @@ Blockly.Blocks['distinct'] = {
 Blockly.Python['distinct'] = function (block) { 
     return "...";
 };
+
+Blockly.Blocks['filled'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("filled");
+        this.appendValueInput("NAME")
+            .setCheck(null)
+            .appendField("(input: resource)");
+        this.setInputsInline(false);
+        this.setOutput(true, null);
+        this.setColour(120);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+ };
+ 
+ Blockly.Python['filled'] = function (block) { 
+    return "...";
+};
+
+Blockly.Blocks['was_read'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("wasRead");
+        this.appendValueInput("NAME")
+            .setCheck(null)
+            .appendField("(input: resource)");
+        this.setInputsInline(false);
+        this.setOutput(true, null);
+        this.setColour(120);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+ };
+
+ Blockly.Python['was_read'] = function (block) { 
+    return "...";
+};
+ 

@@ -52,6 +52,8 @@ export default function App() {
         {type: 'prc'},
         {type: 'lip_signup'},
         {type: 'dtr_meeting_log'},
+        {type: 'urg_guide'},
+        {type: 'previous_soap_notes'},
       ]
     },
     {
@@ -60,6 +62,8 @@ export default function App() {
       blocks: [
         //{type: 'every'},
         {type: 'wasupdatedv1'},
+        {type: 'filled'},
+        {type: 'was_read'},
         //{type: 'At'},
         //{type: 'fullfillment'},
       ]
