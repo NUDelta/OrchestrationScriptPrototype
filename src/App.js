@@ -39,7 +39,11 @@ export default function App() {
       blocks: [
         {type: 'math_round'},
         {type: 'math_number'},
-        {type: 'addition'}
+        {type: 'addition'},
+        {type: 'abs'},
+        {type: 'negative'},
+        {type: 'greater_than'},
+        {type: 'less_than'},
       ]
     },
     {
@@ -54,6 +58,7 @@ export default function App() {
         {type: 'dtr_meeting_log'},
         {type: 'urg_guide'},
         {type: 'previous_soap_notes'},
+        {type: 'student'},
       ]
     },
     {
@@ -63,7 +68,7 @@ export default function App() {
         //{type: 'every'},
         {type: 'wasupdatedv1'},
         {type: 'filled'},
-        {type: 'was_read'},
+        {type: 'was_read'}
         //{type: 'At'},
         //{type: 'fullfillment'},
       ]
@@ -122,7 +127,7 @@ export default function App() {
       blocks: [
         {type: 'math_round'},
         {type: 'math_number'},
-        {type: 'addition'}
+        {type: 'addition'},
       ]
     },
   ]

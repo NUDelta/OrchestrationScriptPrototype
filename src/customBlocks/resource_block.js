@@ -18,11 +18,11 @@ Blockly.Blocks['ipm'] = {
 Blockly.Blocks['sprint_log'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Sprint Log");
-    this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["current","current"], ["previous","previous"], ["next","next"]]), "NAME");
-    this.setInputsInline(true);
-    this.setOutput(true, "resource");
+        .appendField("Sprint Log")
+        .appendField(new Blockly.FieldDropdown([["current","current"], ["previous","previous"], ["next","next"]]), "NAME")
+        .appendField(new Blockly.FieldDropdown([["roadblocks","roadblocks"]]), "NAME");
+    this.setInputsInline(false);
+    this.setOutput(true, null);
     this.setColour(290);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -104,6 +104,20 @@ Blockly.Blocks['previous_soap_notes'] = {
   }
 };
 
+Blockly.Blocks['student'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Student")
+        .appendField(new Blockly.FieldDropdown([["Jason","Jason"], ["Hang","Hang"]]), "NAME")
+        .appendField(new Blockly.FieldDropdown([["D_points","D_points"], ["T_points","T_points"], ["R_points","R_points"]]), "NAME");
+    this.setInputsInline(false);
+    this.setOutput(true, null);
+    this.setColour(290);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 Blockly.Python['ipm'] = function (block) { return "...";};
 Blockly.Python['sprint_log'] = function (block) { return "...";};
 Blockly.Python['rrc'] = function (block) { return "...";};
@@ -112,3 +126,4 @@ Blockly.Python['lip_signup'] = function (block) { return "...";};
 Blockly.Python['dtr_meeting_log'] = function (block) { return "...";};
 Blockly.Python['urg_guide'] = function (block) { return "...";};
 Blockly.Python['previous_soap_notes'] = function (block) { return "...";};
+Blockly.Python['student'] = function (block) { return "...";};

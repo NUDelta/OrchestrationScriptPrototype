@@ -2,45 +2,45 @@ import Blockly from 'blockly';
 import 'blockly/python';
 
 Blockly.Blocks['if'] = {
-    init: function() {
-      this.appendDummyInput()
-          .appendField("If: ");
-      this.appendValueInput("condition")
-          .setCheck("Boolean")
-          .appendField("(input: condition)");
-      this.appendValueInput("do1")
-          .setCheck(null)
-          .appendField("(input: action)");
-      this.appendValueInput("else")
-          .setCheck(null)
-          .appendField("else: ");
-      this.appendValueInput("do2")
-          .setCheck(null)
-          .appendField("(input: action)");
-      this.setOutput(true, "event");
-      this.setColour(210);
-   this.setTooltip("");
-   this.setHelpUrl("");
+    init: function () {
+        this.appendDummyInput()
+            .appendField("If: ");
+        this.appendValueInput("condition")
+            .setCheck("Boolean")
+            .appendField("(input: condition)");
+        this.appendValueInput("do1")
+            .setCheck(null)
+            .appendField("(input: action)");
+        this.appendValueInput("else")
+            .setCheck(null)
+            .appendField("else: ");
+        this.appendValueInput("do2")
+            .setCheck(null)
+            .appendField("(input: action)");
+        this.setOutput(true, "event");
+        this.setColour(210);
+        this.setTooltip("");
+        this.setHelpUrl("");
     }
-  };
+};
 
-Blockly.Python['if'] = function (block) { 
+Blockly.Python['if'] = function (block) {
     return "...";
 };
 
 Blockly.Blocks['not'] = {
-  init: function() {
-    this.appendValueInput("not")
-        .setCheck(null)
-        .appendField("not");
-    this.setOutput(true, "Boolean");
-    this.setColour(210);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
+    init: function () {
+        this.appendValueInput("not")
+            .setCheck(null)
+            .appendField("not");
+        this.setOutput(true, "Boolean");
+        this.setColour(210);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
 };
 
-Blockly.Python['not'] = function (block) { 
+Blockly.Python['not'] = function (block) {
     return "...";
 };
 
@@ -87,152 +87,221 @@ Blockly.Python['return'] = function (block) {
 };
 
 Blockly.Blocks['set'] = {
-    init: function() {
-      this.appendValueInput("name")
-          .setCheck(null)
-          .appendField("set");
-      this.appendValueInput("set")
-          .setCheck(null)
-          .appendField("to");
-      this.setInputsInline(true);
-      this.setColour(160);
-   this.setTooltip("");
-   this.setHelpUrl("");
+    init: function () {
+        this.appendValueInput("name")
+            .setCheck(null)
+            .appendField("set");
+        this.appendValueInput("set")
+            .setCheck(null)
+            .appendField("to");
+        this.setInputsInline(true);
+        this.setColour(160);
+        this.setTooltip("");
+        this.setHelpUrl("");
     }
-  };
+};
 
-Blockly.Python['set'] = function (block) {return "";};
+Blockly.Python['set'] = function (block) { return ""; };
 
 Blockly.Blocks['concept_variable'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Concept Variable");
-    this.appendValueInput("set")
-        .setCheck("String");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(160);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
+    init: function () {
+        this.appendDummyInput()
+            .appendField("Concept Variable");
+        this.appendValueInput("set")
+            .setCheck("String");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(160);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
 };
 
-Blockly.Python['concept_variable'] = function (block) {return "";};
+Blockly.Python['concept_variable'] = function (block) { return ""; };
 
 Blockly.Blocks['and'] = {
-  init: function() {
-    this.appendValueInput("left")
-    this.appendValueInput("right")
-        .appendField("AND");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(210);
-    this.setTooltip("");
-    this.setHelpUrl("");
-  }
+    init: function () {
+        this.appendValueInput("left")
+        this.appendValueInput("right")
+            .appendField("AND");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(210);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
 };
 
-Blockly.Python['and'] = function (block) {return "";};
+Blockly.Python['and'] = function (block) { return ""; };
 
 Blockly.Blocks['or'] = {
-  init: function() {
-    this.appendValueInput("left")
-        .setCheck(null);
-    this.appendValueInput("right")
-        .setCheck(null)
-        .appendField("OR");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(210);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
+    init: function () {
+        this.appendValueInput("left")
+            .setCheck(null);
+        this.appendValueInput("right")
+            .setCheck(null)
+            .appendField("OR");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(210);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
 };
 
-Blockly.Python['or'] = function (block) {return "";};
+Blockly.Python['or'] = function (block) { return ""; };
 
 Blockly.Blocks['addition'] = {
-  init: function() {
-    this.appendValueInput("left")
-        .setCheck(null);
-    this.appendValueInput("right")
-        .setCheck(null)
-        .appendField("+");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
+    init: function () {
+        this.appendValueInput("left")
+            .setCheck(null);
+        this.appendValueInput("right")
+            .setCheck(null)
+            .appendField("+");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
 };
 
-Blockly.Python['addition'] = function (block) {return "";};
+Blockly.Python['addition'] = function (block) { return ""; };
 
-Blockly.Blocks['individual'] = {
+Blockly.Blocks['greater_than'] = {
     init: function() {
-      this.appendDummyInput()
-          .appendField("student");
-      this.appendDummyInput()
-          .appendField(new Blockly.FieldDropdown([["Aimee","Aimee"], ["Ariella","Ariella"], ["Ava","Ava"], ["Charlotte","Charlotte"], ["Gobi","Gobi"], ["Grace","Grace"], ["Hang","Hang"], ["Harrison","Harrison"], ["Jason","Jason"], ["Jonathan","Jonathan"], ["Kapil","Kapil"], ["Kevin","Kevin"], ["Leesha","Leesha"], ["Mason","Mason"], ["Molly","Molly"], ["Neha","Neha"], ["Nina","Nina"], ["Roxy","Roxy"], ["Ryan","Ryan"]]), "student_name");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour(260);
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Python['individual'] = function (block) {return "";};
-
-  Blockly.Blocks['project_group'] = {
-    init: function() {
-      this.appendDummyInput()
-          .appendField("project");
-      this.appendDummyInput()
-          .appendField(new Blockly.FieldDropdown([["Knowledge Maps","Knowledge Maps"], ["Scaffolded Exercises","Scaffolded Exercises"], ["Weekly","Weekly"], ["Skill Tracking","Skill Tracking"]]), "project");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour(260);
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-  };
-
-  Blockly.Python['project_group'] = function (block) {return "";};
-
-  Blockly.Blocks['situation'] = {
-    init: function() {
-      this.appendDummyInput()
-          .appendField("Situation(boolean)");
-      this.appendDummyInput()
-          .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"]]), "NAME");
       this.appendValueInput("NAME")
           .setCheck(null);
+      this.appendValueInput("NAME")
+          .setCheck(null)
+          .appendField(">");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(120);
+      this.setColour(230);
    this.setTooltip("");
    this.setHelpUrl("");
     }
   };
 
-  Blockly.Python['situation'] = function (block) {return "";};
+  Blockly.Python['greater_than'] = function (block) { return ""; };
 
-  Blockly.Blocks['situation_instance'] = {
+  Blockly.Blocks['less_than'] = {
     init: function() {
-      this.appendDummyInput()
-          .appendField("Situation");
-      this.appendDummyInput()
-          .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"]]), "NAME");
+      this.appendValueInput("NAME")
+          .setCheck(null);
+      this.appendValueInput("NAME")
+          .setCheck(null)
+          .appendField("<");
       this.setInputsInline(true);
       this.setOutput(true, null);
-      this.setColour(120);
+      this.setColour(230);
    this.setTooltip("");
    this.setHelpUrl("");
     }
   };
 
-  Blockly.Python['situation_instance'] = function (block) {return "";};
+  Blockly.Python['less_than'] = function (block) { return ""; };
+
+
+Blockly.Blocks['abs'] = {
+    init: function () {
+        this.appendValueInput("NAME")
+            .setCheck(null)
+            .appendField("Abs");
+        this.setInputsInline(false);
+        this.setOutput(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Python['abs'] = function (block) {
+    return "...";
+};
+
+Blockly.Blocks['negative'] = {
+    init: function () {
+        this.appendValueInput("NAME")
+            .setCheck(null)
+            .appendField("-");
+        this.setInputsInline(false);
+        this.setOutput(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Python['negative'] = function (block) {
+    return "...";
+};
+
+Blockly.Blocks['individual'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("student");
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldDropdown([["Aimee", "Aimee"], ["Ariella", "Ariella"], ["Ava", "Ava"], ["Charlotte", "Charlotte"], ["Gobi", "Gobi"], ["Grace", "Grace"], ["Hang", "Hang"], ["Harrison", "Harrison"], ["Jason", "Jason"], ["Jonathan", "Jonathan"], ["Kapil", "Kapil"], ["Kevin", "Kevin"], ["Leesha", "Leesha"], ["Mason", "Mason"], ["Molly", "Molly"], ["Neha", "Neha"], ["Nina", "Nina"], ["Roxy", "Roxy"], ["Ryan", "Ryan"]]), "student_name");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(260);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Python['individual'] = function (block) { return ""; };
+
+Blockly.Blocks['project_group'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("project");
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldDropdown([["Knowledge Maps", "Knowledge Maps"], ["Scaffolded Exercises", "Scaffolded Exercises"], ["Weekly", "Weekly"], ["Skill Tracking", "Skill Tracking"]]), "project");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(260);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Python['project_group'] = function (block) { return ""; };
+
+Blockly.Blocks['situation'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("Situation(boolean)");
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldDropdown([["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]]), "NAME");
+        this.appendValueInput("NAME")
+            .setCheck(null);
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(120);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Python['situation'] = function (block) { return ""; };
+
+Blockly.Blocks['situation_instance'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("Situation");
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldDropdown([["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]]), "NAME");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(120);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Python['situation_instance'] = function (block) { return ""; };
 
 
 
