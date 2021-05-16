@@ -68,9 +68,9 @@ export default function App() {
         //{type: 'every'},
         {type: 'wasupdatedv1'},
         {type: 'filled'},
-        {type: 'was_read'}
+        {type: 'was_read'},
         //{type: 'At'},
-        //{type: 'fullfillment'},
+        {type: 'fullfillment'},
       ]
     },
     {
