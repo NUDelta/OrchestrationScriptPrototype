@@ -25,7 +25,18 @@ const options = [
 export default function App() {
   const initialXml = '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="text" x="70" y="30"><field name="TEXT"></field></block></xml>';
   const toolboxCategories = [
-    
+    {
+      name: 'Logic',
+      colour: '#5C81A6',
+      blocks: [
+        {type: 'if'},
+        {type: 'not'},
+        {type: 'and'},
+        {type: 'or'},
+        {type: 'logic_compare'},
+
+      ]
+    },
     {
       name: 'Text',
       colour: '#68DEC2',
@@ -40,6 +51,7 @@ export default function App() {
         {type: 'math_round'},
         {type: 'math_number'},
         {type: 'addition'},
+        {type: 'subtraction'},
         {type: 'abs'},
         {type: 'negative'},
         {type: 'greater_than'},

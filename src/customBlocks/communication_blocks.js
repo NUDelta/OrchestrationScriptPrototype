@@ -16,6 +16,9 @@ Blockly.Blocks['send'] = {
       this.appendValueInput("medium")
           .setCheck("medium")
           .appendField("(input: medium)");
+      this.appendValueInput("recipient")
+          .setCheck("String")
+          .appendField("(input: recipient)");
       this.setOutput(true, "event");
       this.setColour(20);
    this.setTooltip("");

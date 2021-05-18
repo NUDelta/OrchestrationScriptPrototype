@@ -96,8 +96,10 @@ Blockly.Blocks['fullfillment'] = {
     this.appendValueInput("message")
         .setCheck(null)
         .appendField("(input: message)");
-    this.appendDummyInput()
-        .appendField(new Blockly.FieldCheckbox("TRUE"), "option");
+    this.appendValueInput("message")
+        .setCheck(null)
+        .appendField("(input: recipient)");
+    this.setInputsInline(false);
     this.setOutput(true, null);
     this.setColour(120);
  this.setTooltip("");

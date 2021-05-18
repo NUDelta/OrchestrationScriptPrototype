@@ -168,6 +168,23 @@ Blockly.Blocks['addition'] = {
 
 Blockly.Python['addition'] = function (block) { return ""; };
 
+Blockly.Blocks['subtraction'] = {
+    init: function () {
+        this.appendValueInput("left")
+            .setCheck(null);
+        this.appendValueInput("right")
+            .setCheck(null)
+            .appendField("-");
+        this.setInputsInline(true);
+        this.setOutput(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Python['subtraction'] = function (block) { return ""; };
+
 Blockly.Blocks['greater_than'] = {
     init: function() {
       this.appendValueInput("NAME")
