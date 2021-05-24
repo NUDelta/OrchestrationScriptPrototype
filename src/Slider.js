@@ -5,7 +5,7 @@ import Slider from '@material-ui/core/Slider';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 1500,
+    width: 'fill',
   },
   
   margin: {
@@ -21,6 +21,16 @@ const marks = [
   {value: 30,label: 'Sat',},
   {value: 40,label: 'Sun',},
   {value: 50,label: 'Mon',},
+  {value: 60,label: 'Tue',},
+  {value: 70,label: 'Wed',},
+  {value: 80,label: 'Thu',},
+  /*
+  {value: 90,label: 'Fri',},
+  {value: 100,label: 'Sat',},
+  {value: 110,label: 'Sun',},
+  {value: 120,label: 'Mon',},
+  {value: 130,label: 'Tue',},
+  */
 ];
 
 function valuetext(value) {
