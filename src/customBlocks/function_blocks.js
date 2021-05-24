@@ -52,6 +52,9 @@ Blockly.Blocks['wasupdatedv1'] = {
     this.appendValueInput("resource")
         .setCheck("resource")
         .appendField("(input: resource)");
+    this.appendDummyInput()
+        .appendField("(output: boolean)");
+    this.setInputsInline(false);
     /*
     this.appendValueInput("time_period")
         .setCheck(null)
@@ -63,6 +66,7 @@ Blockly.Blocks['wasupdatedv1'] = {
  this.setHelpUrl("");
   }
 };
+
 
 Blockly.Python['wasupdatedv1'] = function (block) { 
     return "...";
@@ -99,6 +103,8 @@ Blockly.Blocks['fullfillment'] = {
     this.appendValueInput("message")
         .setCheck(null)
         .appendField("(input: recipient)");
+    this.appendDummyInput("output: boolean")
+        .appendField("(output: boolean)");
     this.setInputsInline(false);
     this.setOutput(true, null);
     this.setColour(120);
@@ -163,6 +169,8 @@ Blockly.Blocks['filled'] = {
         this.appendValueInput("NAME")
             .setCheck(null)
             .appendField("(input: resource)");
+        this.appendDummyInput("output: boolean")
+            .appendField("(output: boolean)");
         this.setInputsInline(false);
         this.setOutput(true, null);
         this.setColour(120);
@@ -182,6 +190,8 @@ Blockly.Blocks['was_read'] = {
         this.appendValueInput("NAME")
             .setCheck(null)
             .appendField("(input: resource)");
+        this.appendDummyInput("output: boolean")
+            .appendField("(output: boolean)");
         this.setInputsInline(false);
         this.setOutput(true, null);
         this.setColour(120);

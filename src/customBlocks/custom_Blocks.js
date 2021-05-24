@@ -32,7 +32,8 @@ Blockly.Blocks['not'] = {
     init: function () {
         this.appendValueInput("not")
             .setCheck(null)
-            .appendField("not");
+            .appendField("not")
+            .appendField("(output: boolean)");
         this.setOutput(true, "Boolean");
         this.setColour(210);
         this.setTooltip("");
@@ -123,7 +124,8 @@ Blockly.Blocks['and'] = {
     init: function () {
         this.appendValueInput("left")
         this.appendValueInput("right")
-            .appendField("AND");
+            .appendField("AND")
+            .appendField("(output: boolean)");
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour(210);
@@ -140,7 +142,8 @@ Blockly.Blocks['or'] = {
             .setCheck(null);
         this.appendValueInput("right")
             .setCheck(null)
-            .appendField("OR");
+            .appendField("OR")
+            .appendField("(output: boolean)");
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour(210);

@@ -34,12 +34,14 @@ export default function App() {
       name: "Logic",
       colour: "#5C81A6",
       blocks: [
-        { type: "if" },
-        { type: "not" },
-        { type: "and" },
-        { type: "or" },
-        { type: "logic_compare" },
-      ],
+        //{type: 'if'},
+        {type: 'not'},
+        {type: 'and'},
+        {type: 'or'},
+        {type: 'logic_compare'},
+
+      ]
+
     },
     {
       name: "Text",
@@ -64,16 +66,18 @@ export default function App() {
       name: "Resources",
       colour: "#CEABFA",
       blocks: [
-        { type: "ipm" },
-        { type: "sprint_log" },
-        { type: "rrc" },
-        { type: "prc" },
-        { type: "lip_signup" },
-        { type: "dtr_meeting_log" },
-        { type: "urg_guide" },
-        { type: "previous_soap_notes" },
-        { type: "student" },
-      ],
+
+        //{type: 'ipm'},
+        {type: 'sprint_log'},
+        {type: 'rrc'},
+        {type: 'prc'},
+        //{type: 'lip_signup'},
+        //{type: 'dtr_meeting_log'},
+        {type: 'urg_guide'},
+        {type: 'previous_soap_notes'},
+        {type: 'student'},
+      ]
+
     },
     {
       name: "Functions",
