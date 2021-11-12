@@ -5,9 +5,12 @@ Blockly.Blocks['send'] = {
     init: function() {
       this.appendDummyInput()
           .appendField("send");
-      this.appendValueInput("message")
+      this.appendValueInput("message1")
           .setCheck("String")
-          .appendField("(input: message)");
+          .appendField("(input: suggested actions)");
+      this.appendValueInput("message2")
+          .setCheck("String")
+          .appendField("(input: underlying strategy)");
     /*
       this.appendValueInput("recipient")
           .setCheck("recipient")
@@ -19,7 +22,7 @@ Blockly.Blocks['send'] = {
       this.appendValueInput("recipient")
           .setCheck("String")
           .appendField("(input: recipient)");
-      this.setOutput(true, "event");
+      this.setOutput(false);
       this.setColour(20);
    this.setTooltip("");
    this.setHelpUrl("");

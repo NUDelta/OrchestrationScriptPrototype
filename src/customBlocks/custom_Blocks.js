@@ -17,7 +17,7 @@ Blockly.Blocks['if'] = {
         this.appendValueInput("do2")
             .setCheck(null)
             .appendField("(input: action)");
-        this.setOutput(true, "event");
+        this.setOutput(false);
         this.setColour(210);
         this.setTooltip("");
         this.setHelpUrl("");

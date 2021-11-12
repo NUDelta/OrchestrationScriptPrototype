@@ -50,7 +50,7 @@ Blockly.Blocks['wasupdatedv1'] = {
     this.appendDummyInput()
         .appendField("wasUpdated");
     this.appendValueInput("resource")
-        .setCheck("resource")
+        .setCheck(null)
         .appendField("(input: resource)");
     this.appendDummyInput()
         .appendField("(output: boolean)");
@@ -124,10 +124,10 @@ Blockly.Blocks['timestamp'] = {
       this.appendDummyInput()
           .appendField("(output: list of timestamps)");
       this.appendValueInput("resource")
-          .setCheck("resource")
+          .setCheck(null)
           .appendField("(input: resource)");
       this.appendValueInput("start")
-          .setCheck("time")
+          .setCheck(null)
           .appendField("(input: start time)");
       this.appendValueInput("end")
           .setCheck("time")
@@ -180,6 +180,30 @@ Blockly.Blocks['filled'] = {
  };
  
  Blockly.Python['filled'] = function (block) { 
+    return "...";
+};
+
+Blockly.Blocks['contains'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("contains");
+        this.appendValueInput("NAME")
+            .setCheck(null)
+            .appendField("(input: resource)");
+        this.appendValueInput("blah")
+            .setCheck(null)
+            .appendField("(input: text)");
+        this.appendDummyInput("output: boolean")
+            .appendField("(output: boolean)");
+        this.setInputsInline(false);
+        this.setOutput(true, null);
+        this.setColour(120);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+ };
+ 
+ Blockly.Python['contains'] = function (block) { 
     return "...";
 };
 

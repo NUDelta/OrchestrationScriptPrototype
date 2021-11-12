@@ -19,6 +19,9 @@ import DiscreteSlider from "./Slider";
 //import "react-pro-sidebar/dist/css/styles.css";
 import CollapsibleTable from "./dictionary/Dictionary";
 
+import "intersection-observer";
+import { ScrollView } from "@cantonjs/react-scroll-view";
+
 const options = [
   { value: "km", label: "Knowledge Maps" },
   { value: "se", label: "Scaffolded Exercises" },
@@ -27,6 +30,7 @@ const options = [
 ];
 
 export default function App() {
+
   const initialXml =
     '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="text" x="70" y="30"><field name="TEXT"></field></block></xml>';
   const toolboxCategories = [
@@ -67,15 +71,19 @@ export default function App() {
       colour: "#CEABFA",
       blocks: [
 
-        //{type: 'ipm'},
+        {type: 'ipm'},
         {type: 'sprint_log'},
         {type: 'rrc'},
         {type: 'prc'},
-        //{type: 'lip_signup'},
+        {type: 'stash'},
+        {type: 'pair research sign up (studio)'},
+        {type: 'lip_signup'},
         //{type: 'dtr_meeting_log'},
         {type: 'urg_guide'},
         {type: 'previous_soap_notes'},
         {type: 'student'},
+        {type: 'google calendar'},
+        {type: 'student response to slack bot'},
       ]
 
     },
@@ -84,6 +92,7 @@ export default function App() {
       colour: "#D3FFCE",
       blocks: [
         //{type: 'every'},
+        { type: "contains" },
         { type: "wasupdatedv1" },
         { type: "filled" },
         { type: "was_read" },
@@ -91,6 +100,7 @@ export default function App() {
         { type: "fullfillment" },
       ],
     },
+    /*
     {
       name: "Concepts",
       colour: "#D3FFCE",
@@ -101,6 +111,7 @@ export default function App() {
       colour: "#5C81A6",
       blocks: [{ type: "situation" }],
     },
+    */
   ];
   const timeToolbox = [
     {
@@ -144,14 +155,9 @@ export default function App() {
       ],
     },
   ];
-  const audienceToolbox = [
-    {
-      name: "audience",
-      colour: "#68DEC2",
-      blocks: [{ type: "individual" }, { type: "project_group" }],
-    },
-  ];
   const actionToolbox = [
+    
+    /*
     {
       name: "Logic",
       colour: "#5C81A6",
@@ -168,15 +174,16 @@ export default function App() {
       colour: "#5C81A6",
       blocks: [{ type: "situation_instance" }],
     },
-    {
-      name: "Text",
-      colour: "#68DEC2",
-      blocks: [{ type: "text" }],
-    },
+    */
     {
       name: "Communication",
       colour: "#998362",
       blocks: [{ type: "send" }],
+    },
+    {
+      name: "Text",
+      colour: "#68DEC2",
+      blocks: [{ type: "text" }],
     },
     {
       name: "Medium",
@@ -224,70 +231,107 @@ export default function App() {
       </Grid>
       */}
 
-        <Grid item xs={9}>
-          <label style={{}}>Situation Detector: what to detect</label>
-          <ReactBlockly
-            toolboxCategories={toolboxCategories}
-            initialXml={initialXml}
-            wrapperDivClassName="one-third"
-            workspaceConfiguration={
-              {
-                /*grid: {
-            spacing: 20,
-            length: 3,
-            colour: '#ccc',
-            snap: true,
-          },
-          */
-                //theme: DarkTheme,
-              }
-            }
-            workspaceDidChange={workspaceDidChange}
-          />
-          {/*
-      <label>Monitoring Condition: when to detect</label>
-      <ReactBlockly
-        toolboxCategories={timeToolbox}
-        initialXml={initialXml}
-        wrapperDivClassName="one-third"
-        workspaceConfiguration={{
-          theme: DarkTheme,
-        }}
-        workspaceDidChange={workspaceDidChange}
-      />
-      <label>Applicable Set: who to detect</label>
-      <ReactBlockly
-        toolboxCategories={audienceToolbox}
-        initialXml={initialXml}
-        wrapperDivClassName="one-third"
-        workspaceConfiguration={{
-          theme: DarkTheme,
-        }}
-        workspaceDidChange={workspaceDidChange}
-      />
-      */}
+        
+        
+        <Grid item xs={8}>
 
-          {/*<HorizontalLabelPositionBelowStepper></HorizontalLabelPositionBelowStepper>*/}
 
-          <label style={{}}>Action Set</label>
-          <ReactBlockly
-            toolboxCategories={actionToolbox}
-            initialXml={initialXml}
-            wrapperDivClassName="one-third"
-            workspaceConfiguration={
-              {
-                //theme: DarkTheme,
+
+            <label style={{fontSize: "20px"}}>Instance1 Detector</label>
+            <ReactBlockly
+              toolboxCategories={toolboxCategories}
+              initialXml={initialXml}
+              wrapperDivClassName="one-third"
+              workspaceConfiguration={
+                {
+                  /*grid: {
+              spacing: 20,
+              length: 3,
+              colour: '#ccc',
+              snap: true,
+            },
+            */
+                  //theme: DarkTheme,
+                }
               }
-            }
-            workspaceDidChange={workspaceDidChange}
-          />
+              workspaceDidChange={workspaceDidChange}
+            />
+
+            <label style={{fontSize: "20px"}}>Instance1 Response<br/>(make sure you both suggest actions and help mentees be aware of the underlying strategy)</label>
+            <ReactBlockly
+              toolboxCategories={actionToolbox}
+              initialXml={initialXml}
+              wrapperDivClassName="one-third"
+              workspaceConfiguration={
+                {
+                  //theme: DarkTheme,
+                }
+              }
+              workspaceDidChange={workspaceDidChange}
+            />
+
+            <label style={{fontSize: "20px"}}>Instance2 Detector</label>
+            <ReactBlockly
+              toolboxCategories={toolboxCategories}
+              initialXml={initialXml}
+              wrapperDivClassName="one-third"
+              workspaceConfiguration={
+                {
+                  /*grid: {
+              spacing: 20,
+              length: 3,
+              colour: '#ccc',
+              snap: true,
+            },
+            */
+                  //theme: DarkTheme,
+                }
+              }
+              workspaceDidChange={workspaceDidChange}
+            />
+
+            <label style={{fontSize: "20px"}}>Instance2 Response<br/>(make sure you both suggest actions and help mentees be aware of the underlying strategy)</label>
+            <ReactBlockly
+              toolboxCategories={actionToolbox}
+              initialXml={initialXml}
+              wrapperDivClassName="one-third"
+              workspaceConfiguration={
+                {
+                  //theme: DarkTheme,
+                }
+              }
+              workspaceDidChange={workspaceDidChange}
+            />
+
           {/*<pre id="generated-xml"></pre>*/}
-          <CollapsibleTable />
+          {/*<CollapsibleTable />*/}
         </Grid>
 
         {/*<textarea id="code" style={{ height: "200px", width: "400px" }} value=""></textarea>*/}
+        <Grid item xs={4}>
 
-        <Grid item xs={3}>
+
+
+          <label style={{fontSize: "20px"}}>Step1: List 2-4 instances this quarter when your mentee worked in an ineffective way.</label>
+          <textarea style={{ height: "20%", width: "100%", fontSize: "20px" }}></textarea>
+
+          <label style={{fontSize: "20px"}}>Step2: Choose 1 instance from step 1 which you would like to detect in the future.</label>
+          <textarea style={{ height: "10%", width: "100%", fontSize: "20px" }}></textarea>
+
+          <label style={{fontSize: "20px"}}>Step3: Why was that instance an ineffective way of working in that case?</label>
+          <textarea style={{ height: "20%", width: "100%", fontSize: "20px" }}></textarea>
+
+          <label style={{fontSize: "20px"}}>Step4: What’s the underlying effective strategy you are trying to teach here?</label>
+          <textarea style={{ height: "10%", width: "100%", fontSize: "20px" }}></textarea>
+
+          <label style={{fontSize: "20px"}}>Step5: Think about mentee’s current and future project risk to brainstorm 0-4 more future instances when this effective strategy won’t be used?</label>
+          <textarea style={{ height: "20%", width: "100%", fontSize: "20px" }}></textarea>
+
+
+          
+
+          
+        {/*
           <label>Applicable Set: who to detect</label>
           <Select
             options={options}
@@ -296,8 +340,14 @@ export default function App() {
           />
           <label>Note Section</label>
           <textarea style={{ height: "100%", width: "100%" }}></textarea>
+        */}
         </Grid>
+
+        
       </Grid>
+
+      
+
     </div>
   );
 }
