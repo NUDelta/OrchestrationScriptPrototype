@@ -10,6 +10,7 @@ import "react-pro-sidebar/dist/css/styles.css";
 import Scaffolding from "./Scaffolding";
 import DetectorWorkspace from "./DetectorWorkspace";
 import ResponseWorkspace from "./ResponseWorkspace";
+import Grid from "@material-ui/core/Grid";
 
 /*
 import ReactBlockly from "react-blockly";
@@ -17,7 +18,7 @@ import {toolboxCategories, actionToolbox, timeToolbox} from "./toolboxCategories
 import Blockly from "blockly";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
+
 import DarkTheme from "@blockly/theme-dark";
 import MyTimeline from "./Timeline";
 import HorizontalLabelPositionBelowStepper from "./Stepper";
@@ -41,21 +42,29 @@ const options = [
 export default function App() {
 
   return (
-    <div style={{/*backgroundColor: '#1e1e1e',*/}}>
+    <div style={{/*backgroundColor: '#1e1e1e',*/marginLeft:16, marginRight:16, marginTop:16,marginBottom:16}}>
 
-      <Scaffolding />
 
-      <label style={{fontSize: "20px"}}>Instance1 Detector</label>
-      <DetectorWorkspace />
+      <Grid container spacing={5}>
+        
+        <Grid item xs={9}>
 
-      <label style={{fontSize: "20px"}}>Instance1 Response<br/>(make sure you both suggest actions and help mentees be aware of the underlying strategy)</label>
-      <ResponseWorkspace />
+          <label style={{fontSize: "15px", marginBottom: 16}}>Step4: Detector<br/>(if the detector expression is evaluated to true, the response prompt will be triggered)</label>
+          <DetectorWorkspace />
 
-      <label style={{fontSize: "20px"}}>Instance2 Detector</label>
-      <DetectorWorkspace />
+          <label style={{fontSize: "15px", marginBottom: 16}}>Step5: Response<br/>(make sure you both suggest actions and help mentees be aware of the underlying strategy)</label>
+          <ResponseWorkspace />
 
-      <label style={{fontSize: "20px"}}>Instance2 Response<br/>(make sure you both suggest actions and help mentees be aware of the underlying strategy)</label>
-      <ResponseWorkspace />
+        </Grid>
+
+        <Grid item xs={3}>
+
+          <Scaffolding />
+
+        </Grid>
+        
+
+      </Grid>
 
     </div>
   );

@@ -27,7 +27,7 @@ export default function DetectorWorkspace() {
     }
 
     return (
-      <div>
+      <div style = {{marginBottom: 16}}>
         <ReactBlockly
             toolboxCategories={toolboxCategories}
             initialXml={initialXml}
