@@ -47,6 +47,14 @@ export default function App() {
 
       <Grid container spacing={5}>
         
+        
+
+        <Grid item xs={3}>
+
+          <Scaffolding />
+
+        </Grid>
+
         <Grid item xs={9}>
 
           <label style={{fontSize: "15px", marginBottom: 16}}>Step4: Detector<br/>(if the detector expression is evaluated to true, the response prompt will be triggered)</label>
@@ -54,12 +62,6 @@ export default function App() {
 
           <label style={{fontSize: "15px", marginBottom: 16}}>Step5: Response<br/>(make sure you both suggest actions and help mentees be aware of the underlying strategy)</label>
           <ResponseWorkspace />
-
-        </Grid>
-
-        <Grid item xs={3}>
-
-          <Scaffolding />
 
         </Grid>
         

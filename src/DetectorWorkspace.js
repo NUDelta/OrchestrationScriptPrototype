@@ -2,6 +2,7 @@ import "./App.css";
 import "./customBlocks/custom_Blocks";
 import React from "react";
 import ReactBlockly from "react-blockly";
+import { BlocklyWorkspace } from "react-blockly";
 import Blockly from "blockly";
 import "./customBlocks/communication_blocks";
 import "./customBlocks/function_blocks";
@@ -27,23 +28,38 @@ export default function DetectorWorkspace() {
     }
 
     return (
-      <div style = {{marginBottom: 16}}>
+      <div style = {{marginBottom: 16, marginTop: 10}}>
         <ReactBlockly
             toolboxCategories={toolboxCategories}
             initialXml={initialXml}
             wrapperDivClassName="one-third"
             workspaceConfiguration={
             {
-                /*grid: {
-            spacing: 20,
-            length: 3,
-            colour: '#ccc',
-            snap: true,
-        },
-        */
-                //theme: DarkTheme,
+                /*
+                grid: {
+                spacing: 20,
+                length: 3,
+                colour: '#ccc',
+                snap: true,
+                },
+                */
+        
+                // theme: DarkTheme,
+            
+                zoom: {
+                controls: true,
+                wheel: true,
+                startScale: 1.0,
+                maxScale: 3,
+                minScale: 0.3,
+                scaleSpeed: 1.2,
+                pinch: true
+                },
+            
+
             }
             }
+            
             workspaceDidChange={workspaceDidChange}
         />
       </div>
