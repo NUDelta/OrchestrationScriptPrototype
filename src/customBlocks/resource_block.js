@@ -5,10 +5,8 @@ Blockly.Blocks['ipm'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("ipm")
-        .appendField(new Blockly.FieldDropdown([["module -> topic", "module -> topic"], ["module -> Type", "module -> Type"], ["module -> description", "module -> description"],
-          ["module -> read?", "module -> read?"], ["module -> understood?", "module -> understood?"], ["module -> applied?", "module -> applied?"], ["module -> questions", "module -> questions"]]), "NAME");
-    this.appendDummyInput("output: string")
-        .appendField("(output: string)");
+        .appendField(new Blockly.FieldDropdown([["module -> topic (output: string)", "module -> topic (output: string)"], ["module -> Type (output: string)", "module -> Type (output: string)"], ["module -> description (output: string)", "module -> description (output: string)"],
+          ["module -> read? (output: boolean)", "module -> read? (output: boolean)"], ["module -> understood? (output: boolean)", "module -> understood? (output: boolean)"], ["module -> applied? (output: boolean)", "module -> applied? (output: boolean)"], ["module -> questions (output: string)", "module -> questions (output: string)"]]), "NAME");
         this.setInputsInline(false);
     this.setOutput(true, null);
     this.setColour(290);
@@ -24,6 +22,8 @@ Blockly.Blocks['ipm'] = {
      this.appendValueInput("message")
              .setCheck("String")
              .appendField("(input: slack bot name)");
+     this.appendDummyInput("(output: string)")
+             .appendField("(output: string)");
          this.setInputsInline(false);
      this.setOutput(true, null);
      this.setColour(290);
@@ -32,18 +32,30 @@ Blockly.Blocks['ipm'] = {
    }
   };
 
+  Blockly.Blocks['detection triggered - mentor wants response triggered (true or false)'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("detection triggered - mentor wants response triggered (true or false");
+      this.appendDummyInput("(output: boolean)")
+              .appendField("(output: boolean)");
+          this.setInputsInline(false);
+      this.setOutput(true, null);
+      this.setColour(290);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+   };
+
 Blockly.Blocks['sprint_log'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Sprint Log")
         .appendField(new Blockly.FieldDropdown([["current","current"], ["previous","previous"], ["next","next"]]), "NAME")
-        .appendField(new Blockly.FieldDropdown([["stories", "stories"],["in progress stories", "in progress stories"],["tasks","tasks"],["in progress tasks", "in progress tasks"],["story -> points committed",
-        "story -> points committed"], ["story -> hours spent", "story -> hours spent"],["story -> Total D Points", "story -> Total D Points"],
-        ["story -> Total T Points", "story -> Total T Points"], ["story -> Total R Points", "story -> Total R Points"],["story -> Progress", "story -> Progress"],
-         ["story -> Burndown", "story -> Burndown"],["task -> roadblocks","task -> roadblocks"],
-         ["task -> points required", "task -> points required"], ["task -> D, T, or R", "task -> D, T, or R"], ["task -> assigned to", "task -> assigned to"],["task -> status", "task -> status"],["task -> hours spent", "task -> hours spent"]]), "NAME");
-    this.appendDummyInput("output: number")
-        .appendField("(output: number)");
+        .appendField(new Blockly.FieldDropdown([["num stories (output: number)", "num stories (output: number)"],["stories (output: string)", "stories (output: string)"],["num in progress stories (output: number)", "num in progress stories (output: number)"],["in progress stories (output: string)", "in progress stories (output: string)"],["num tasks (output: number)", "num tasks (output: number)"],["tasks (output: string)","tasks (output: string)"],["num in progress tasks (output: number)", "num in progress tasks (output: number)"],["in progress tasks (output: string)", "in progress tasks (output: string)"],["story -> points committed (output: number)",
+        "story -> points committed (output: number)"], ["story -> hours spent (output: number)", "story -> hours spent (output: number)"],["story -> Total D Points (output: number)", "story -> Total D Points (output: number)"],
+        ["story -> Total T Points (output: number)", "story -> Total T Points (output: number)"], ["story -> Total R Points (output: number)", "story -> Total R Points (output: number)"],["story -> Progress (output: number)", "story -> Progress (output: number)"],
+         ["story -> Burndown (output: number)", "story -> Burndown (output: number)"],["task -> roadblocks (output: string)","task -> roadblocks (output: string)"],
+         ["task -> points required (output: number)", "task -> points required (output: number)"], ["task -> D, T, or R (output: string)", "task -> D, T, or R (output: string)"], ["task -> assigned to (output: string)", "task -> assigned to (output: string)"],["task -> status (output: string)", "task -> status (output: string)"],["task -> hours spent (output: number)", "task -> hours spent (output: number)"]]), "NAME");
         this.setInputsInline(false);
     this.setOutput(true, null);
     this.setColour(290);
@@ -91,10 +103,8 @@ Blockly.Blocks['rrc'] = {
     init: function() {
       this.appendDummyInput()
           .appendField("pair research sign up (studio)")
-          .appendField(new Blockly.FieldDropdown([["Did they sign up for PR during studio","Did they sign up for PR during studio"], ["What time did they submit their PR", "What time did they submit their PR"],["Content of their PR request","Content of their PR request"],
-        ["who they were paired with", "who they were paired with"], ["Content of the PR request they helped someone with", "Content of the PR request they helped someone with"]]), "NAME");
-      this.appendDummyInput("output: string")
-          .appendField("(output: string)");
+          .appendField(new Blockly.FieldDropdown([["Did they sign up for PR during studio (output: boolean)","Did they sign up for PR during studio (output: boolean)"], ["What time did they submit their PR (output: time)", "What time did they submit their PR (output: time)"],["Content of their PR request (output: string)","Content of their PR request (output: string)"],
+        ["who they were paired with (output: string)", "who they were paired with (output: string)"]]), "NAME");
           this.setInputsInline(false);
       this.setOutput(true, null);
       this.setColour(290);
@@ -147,6 +157,8 @@ Blockly.Blocks['lip_signup'] = {
     this.appendDummyInput()
         .appendField("LIP sign up")
         .appendField(new Blockly.FieldDropdown([["which learning module they signed up for","which learning module they signed up for"]]));
+    this.appendDummyInput("output: string")
+        .appendField("(output: string)");
     this.setOutput(true, "resource");
     this.setColour(290);
  this.setTooltip("");
@@ -159,6 +171,8 @@ Blockly.Blocks['google calendar'] = {
     this.appendDummyInput()
         .appendField("google calendar")
         .appendField(new Blockly.FieldDropdown([["SIG meeting time","SIG meeting time"],["OH meeting time", "OH meeting time"], ["studio time", "studio time"], ["status update date", "status update date"]]));
+    this.appendDummyInput("output: time")
+        .appendField("(output: time)");
     this.setOutput(true, "resource");
     this.setColour(290);
  this.setTooltip("");
@@ -223,3 +237,4 @@ Blockly.Python['previous_soap_notes'] = function (block) { return "...";};
 Blockly.Python['google calendar'] = function (block) { return "...";};
 Blockly.Python['student'] = function (block) { return "...";};
 Blockly.Python['student response to slack bot'] = function (block) { return "...";};
+Blockly.Python['ipdetection triggered - mentor wants response triggered (true or false)m'] = function (block) { return "...";};
