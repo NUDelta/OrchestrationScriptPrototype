@@ -6,7 +6,6 @@ Blockly.Blocks['time'] = {
       this.appendDummyInput()
           .appendField("time");
       this.appendValueInput("Modifier")
-          .setCheck("modifier")
           .appendField("(input: modifier)");
       this.appendValueInput("Event")
           .setCheck("event")
@@ -27,6 +26,18 @@ Blockly.Blocks['modifier'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Modifier: ");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"]]), "days");
+    this.appendDummyInput()
+        .appendField("days");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["6","6"], ["12","12"]]), "hours");
+    this.appendDummyInput()
+        .appendField("hours");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["0","0"], ["5","5"], ["15","15"], ["30","30"], ["45","45"]]), "minutes");
+    this.appendDummyInput()
+        .appendField("minutes");
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([["after","after"], ["before","before"], ["during","during"], ["at","at"]]), "which_modifier");
     this.setInputsInline(true);
@@ -104,7 +115,7 @@ Blockly.Python['at'] = function (block) {
 Blockly.Blocks['sig'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Event: SIG(Wednesday)");
+        .appendField("Event: SIG");
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");
@@ -167,7 +178,7 @@ Blockly.Python['mysore'] = function (block) {
 Blockly.Blocks['office_hour'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Event: Office hours(Monday)");
+        .appendField("Event: Office hours");
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");
@@ -182,7 +193,7 @@ Blockly.Python['office_hour'] = function (block) {
 Blockly.Blocks['studio'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Event: Studio(Friday)");
+        .appendField("Event: Studio");
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");
