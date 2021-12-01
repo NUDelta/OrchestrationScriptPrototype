@@ -23,6 +23,24 @@ Blockly.Python['time'] = function (block) {
     return "time_in_python";
 };
 
+Blockly.Blocks['modifier'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Modifier: ");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["after","after"], ["before","before"], ["during","during"], ["at","at"]]), "which_modifier");
+    this.setInputsInline(true);
+    this.setOutput(true, "event");
+    this.setColour(330);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Python['modifier'] = function (block) { 
+    return "...";
+};
+
 Blockly.Blocks['after'] = {
     init: function() {
       this.appendDummyInput()

@@ -158,6 +158,33 @@ const actionToolbox = [
       colour: "#998362",
       blocks: [{ type: "slack" }, { type: "email" }],
     },
+    {
+      name: "Time",
+      colour: "#F08080",
+      blocks: [
+        { type: "time" },
+      ],
+    },
+    {
+      name: "Modifier",
+      colour: "#F08080",
+      blocks: [
+        { type: "modifier" },
+      ],
+    },
+    {
+      name: "Event",
+      colour: "#F08080",
+      blocks: [
+        { type: "sig" },
+        { type: "sprint" },
+        { type: "days_of_the_week" },
+        { type: "office_hour" },
+        { type: "studio" },
+        { type: "week" },
+        { type: "math_number" },
+      ],
+    },
 ];
 
 export { toolboxCategories, timeToolbox, actionToolbox };
