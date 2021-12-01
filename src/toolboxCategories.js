@@ -51,6 +51,7 @@ const toolboxCategories = [
         {type: 'student'},
         {type: 'google calendar'},
         {type: 'student response to slack bot'},
+        //{type: 'detection triggered - mentor wants response triggered (true or false)'},
       ]
 
     },
@@ -124,7 +125,7 @@ const timeToolbox = [
   ];
 
 const actionToolbox = [
-    
+
     /*
     {
       name: "Logic",
