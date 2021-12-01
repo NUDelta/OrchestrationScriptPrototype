@@ -22,6 +22,8 @@ Blockly.Blocks['send'] = {
       this.appendValueInput("recipient")
           .setCheck("String")
           .appendField("(input: recipient)");
+      this.appendValueInput("time")
+          .appendField("(input: time)");
       this.setOutput(false);
       this.setColour(20);
    this.setTooltip("");
