@@ -71,17 +71,17 @@ export default function App() {
         <Grid item xs={3}>
 
           <Scaffolding />
-          <label style={{fontSize: "15px"}}>Step4: Script Target</label>
+          <label style={{fontSize: "15px"}}>Step4: Please select or write in text which student(s) and/or project groups(s) you want to detect this ineffective strategy for.</label>
           <Select options = {options} style={{fontSize: "15px", marginTop: 10}} placeholder = "Choose a project group/student" isMulti/>
 
         </Grid>
 
         <Grid item xs={9}>
 
-          <label style={{fontSize: "15px", marginBottom: 16}}>Step5: Detector<br/>(if the detector expression is evaluated to true, the response prompt will be triggered)</label>
+          <label style={{fontSize: "15px", marginBottom: 16}}>Step5: Detector<br/>Using your answer from Step3 as a guide, express the ineffective strategy you want to detect in the programming workspace below (if the detector expression is evaluated to true, the response prompt will be triggered)</label>
           <DetectorWorkspace />
 
-          <label style={{fontSize: "15px", marginBottom: 16}}>Step6: Response<br/>(make sure you both suggest actions and help mentees be aware of the underlying strategy)</label>
+          <label style={{fontSize: "15px", marginBottom: 16}}>Step6: Response<br/>Using your answer from Step3 as a guide, express the response you would like to trigger to support the student across the venues/tools/processes in the DTR network if the detector expression is evaluated to true.</label>
           <ResponseWorkspace />
 
         </Grid>

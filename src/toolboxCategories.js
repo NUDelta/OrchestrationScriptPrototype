@@ -5,7 +5,7 @@ const toolboxCategories = [
       name: "Logic",
       colour: "#5C81A6",
       blocks: [
-        //{type: 'if'},
+        {type: 'if'},
         {type: 'not'},
         {type: 'and'},
         {type: 'or'},
@@ -68,12 +68,15 @@ const toolboxCategories = [
         { type: "fullfillment" },
       ],
     },
-    /*
+    
     {
       name: "Concepts",
       colour: "#D3FFCE",
-      blocks: [{ type: "set" }, { type: "concept_variable" }],
+      blocks: [
+        { type: "set" }, 
+        { type: "concept_variable" }],
     },
+    /*
     {
       name: "Situation",
       colour: "#5C81A6",

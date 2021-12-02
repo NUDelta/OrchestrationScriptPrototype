@@ -4,10 +4,11 @@ import 'blockly/python';
 Blockly.Blocks['if'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("If: ");
+            .appendField("If ");
         this.appendValueInput("condition")
-            .setCheck("Boolean")
+            //.setCheck("Boolean")
             .appendField("(input: condition)");
+        /*
         this.appendValueInput("do1")
             .setCheck(null)
             .appendField("(input: action)");
@@ -17,6 +18,7 @@ Blockly.Blocks['if'] = {
         this.appendValueInput("do2")
             .setCheck(null)
             .appendField("(input: action)");
+        */
         this.setOutput(false);
         this.setColour(210);
         this.setTooltip("");
@@ -32,8 +34,8 @@ Blockly.Blocks['not'] = {
     init: function () {
         this.appendValueInput("not")
             .setCheck(null)
-            .appendField("not")
-            .appendField("(output: boolean)");
+            .appendField("not");
+            //.appendField("(output: boolean)");
         this.setOutput(true, "Boolean");
         this.setColour(210);
         this.setTooltip("");
@@ -124,8 +126,8 @@ Blockly.Blocks['and'] = {
     init: function () {
         this.appendValueInput("left")
         this.appendValueInput("right")
-            .appendField("AND")
-            .appendField("(output: boolean)");
+            .appendField("AND");
+            //.appendField("(output: boolean)");
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour(210);
@@ -142,8 +144,8 @@ Blockly.Blocks['or'] = {
             .setCheck(null);
         this.appendValueInput("right")
             .setCheck(null)
-            .appendField("OR")
-            .appendField("(output: boolean)");
+            .appendField("OR");
+            //.appendField("(output: boolean)");
         this.setInputsInline(true);
         this.setOutput(true, null);
         this.setColour(210);
