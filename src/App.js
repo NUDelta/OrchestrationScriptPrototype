@@ -8,8 +8,8 @@ import "./customBlocks/resource_block";
 import "intersection-observer";
 import "react-pro-sidebar/dist/css/styles.css";
 import Scaffolding from "./Scaffolding";
-import DetectorWorkspace from "./DetectorWorkspace";
-import ResponseWorkspace from "./ResponseWorkspace";
+import DetectorWorkspace from "./blockly_workspace/DetectorWorkspace";
+import ResponseWorkspace from "./blockly_workspace/ResponseWorkspace";
 import Grid from "@material-ui/core/Grid";
 import Select from "react-select";
 
@@ -21,9 +21,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 
 import DarkTheme from "@blockly/theme-dark";
-import MyTimeline from "./Timeline";
-import HorizontalLabelPositionBelowStepper from "./Stepper";
-import DiscreteSlider from "./Slider";
+import MyTimeline from "./timeline/Timeline";
+import HorizontalLabelPositionBelowStepper from "./timeline/Stepper";
+import DiscreteSlider from "./timeline/Slider";
 import { ProSidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import CollapsibleTable from "./dictionary/Dictionary";
 import { ScrollView } from "@cantonjs/react-scroll-view";

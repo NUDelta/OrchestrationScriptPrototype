@@ -1,15 +1,16 @@
-import "./App.css";
-import "./customBlocks/custom_Blocks";
+import "../App.css";
+import "../customBlocks/custom_Blocks";
 import React from "react";
 import ReactBlockly from "react-blockly";
 import Blockly from "blockly";
-import "./customBlocks/communication_blocks";
-import "./customBlocks/function_blocks";
-import "./customBlocks/time_blocks";
-import "./customBlocks/resource_block";
+import "../customBlocks/communication_blocks";
+import "../customBlocks/function_blocks";
+import "../customBlocks/time_blocks";
+import "../customBlocks/resource_block";
 import "intersection-observer";
 import "react-pro-sidebar/dist/css/styles.css";
-import {actionToolbox} from "./toolboxCategories";
+//import {actionToolbox} from "./blockly_toolbox/detectionToolbox";
+import { responseToolbox } from "../blockly_toolbox/responseToolbox";
 
 export default function ResponseWorkspace() {
 
@@ -29,7 +30,7 @@ export default function ResponseWorkspace() {
     return (
       <div style = {{marginTop: 10}}>
         <ReactBlockly
-            toolboxCategories={actionToolbox}
+            toolboxCategories={responseToolbox}
             initialXml={initialXml}
             wrapperDivClassName="one-third"
             workspaceConfiguration={
