@@ -34,6 +34,16 @@ const detectionToolbox = [
       ],
     },
     {
+      name: "Objects",
+      colour: "#68A65C",
+      blocks: [
+
+        {type: 'project_team'},
+        //{type: 'detection triggered - mentor wants response triggered (true or false)'},
+      ]
+
+    },
+    {
       name: "Resources",
       colour: "#CEABFA",
       blocks: [
@@ -68,12 +78,12 @@ const detectionToolbox = [
         { type: "fullfillment" },
       ],
     },
-    
+
     {
       name: "Concepts",
       colour: "#D3FFCE",
       blocks: [
-        { type: "set" }, 
+        { type: "set" },
         { type: "concept_variable" }],
     },
     /*

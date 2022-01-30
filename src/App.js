@@ -5,6 +5,7 @@ import "./customBlocks/communication_blocks";
 import "./customBlocks/function_blocks";
 import "./customBlocks/time_blocks";
 import "./customBlocks/resource_block";
+import "./customBlocks/object_blocks";
 import "intersection-observer";
 import "react-pro-sidebar/dist/css/styles.css";
 import Scaffolding from "./Scaffolding";
