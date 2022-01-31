@@ -39,6 +39,12 @@ const detectionToolbox = [
       blocks: [
 
         {type: 'project_team'},
+        {type: 'sprint_log'},
+        {type: 'planning_view_prc'},
+        {type: 'planning_view_rrc'},
+        {type: 'prc'},
+        {type: 'rrc'},
+
         //{type: 'detection triggered - mentor wants response triggered (true or false)'},
       ]
 
@@ -85,6 +91,36 @@ const detectionToolbox = [
       blocks: [
         { type: "set" },
         { type: "concept_variable" }],
+    },
+    {
+      name: "Time",
+      colour: "#F08080",
+      blocks: [
+        { type: "time" },
+      ],
+    },
+    {
+      name: "Modifier",
+      colour: "#F08080",
+      blocks: [
+        { type: "modifier" },
+      ],
+    },
+    {
+      name: "Event",
+      colour: "#F08080",
+      blocks: [
+        { type: "first_sig" },
+        { type: "second_sig"},
+        { type: "sprint" },
+        { type: "days_of_the_week" },
+        { type: "first_office_hour" },
+        { type: "second_office_hour"},
+        { type: "first_studio"},
+        { type: "second_studio"},
+        { type: "week" },
+        { type: "math_number" },
+      ],
     },
     /*
     {

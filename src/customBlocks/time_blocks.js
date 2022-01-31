@@ -18,7 +18,7 @@ Blockly.Blocks['time'] = {
   };
 
 Blockly.Python['time'] = function (block) {
-    
+
     return "time_in_python";
 };
 
@@ -40,7 +40,7 @@ Blockly.Blocks['modifier'] = {
         .appendField("minutes");
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([["after","after"], ["before","before"], ["during","during"], ["at","at"]]), "which_modifier");
-    this.setInputsInline(true);
+    this.setInputsInline(false);
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");
@@ -48,7 +48,7 @@ Blockly.Blocks['modifier'] = {
   }
 };
 
-Blockly.Python['modifier'] = function (block) { 
+Blockly.Python['modifier'] = function (block) {
     return "...";
 };
 
@@ -63,7 +63,7 @@ Blockly.Blocks['after'] = {
     }
   };
 
-Blockly.Python['after'] = function (block) { 
+Blockly.Python['after'] = function (block) {
     return "...";
 };
 
@@ -78,7 +78,7 @@ Blockly.Blocks['before'] = {
   }
 };
 
-Blockly.Python['before'] = function (block) { 
+Blockly.Python['before'] = function (block) {
     return "...";
 };
 
@@ -93,7 +93,7 @@ Blockly.Blocks['during'] = {
   }
 };
 
-Blockly.Python['during'] = function (block) { 
+Blockly.Python['during'] = function (block) {
     return "...";
 };
 
@@ -108,14 +108,14 @@ Blockly.Blocks['at'] = {
   }
 };
 
-Blockly.Python['at'] = function (block) { 
+Blockly.Python['at'] = function (block) {
     return "...";
 };
 
-Blockly.Blocks['sig'] = {
+Blockly.Blocks['first_sig'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Event: SIG");
+        .appendField("Event: First SIG");
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");
@@ -123,7 +123,22 @@ Blockly.Blocks['sig'] = {
   }
 };
 
-Blockly.Python['sig'] = function (block) { 
+Blockly.Python['first_sig'] = function (block) {
+    return "...";
+};
+
+Blockly.Blocks['second_sig'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Event: Second SIG");
+    this.setOutput(true, "event");
+    this.setColour(330);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Python['second_sig'] = function (block) {
     return "...";
 };
 
@@ -141,7 +156,7 @@ Blockly.Blocks['sprint'] = {
   }
 };
 
-Blockly.Python['sprint'] = function (block) { 
+Blockly.Python['sprint'] = function (block) {
     return "...";
 };
 
@@ -156,7 +171,7 @@ Blockly.Blocks['days_of_the_week'] = {
   }
 };
 
-Blockly.Python['days_of_the_week'] = function (block) { 
+Blockly.Python['days_of_the_week'] = function (block) {
     return "...";
 };
 
@@ -171,14 +186,14 @@ Blockly.Blocks['mysore'] = {
   }
 };
 
-Blockly.Python['mysore'] = function (block) { 
+Blockly.Python['mysore'] = function (block) {
     return "...";
 };
 
-Blockly.Blocks['office_hour'] = {
+Blockly.Blocks['first_office_hour'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Event: Office hours");
+        .appendField("Event: First Office hours");
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");
@@ -186,14 +201,14 @@ Blockly.Blocks['office_hour'] = {
   }
 };
 
-Blockly.Python['office_hour'] = function (block) { 
+Blockly.Python['first_office_hour'] = function (block) {
     return "...";
 };
 
-Blockly.Blocks['studio'] = {
+Blockly.Blocks['second_office_hour'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Event: Studio");
+        .appendField("Event: Second Office hours");
     this.setOutput(true, "event");
     this.setColour(330);
  this.setTooltip("");
@@ -201,7 +216,37 @@ Blockly.Blocks['studio'] = {
   }
 };
 
-Blockly.Python['studio'] = function (block) { 
+Blockly.Python['second_office_hour'] = function (block) {
+    return "...";
+};
+
+Blockly.Blocks['first_studio'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Event: First Studio");
+    this.setOutput(true, "event");
+    this.setColour(330);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Python['first_studio'] = function (block) {
+    return "...";
+};
+
+Blockly.Blocks['second_studio'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Event: Second Studio");
+    this.setOutput(true, "event");
+    this.setColour(330);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Python['second_studio'] = function (block) {
     return "...";
 };
 
@@ -219,7 +264,7 @@ Blockly.Blocks['week'] = {
   }
 };
 
-Blockly.Python['week'] = function (block) { 
+Blockly.Python['week'] = function (block) {
     return "...";
 };
 
@@ -249,7 +294,7 @@ Blockly.Blocks['time_elapsed'] = {
   }
 };
 
-Blockly.Python['time_elapsed'] = function (block) { 
+Blockly.Python['time_elapsed'] = function (block) {
   return "...";
 };
 
@@ -270,6 +315,6 @@ Blockly.Blocks['time_period'] = {
   }
 };
 
-Blockly.Python['time_period'] = function (block) { 
+Blockly.Python['time_period'] = function (block) {
   return "...";
 };
