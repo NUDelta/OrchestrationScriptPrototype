@@ -18,21 +18,44 @@ Blockly.Blocks['every'] = {
   }
 };
 
-Blockly.Python['every'] = function (block) { 
+Blockly.Python['every'] = function (block) {
     return "...";
 };
 
-Blockly.Blocks['wasUpdated'] = {
+Blockly.Blocks['contains'] = {
+    init: function () {
+        this.appendValueInput("NAME")
+            .setCheck(null)
+            .appendField("(input 1)");
+        this.appendDummyInput()
+            .appendField("Contains?");
+        this.appendValueInput("blah")
+            .setCheck(null)
+            .appendField("(input 2)");
+        this.appendDummyInput("output: true or false")
+            .appendField("(output: true or false)");
+        this.setInputsInline(false);
+        this.setOutput(true, null);
+        this.setColour(120);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+ };
+
+ Blockly.Python['contains'] = function (block) {
+    return "...";
+};
+
+Blockly.Blocks['was_updated'] = {
   init: function() {
+    this.appendValueInput("NAME")
+        .setCheck(null)
+        .appendField("(input)");
     this.appendDummyInput()
-        .appendField("wasUpdated");
-    this.appendValueInput("time")
-        .setCheck("resource")
-        .appendField("(input: resource)");
-    this.appendValueInput("venue")
-        .appendField("(input: venue)");
-    this.appendValueInput("time")
-        .appendField("(input: time elapsed since venue)");
+        .appendField("Was Updated?");
+    this.appendDummyInput("output: true or false")
+        .appendField("(output: true or false)");
+    this.setInputsInline(false);
     this.setOutput(true, "Boolean");
     this.setColour(120);
  this.setTooltip("");
@@ -40,11 +63,11 @@ Blockly.Blocks['wasUpdated'] = {
   }
 };
 
-Blockly.Python['wasUpdated'] = function (block) { 
+Blockly.Python['wasUpdated'] = function (block) {
     return "...";
 };
 
-
+/*
 Blockly.Blocks['wasupdatedv1'] = {
   init: function() {
     this.appendDummyInput()
@@ -59,7 +82,7 @@ Blockly.Blocks['wasupdatedv1'] = {
     this.appendValueInput("time_period")
         .setCheck(null)
         .appendField("(input: time period)");
-    */
+
     this.setOutput(true, "Boolean");
     this.setColour(120);
  this.setTooltip("");
@@ -68,9 +91,10 @@ Blockly.Blocks['wasupdatedv1'] = {
 };
 
 
-Blockly.Python['wasupdatedv1'] = function (block) { 
+Blockly.Python['wasupdatedv1'] = function (block) {
     return "...";
 };
+*/
 
 Blockly.Blocks['At'] = {
   init: function() {
@@ -89,7 +113,7 @@ Blockly.Blocks['At'] = {
   }
 };
 
-Blockly.Python['At'] = function (block) { 
+Blockly.Python['At'] = function (block) {
     return "...";
 };
 
@@ -113,7 +137,7 @@ Blockly.Blocks['fullfillment'] = {
   }
 };
 
-Blockly.Python['fullfillment'] = function (block) { 
+Blockly.Python['fullfillment'] = function (block) {
     return "...";
 };
 
@@ -138,7 +162,7 @@ Blockly.Blocks['timestamp'] = {
    this.setHelpUrl("");
     }
   };
-Blockly.Python['timestamp'] = function (block) { 
+Blockly.Python['timestamp'] = function (block) {
     return "...";
 };
 
@@ -158,7 +182,7 @@ Blockly.Blocks['distinct'] = {
   }
 };
 
-Blockly.Python['distinct'] = function (block) { 
+Blockly.Python['distinct'] = function (block) {
     return "...";
 };
 
@@ -178,34 +202,12 @@ Blockly.Blocks['filled'] = {
         this.setHelpUrl("");
     }
  };
- 
- Blockly.Python['filled'] = function (block) { 
+
+ Blockly.Python['filled'] = function (block) {
     return "...";
 };
 
-Blockly.Blocks['contains'] = {
-    init: function () {
-        this.appendDummyInput()
-            .appendField("contains");
-        this.appendValueInput("NAME")
-            .setCheck(null)
-            .appendField("(input: resource)");
-        this.appendValueInput("blah")
-            .setCheck(null)
-            .appendField("(input: text)");
-        this.appendDummyInput("output: boolean")
-            .appendField("(output: boolean)");
-        this.setInputsInline(false);
-        this.setOutput(true, null);
-        this.setColour(120);
-        this.setTooltip("");
-        this.setHelpUrl("");
-    }
- };
- 
- Blockly.Python['contains'] = function (block) { 
-    return "...";
-};
+
 
 Blockly.Blocks['was_read'] = {
     init: function () {
@@ -224,6 +226,6 @@ Blockly.Blocks['was_read'] = {
     }
  };
 
- Blockly.Python['was_read'] = function (block) { 
+ Blockly.Python['was_read'] = function (block) {
     return "...";
 };

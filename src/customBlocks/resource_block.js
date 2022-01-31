@@ -46,17 +46,32 @@ Blockly.Blocks['ipm'] = {
     }
    };
 
-Blockly.Blocks['sprint_log'] = {
+Blockly.Blocks['sprintlog'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Sprint Log")
-        .appendField(new Blockly.FieldDropdown([["current","current"], ["previous","previous"], ["next","next"]]), "NAME")
-        .appendField(new Blockly.FieldDropdown([["num stories (output: number)", "num stories (output: number)"],["stories (output: string)", "stories (output: string)"],["num in progress stories (output: number)", "num in progress stories (output: number)"],["in progress stories (output: string)", "in progress stories (output: string)"],["num tasks (output: number)", "num tasks (output: number)"],["tasks (output: string)","tasks (output: string)"],["num in progress tasks (output: number)", "num in progress tasks (output: number)"],["in progress tasks (output: string)", "in progress tasks (output: string)"],["story -> points committed (output: number)",
-        "story -> points committed (output: number)"], ["story -> hours spent (output: number)", "story -> hours spent (output: number)"],["story -> Total D Points (output: number)", "story -> Total D Points (output: number)"],
-        ["story -> Total T Points (output: number)", "story -> Total T Points (output: number)"], ["story -> Total R Points (output: number)", "story -> Total R Points (output: number)"],["story -> Progress (output: number)", "story -> Progress (output: number)"],
-         ["story -> Burndown (output: number)", "story -> Burndown (output: number)"],["task -> roadblocks (output: string)","task -> roadblocks (output: string)"],
-         ["task -> points required (output: number)", "task -> points required (output: number)"], ["task -> D, T, or R (output: string)", "task -> D, T, or R (output: string)"], ["task -> assigned to (output: string)", "task -> assigned to (output: string)"],["task -> status (output: string)", "task -> status (output: string)"],["task -> hours spent (output: number)", "task -> hours spent (output: number)"]]), "NAME");
-        this.setInputsInline(false);
+        .appendField(new Blockly.FieldDropdown([
+          ["points spent", "points spent"],
+          ["points committed", "points committed"],
+          ["percent sprint tasks", "percent sprint tasks"],
+          ["avg num tasks per story", "avg num tasks per story"],
+          ["num stories", "num stories"],
+          ["stories", "stories"],
+          ["num tasks", "num tasks"],
+          ["tasks","tasks"]]), "NAME");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([
+          ["N/A","N/A"],
+          ["all","all"],
+          ["tech","tech"],
+          ["design","design"],
+          ["research","research"],
+          ["done","done"],
+          ["backlogged","backlogged"],
+          ["in progress","in progress"],
+          ["unmarked","unmarked"],
+          ["roadblocks","roadblocks"]]), "NAME");
+        this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(290);
  this.setTooltip("");
@@ -69,11 +84,11 @@ Blockly.Blocks['rrc'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("RRC")
-        .appendField(new Blockly.FieldDropdown([["Planning view -> gaps in canvas", "Planning view -> gaps in canvas"],["Planning view -> Focus for sprint", "Planning view -> Focus for sprint"], ["Planning view -> What we learned", "Planning view -> What we learned"],
+        .appendField(new Blockly.FieldDropdown([
+          ["all","all"],
+          ["Planning view -> gaps in canvas", "Planning view -> gaps in canvas"],["Planning view -> Focus for sprint", "Planning view -> Focus for sprint"], ["Planning view -> What we learned", "Planning view -> What we learned"],
 
           ["section 1: identify your research audience","section 1: identify your research audience"], ["section 2: define class of problems and desired outcomes","section 2: define class of problems and desired outcomes"], ["section 3: existing approaches and schools of thought (farther approaches)","section 3: existing approaches and schools of thought (farther approaches)"], ["section 4: existing approaches and schools of thought (closer approaches)","section 4: existing approaches and schools of thought (closer approaches)"], ["section 5: research question","section 5: research question"], ["section 6: conceptual contribution","section 6: conceptual contribution"], ["section 7: technical contribution","section 7: technical contribution"], ["section 8: synthesis tree","section 8: synthesis tree"], ["section 9: study design","section 9: study design"], ["section 10: core takeaways","section 10: core takeaways"], ["section 11: revised understanding of conceptual and technical approach","section 11: revised understanding of conceptual and technical approach"], ["section 12: future work","section 12: future work"]]), "NAME");
-    this.appendDummyInput("output: string")
-        .appendField("(output: string)");
         this.setInputsInline(false);
     this.setOutput(true, null);
     this.setColour(290);
@@ -132,7 +147,9 @@ Blockly.Blocks['prc'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("PRC")
-        .appendField(new Blockly.FieldDropdown([["Planning View -> Gaps in canvas", "Planning View -> Gaps in canvas"],
+        .appendField(new Blockly.FieldDropdown([
+        ["all","all"],
+        ["Planning View -> Gaps in canvas", "Planning View -> Gaps in canvas"],
         ["Planning view -> Focus for sprint", "Planning view -> Focus for sprint"], ["Planning view -> What we learned", "Planning view -> What we learned"],
         ["section 1: identify a design situation","section 1: identify a design situation"], ["section 2: test if a design problem","section 2: test if a design problem"],
         ["section 3: describe broader impact","section 3: describe broader impact"], ["section 4-7: design arguments","section 4-7: design arguments"],
@@ -141,8 +158,6 @@ Blockly.Blocks['prc'] = {
          ["section 14a: study aims and expected outcomes","section 14a: study aims and expected outcomes"], ["section 14b: study aims and expected outcomes","section 14b: study aims and expected outcomes"],
          ["section 15a: study setup (participants)","section 15a: study setup (participants)"], ["section 15b: study setup (scenario)","section 15b: study setup (scenario)"],
          ["section 16: data collection","section 16: data collection"], ["section 17: core findings","section 17: core findings"], ["section 18: design implications","section 18: design implications"]]), "NAME");
-    this.appendDummyInput("output: string")
-        .appendField("(output: string)");
     this.setInputsInline(false);
     this.setOutput(true, null);
     this.setColour(290);
@@ -225,7 +240,7 @@ Blockly.Blocks['student'] = {
 };
 
 Blockly.Python['ipm'] = function (block) { return "...";};
-Blockly.Python['sprint_log'] = function (block) { return "...";};
+Blockly.Python['sprintlog'] = function (block) { return "...";};
 Blockly.Python['rrc'] = function (block) { return "...";};
 Blockly.Python['prc'] = function (block) { return "...";};
 Blockly.Python['stash'] = function (block) { return "...";};

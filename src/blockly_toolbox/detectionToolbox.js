@@ -34,17 +34,12 @@ const detectionToolbox = [
       ],
     },
     {
-      name: "Objects",
+      name: "Tools",
       colour: "#68A65C",
       blocks: [
 
-        {type: 'project_team'},
-        {type: 'sprint_log'},
-        {type: 'planning_view_prc'},
-        {type: 'planning_view_rrc'},
-        {type: 'prc'},
-        {type: 'rrc'},
-
+        {type: 'soap_notes'},
+        {type: 'github'},
         //{type: 'detection triggered - mentor wants response triggered (true or false)'},
       ]
 
@@ -54,11 +49,11 @@ const detectionToolbox = [
       colour: "#CEABFA",
       blocks: [
 
-        {type: 'ipm'},
-        {type: 'sprint_log'},
+        //{type: 'ipm'},
+        {type: 'sprintlog'},
         {type: 'rrc'},
-        {type: 'prc'},
-        {type: 'stash'},
+        {type: 'prc'}
+        /*{type: 'stash'},
         {type: 'pair research sign up (studio)'},
         {type: 'lip_signup'},
         //{type: 'dtr_meeting_log'},
@@ -66,7 +61,7 @@ const detectionToolbox = [
         {type: 'previous_soap_notes'},
         {type: 'student'},
         {type: 'google calendar'},
-        {type: 'student response to slack bot'},
+        {type: 'student response to slack bot'},*/
         //{type: 'detection triggered - mentor wants response triggered (true or false)'},
       ]
 
@@ -77,11 +72,11 @@ const detectionToolbox = [
       blocks: [
         //{type: 'every'},
         { type: "contains" },
-        { type: "wasupdatedv1" },
-        { type: "filled" },
-        { type: "was_read" },
+        { type: "was_updated" },
+        //{ type: "filled" },
+        //{ type: "was_read" },
         //{type: 'At'},
-        { type: "fullfillment" },
+        //{ type: "fullfillment" },
       ],
     },
 
