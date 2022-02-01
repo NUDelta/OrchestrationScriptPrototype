@@ -58,7 +58,8 @@ Blockly.Blocks['sprintlog'] = {
           ["num stories", "num stories"],
           ["stories", "stories"],
           ["num tasks", "num tasks"],
-          ["tasks","tasks"]]), "NAME");
+          ["tasks","tasks"],
+          ["deliverables","deliverables"]]), "NAME");
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([
           ["N/A","N/A"],
@@ -114,19 +115,7 @@ Blockly.Blocks['rrc'] = {
    }
   };
 
-  Blockly.Blocks['pair research sign up (studio)'] = {
-    init: function() {
-      this.appendDummyInput()
-          .appendField("pair research sign up (studio)")
-          .appendField(new Blockly.FieldDropdown([["Did they sign up for PR during studio (output: boolean)","Did they sign up for PR during studio (output: boolean)"], ["What time did they submit their PR (output: time)", "What time did they submit their PR (output: time)"],["Content of their PR request (output: string)","Content of their PR request (output: string)"],
-        ["who they were paired with (output: string)", "who they were paired with (output: string)"]]), "NAME");
-          this.setInputsInline(false);
-      this.setOutput(true, null);
-      this.setColour(290);
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-   };
+
 
  Blockly.Blocks['urg_guide'] = {
   init: function() {
@@ -172,8 +161,11 @@ Blockly.Blocks['lip_signup'] = {
     this.appendDummyInput()
         .appendField("LIP sign up")
         .appendField(new Blockly.FieldDropdown([["which learning module they signed up for","which learning module they signed up for"]]));
-    this.appendDummyInput("output: string")
-        .appendField("(output: string)");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([
+            ["first studio","first studio"],
+            ["second studio","second studio"]]), "NAME");
+    this.setInputsInline(true);
     this.setOutput(true, "resource");
     this.setColour(290);
  this.setTooltip("");
@@ -223,6 +215,27 @@ Blockly.Blocks['previous_soap_notes'] = {
   }
 };
 
+Blockly.Blocks['pr_studio'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("PR (studio)")
+        .appendField(new Blockly.FieldDropdown([["signed up for studio PR?","signed up for studio PR?"],
+         ["Content of PR request","Content of PR request"],
+      ["who they paired with", "who they paired with"]]), "NAME");
+        this.setInputsInline(false);
+    this.appendDummyInput()
+            .appendField(new Blockly.FieldDropdown([
+              ["first studio","first studio"],
+              ["second studio","second studio"]]), "NAME");
+            this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(290);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+ };
+
+
 Blockly.Blocks['student'] = {
   init: function() {
     this.appendDummyInput()
@@ -244,7 +257,7 @@ Blockly.Python['sprintlog'] = function (block) { return "...";};
 Blockly.Python['rrc'] = function (block) { return "...";};
 Blockly.Python['prc'] = function (block) { return "...";};
 Blockly.Python['stash'] = function (block) { return "...";};
-Blockly.Python['pair research sign up (studio)'] = function (block) { return "...";};
+Blockly.Python['pr_studio'] = function (block) { return "...";};
 Blockly.Python['lip_signup'] = function (block) { return "...";};
 Blockly.Python['dtr_meeting_log'] = function (block) { return "...";};
 Blockly.Python['urg_guide'] = function (block) { return "...";};

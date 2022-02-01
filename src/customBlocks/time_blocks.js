@@ -160,7 +160,7 @@ Blockly.Python['sprint'] = function (block) {
     return "...";
 };
 
-Blockly.Blocks['days_of_the_week'] = {
+/*Blockly.Blocks['days_of_the_week'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Event: Days of the week");
@@ -174,7 +174,7 @@ Blockly.Blocks['days_of_the_week'] = {
 Blockly.Python['days_of_the_week'] = function (block) {
     return "...";
 };
-
+*/
 Blockly.Blocks['mysore'] = {
   init: function() {
     this.appendDummyInput()

@@ -40,6 +40,7 @@ const detectionToolbox = [
 
         {type: 'soap_notes'},
         {type: 'github'},
+        {type: 'slack'},
         //{type: 'detection triggered - mentor wants response triggered (true or false)'},
       ]
 
@@ -52,12 +53,12 @@ const detectionToolbox = [
         //{type: 'ipm'},
         {type: 'sprintlog'},
         {type: 'rrc'},
-        {type: 'prc'}
-        /*{type: 'stash'},
-        {type: 'pair research sign up (studio)'},
+        {type: 'prc'},
+        //{type: 'stash'},
+        {type: 'pr_studio'},
         {type: 'lip_signup'},
         //{type: 'dtr_meeting_log'},
-        {type: 'urg_guide'},
+        /*{type: 'urg_guide'},
         {type: 'previous_soap_notes'},
         {type: 'student'},
         {type: 'google calendar'},
@@ -73,10 +74,11 @@ const detectionToolbox = [
         //{type: 'every'},
         { type: "contains" },
         { type: "was_updated" },
+        { type: 'slack_message'},
         //{ type: "filled" },
         //{ type: "was_read" },
         //{type: 'At'},
-        //{ type: "fullfillment" },
+        { type: "tf_slack_message" },
       ],
     },
 
@@ -108,7 +110,7 @@ const detectionToolbox = [
         { type: "first_sig" },
         { type: "second_sig"},
         { type: "sprint" },
-        { type: "days_of_the_week" },
+        //{ type: "days_of_the_week" },
         { type: "first_office_hour" },
         { type: "second_office_hour"},
         { type: "first_studio"},

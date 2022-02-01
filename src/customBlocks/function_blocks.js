@@ -117,18 +117,21 @@ Blockly.Python['At'] = function (block) {
     return "...";
 };
 
-Blockly.Blocks['fullfillment'] = {
+Blockly.Blocks['tf_slack_message'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Fullfillment");
+        .appendField("True / False Slack Message");
     this.appendValueInput("message")
         .setCheck(null)
-        .appendField("(input: message)");
+        .appendField("(input: message to send)");
+    this.appendValueInput("time")
+        .setCheck(null)
+        .appendField("(input: time to send)");
     this.appendValueInput("message")
         .setCheck(null)
         .appendField("(input: recipient)");
-    this.appendDummyInput("output: boolean")
-        .appendField("(output: boolean)");
+    this.appendDummyInput("output: recipient responded true or false")
+        .appendField("(output: recipient responded true or false)");
     this.setInputsInline(false);
     this.setOutput(true, null);
     this.setColour(120);
@@ -137,9 +140,37 @@ Blockly.Blocks['fullfillment'] = {
   }
 };
 
-Blockly.Python['fullfillment'] = function (block) {
+Blockly.Python['tf_slack_message'] = function (block) {
     return "...";
 };
+
+Blockly.Blocks['slack_message'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Slack Message");
+    this.appendValueInput("message")
+        .setCheck(null)
+        .appendField("(input: message to send)");
+    this.appendValueInput("time")
+        .setCheck(null)
+        .appendField("(input: time to send)");
+    this.appendValueInput("message")
+        .setCheck(null)
+        .appendField("(input: recipient)");
+    this.appendDummyInput("output: message received")
+        .appendField("(output: message received)");
+    this.setInputsInline(false);
+    this.setOutput(true, null);
+    this.setColour(120);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Python['slack_message'] = function (block) {
+    return "...";
+};
+
 
 Blockly.Blocks['timestamp'] = {
     init: function() {
