@@ -26,12 +26,12 @@ Blockly.Blocks['contains'] = {
     init: function () {
         this.appendValueInput("NAME")
             .setCheck(null)
-            .appendField("(input 1)");
+            .appendField("                 Does (resource 1)");
         this.appendDummyInput()
-            .appendField("Contains?");
+            .appendField("Contain");
         this.appendValueInput("blah")
             .setCheck(null)
-            .appendField("(input 2)");
+            .appendField("                        (resource 2)?");
         this.appendDummyInput("output: true or false")
             .appendField("(output: true or false)");
         this.setInputsInline(false);
@@ -50,9 +50,9 @@ Blockly.Blocks['was_updated'] = {
   init: function() {
     this.appendValueInput("NAME")
         .setCheck(null)
-        .appendField("(input)");
+        .appendField("                      Was (resource)");
     this.appendDummyInput()
-        .appendField("Was Updated?");
+        .appendField("Updated?");
     this.appendDummyInput("output: true or false")
         .appendField("(output: true or false)");
     this.setInputsInline(false);
@@ -144,21 +144,22 @@ Blockly.Python['tf_slack_message'] = function (block) {
     return "...";
 };
 
+
 Blockly.Blocks['slack_message'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Slack Message");
+        .appendField("Slack Someone A Question");
     this.appendValueInput("message")
         .setCheck(null)
-        .appendField("(input: message to send)");
+        .appendField("         text - question to ask");
     this.appendValueInput("time")
         .setCheck(null)
-        .appendField("(input: time to send)");
+        .appendField("         time block - when to send");
     this.appendValueInput("message")
         .setCheck(null)
-        .appendField("(input: recipient)");
-    this.appendDummyInput("output: message received")
-        .appendField("(output: message received)");
+        .appendField("         text - recipient's name");
+    this.appendDummyInput("output: text - recipient's response")
+        .appendField("(output: text - recipient's response)");
     this.setInputsInline(false);
     this.setOutput(true, null);
     this.setColour(120);

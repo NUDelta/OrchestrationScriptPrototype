@@ -33,7 +33,7 @@ const responseToolbox = [
     {
       name: "Medium",
       colour: "#998362",
-      blocks: [{ type: "slack" }, { type: "email" }],
+      blocks: [{ type: "slack_medium" }, { type: "email" }],
     },
     {
       name: "Time",
@@ -42,6 +42,7 @@ const responseToolbox = [
         { type: "time" },
       ],
     },
+    /*
     {
       name: "Modifier",
       colour: "#F08080",
@@ -62,6 +63,7 @@ const responseToolbox = [
         { type: "math_number" },
       ],
     },
+    */
 ];
 
 export { responseToolbox };

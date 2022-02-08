@@ -38,7 +38,7 @@ const detectionToolbox = [
       colour: "#68A65C",
       blocks: [
 
-        {type: 'soap_notes'},
+        //{type: 'soap_notes'},
         {type: 'github'},
         {type: 'slack'},
         //{type: 'detection triggered - mentor wants response triggered (true or false)'},
@@ -57,6 +57,7 @@ const detectionToolbox = [
         //{type: 'stash'},
         {type: 'pr_studio'},
         {type: 'lip_signup'},
+        {type: 'soap_notes'},
         //{type: 'dtr_meeting_log'},
         /*{type: 'urg_guide'},
         {type: 'previous_soap_notes'},
@@ -78,7 +79,7 @@ const detectionToolbox = [
         //{ type: "filled" },
         //{ type: "was_read" },
         //{type: 'At'},
-        { type: "tf_slack_message" },
+        //{ type: "tf_slack_message" },
       ],
     },
 
@@ -89,6 +90,7 @@ const detectionToolbox = [
         { type: "set" },
         { type: "concept_variable" }],
     },
+
     {
       name: "Time",
       colour: "#F08080",
@@ -96,6 +98,7 @@ const detectionToolbox = [
         { type: "time" },
       ],
     },
+    /*
     {
       name: "Modifier",
       colour: "#F08080",
@@ -103,6 +106,7 @@ const detectionToolbox = [
         { type: "modifier" },
       ],
     },
+
     {
       name: "Event",
       colour: "#F08080",
@@ -119,6 +123,8 @@ const detectionToolbox = [
         { type: "math_number" },
       ],
     },
+    */
+
     /*
     {
       name: "Situation",

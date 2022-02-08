@@ -31,7 +31,7 @@ Blockly.Blocks['send'] = {
     }
   };
 
-Blockly.Python['send'] = function (block) { 
+Blockly.Python['send'] = function (block) {
     return "...";
 };
 
@@ -49,7 +49,7 @@ Blockly.Blocks['person'] = {
   }
 };
 
-Blockly.Python['person'] = function (block) { 
+Blockly.Python['person'] = function (block) {
     return "...";
 };
 
@@ -67,7 +67,7 @@ Blockly.Blocks['email_address'] = {
   }
 };
 
-Blockly.Python['email_address'] = function (block) { 
+Blockly.Python['email_address'] = function (block) {
     return "...";
 };
 
@@ -85,11 +85,11 @@ Blockly.Blocks['slack_channel'] = {
   }
 };
 
-Blockly.Python['slack_channel'] = function (block) { 
+Blockly.Python['slack_channel'] = function (block) {
     return "...";
 };
 
-Blockly.Blocks['slack'] = {
+Blockly.Blocks['slack_medium'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Medium: Slack");
@@ -100,7 +100,7 @@ Blockly.Blocks['slack'] = {
   }
 };
 
-Blockly.Python['slack'] = function (block) { 
+Blockly.Python['slack_medium'] = function (block) {
     return "...";
 };
 
@@ -115,6 +115,6 @@ Blockly.Blocks['email'] = {
   }
 };
 
-Blockly.Python['email'] = function (block) { 
+Blockly.Python['email'] = function (block) {
     return "...";
 };

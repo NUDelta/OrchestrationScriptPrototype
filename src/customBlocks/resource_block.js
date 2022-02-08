@@ -252,6 +252,29 @@ Blockly.Blocks['student'] = {
   }
 };
 
+Blockly.Blocks['soap_notes'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("SOAP Notes")
+        .appendField(new Blockly.FieldDropdown([["subjective", "subjective"],
+                                                ["objective", "objective"],
+                                                ["assessment","assessment"],
+                                                ["plan", "plan"]]), "NAME");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["First SIG", "First SIG"],
+                                                ["Second SIG", "Second SIG"],
+                                                ["First OH","First OH"],
+                                                ["Second OH", "Second OH"],
+                                                ["All", "All"]]), "NAME");
+        this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour(290);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+ };
+
+Blockly.Python['soap_notes'] = function (block) { return "...";};
 Blockly.Python['ipm'] = function (block) { return "...";};
 Blockly.Python['sprintlog'] = function (block) { return "...";};
 Blockly.Python['rrc'] = function (block) { return "...";};

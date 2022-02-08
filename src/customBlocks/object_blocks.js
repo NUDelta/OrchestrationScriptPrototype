@@ -1,27 +1,7 @@
 import Blockly from 'blockly';
 import 'blockly/python';
 
-Blockly.Blocks['soap_notes'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("SOAP Notes")
-        .appendField(new Blockly.FieldDropdown([["subjective", "subjective"],
-                                                ["objective", "objective"],
-                                                ["assessment","assessment"],
-                                                ["plan", "plan"]]), "NAME");
-    this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["First SIG", "First SIG"],
-                                                ["Second SIG", "Second SIG"],
-                                                ["First OH","First OH"],
-                                                ["Second OH", "Second OH"],
-                                                ["All", "All"]]), "NAME");
-        this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour(110);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
- };
+
 
  Blockly.Blocks['github'] = {
    init: function() {
