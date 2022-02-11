@@ -7,7 +7,7 @@ Blockly.Blocks['send'] = {
           .appendField("send");
       this.appendValueInput("message1")
           .setCheck("String")
-          .appendField("(input: suggested actions)");
+          .appendField("         text - suggested actions");
     /*
       this.appendValueInput("message2")
           .setCheck("String")
@@ -18,12 +18,12 @@ Blockly.Blocks['send'] = {
     */
       this.appendValueInput("medium")
           .setCheck("medium")
-          .appendField("(input: medium)");
+          .appendField("         medium - slack or email");
       this.appendValueInput("recipient")
           .setCheck("String")
-          .appendField("(input: recipient)");
+          .appendField("         text - recipient's name");
       this.appendValueInput("time")
-          .appendField("(input: time)");
+          .appendField("         time block - when to send message");
       this.setOutput(false);
       this.setColour(20);
    this.setTooltip("");
