@@ -26,12 +26,12 @@ Blockly.Blocks['contains'] = {
     init: function () {
         this.appendValueInput("NAME")
             .setCheck(null)
-            .appendField("                 Does (resource 1)");
+            .appendField("            Does (resource 1)");
         this.appendDummyInput()
             .appendField("Contain");
         this.appendValueInput("blah")
             .setCheck(null)
-            .appendField("                        (resource 2)?");
+            .appendField("                     (text)?");
         this.appendDummyInput("output: true or false")
             .appendField("(output: true or false)");
         this.setInputsInline(false);

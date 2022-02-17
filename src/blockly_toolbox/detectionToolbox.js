@@ -82,6 +82,21 @@ const detectionToolbox = [
         //{ type: "tf_slack_message" },
       ],
     },
+    {
+      name: "HighLevel",
+      colour: "#D3FFCE",
+      blocks: [
+        { type: "sprint_log3"},
+        { type: "github3"},
+        { type: "high_by_end_of_sprint"},
+        { type: "high_halfway_through_sprint"},
+        { type: "high_pr_request"},
+        { type: "high_deliverables"},
+        { type: "high_canvas_update"},
+        { type: "high_learn_nothing"},
+        { type: "high_new_argument"},
+      ],
+    },
 
     {
       name: "Concepts",
