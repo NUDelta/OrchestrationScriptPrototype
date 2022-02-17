@@ -5,8 +5,7 @@ Blockly.Blocks['time'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("time");
-    this.appendDummyInput()
-        .appendField("         modifier:");
+
     this.appendDummyInput()
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"]]), "days")
@@ -16,8 +15,6 @@ Blockly.Blocks['time'] = {
         .appendField(new Blockly.FieldDropdown([["0","0"], ["5","5"], ["15","15"], ["30","30"], ["45","45"]]), "minutes")
         .appendField("minutes")
         .appendField(new Blockly.FieldDropdown([["after","after"], ["before","before"], ["at","at"]]), "relation");
-    this.appendDummyInput()
-        .appendField("         event:");
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([["1st SIG","1st SIG"], ["2nd SIG","2nd SIG"], ["current sprint","current sprint"], ["last sprint","last sprint"], ["next sprint","next sprint"], ["1st Office Hour","1st Office Hour"], ["2nd Office Hour","2nd Office Hour"], ["1st Studio","1st Studio"], ["2nd Studio","2nd Studio"]]), "event");
     this.setOutput(true, null);
