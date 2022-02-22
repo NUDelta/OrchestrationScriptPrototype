@@ -148,7 +148,32 @@ Blockly.Python['tf_slack_message'] = function (block) {
 Blockly.Blocks['slack_message'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Slack Someone A Question");
+        .appendField("Send a slack message to ");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("type name"), "NAME");
+    this.appendDummyInput()
+        .appendField("asking ");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("type question"), "NAME1");
+    this.appendDummyInput()
+        .appendField("at");
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"]]), "days")
+        .appendField("days")
+        .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["6","6"], ["12","12"]]), "hours")
+        .appendField("hours")
+        .appendField(new Blockly.FieldDropdown([["0","0"], ["5","5"], ["15","15"], ["30","30"], ["45","45"]]), "minutes")
+        .appendField("minutes")
+        .appendField(new Blockly.FieldDropdown([["after","after"], ["before","before"], ["at","at"]]), "relation");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["1st SIG","1st SIG"], ["2nd SIG","2nd SIG"], ["current sprint","current sprint"], ["last sprint","last sprint"], ["next sprint","next sprint"], ["1st Office Hour","1st Office Hour"], ["2nd Office Hour","2nd Office Hour"], ["1st Studio","1st Studio"], ["2nd Studio","2nd Studio"]]), "event");
+    this.setInputsInline(false);
+    this.appendDummyInput()
+        .appendField(", then check if this message contains: ");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("type keyword"), "NAME2");
+    /*
     this.appendValueInput("message")
         .setCheck(null)
         .appendField("         text - question to ask");
@@ -160,11 +185,12 @@ Blockly.Blocks['slack_message'] = {
         .appendField("         text - recipient's name");
     this.appendDummyInput("output: text - recipient's response")
         .appendField("(output: text - recipient's response)");
+    */
     this.setInputsInline(false);
     this.setOutput(true, null);
     this.setColour(120);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
 

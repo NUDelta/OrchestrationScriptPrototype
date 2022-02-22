@@ -34,6 +34,59 @@ const detectionToolbox = [
       ],
     },
     {
+      name: "People",
+      colour: "#68A65C",
+      blocks: [
+        {type: 'slack_subcategory'},
+        {type: 'slacked_someone'},
+        {type: 'slacked_deliverables'},
+        {type: 'slack_message'},
+      ]
+
+    },
+    {
+      name: "Venues",
+      colour: "#cc9900",
+      blocks: [
+        //sprint
+        {type: 'time_subcategory'},
+
+        {type: 'high_halfway_through_sprint'},
+        {type: 'high_by_end_of_sprint'},
+        {type: 'before_first_sig_of_sprint'},
+        {type: 'before_first_studio_of_sprint'},
+        {type: 'before_first_oh_of_sprint'},
+        {type: 'before_second_sig_of_sprint'},
+        {type: 'before_second_studio_of_sprint'},
+        {type: 'before_second_oh_of_sprint'},
+
+        {type: 'studio_subcategory'},
+        {type: 'high_pr_request'},
+        {type: 'high_mysore_signup'},
+      ]
+
+    },
+    {
+      name: "Tools",
+      colour: "#0066cc",
+      blocks: [
+        {type: 'github_subcategory'},
+        //github
+        {type: 'github3'},
+        //sprint log
+        {type: 'sprint_log_subcategory'},
+        {type: 'sprint_log3'},
+        {type: 'high_sprint_log_contains'},
+        {type: 'high_sprint_updated'},
+        //canvas
+        {type: 'canvas_subcategory'},
+        {type: 'high_canvas_update'},
+        {type: 'high_new_argument'},
+        
+      ]
+    },
+    /*
+    {
       name: "Tools",
       colour: "#68A65C",
       blocks: [
@@ -45,29 +98,24 @@ const detectionToolbox = [
       ]
 
     },
+    
+   
     {
       name: "Resources",
       colour: "#CEABFA",
       blocks: [
 
-        //{type: 'ipm'},
         {type: 'sprintlog'},
         {type: 'rrc'},
         {type: 'prc'},
-        //{type: 'stash'},
+
         {type: 'pr_studio'},
         {type: 'lip_signup'},
         {type: 'soap_notes'},
-        //{type: 'dtr_meeting_log'},
-        /*{type: 'urg_guide'},
-        {type: 'previous_soap_notes'},
-        {type: 'student'},
-        {type: 'google calendar'},
-        {type: 'student response to slack bot'},*/
-        //{type: 'detection triggered - mentor wants response triggered (true or false)'},
-      ]
 
+      ]
     },
+    
     {
       name: "Functions",
       colour: "#D3FFCE",
@@ -97,7 +145,7 @@ const detectionToolbox = [
         { type: "high_new_argument"},
       ],
     },
-
+    */
     {
       name: "Concepts",
       colour: "#D3FFCE",
@@ -113,6 +161,18 @@ const detectionToolbox = [
         { type: "time" },
       ],
     },
+    /*
+    {
+      name: "Communication",
+      colour: "#998362",
+      blocks: [{ type: "send" }],
+    },
+    {
+      name: "Medium",
+      colour: "#998362",
+      blocks: [{ type: "slack_medium" }, { type: "email" }],
+    },
+    */
     /*
     {
       name: "Modifier",

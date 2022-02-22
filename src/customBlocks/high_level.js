@@ -16,7 +16,7 @@ import 'blockly/python';
 
          this.setInputsInline(true);
      this.setOutput(true, null);
-     this.setColour(110);
+     this.setColour("#0066cc");
   this.setTooltip("");
   this.setHelpUrl("");
    }
@@ -41,7 +41,7 @@ Blockly.Blocks['sprint_log3'] = {
           ["has spent a lot of time","student has spent a lot of time"]]), "NAME");
         this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(110);
+    this.setColour("#0066cc");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -53,7 +53,7 @@ Blockly.Blocks['high_by_end_of_sprint'] = {
     this.appendDummyInput()
         .appendField("By the end of sprint");
     this.setOutput(true, null);
-    this.setColour(290);
+    this.setColour("#cc9900");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -63,7 +63,7 @@ Blockly.Blocks['high_halfway_through_sprint'] = {
     this.appendDummyInput()
         .appendField("Half way through the sprint");
     this.setOutput(true, null);
-    this.setColour(290);
+    this.setColour("#cc9900");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -76,7 +76,7 @@ Blockly.Blocks['high_pr_request'] = {
         .appendField(new Blockly.FieldTextInput("type here!"), "NAME");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(290);
+    this.setColour("#cc9900");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -98,7 +98,7 @@ Blockly.Blocks['high_canvas_update'] = {
         .appendField("Canvas not updated");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(290);
+    this.setColour("#0066cc");
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -124,7 +124,203 @@ Blockly.Blocks['high_new_argument'] = {
         .appendField("argument");
     this.setInputsInline(true);
     this.setOutput(true, null);
-    this.setColour(290);
+    this.setColour("#0066cc");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['before_first_sig_of_sprint'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("before first SIG of sprint");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['before_first_studio_of_sprint'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("before first Studio of sprint");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['before_first_oh_of_sprint'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("before first OH of sprint");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['before_second_sig_of_sprint'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("before second SIG of sprint");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['before_second_studio_of_sprint'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("before second Studio of sprint");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['before_second_oh_of_sprint'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("before second OH of sprint");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['slacked_someone'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Have you slacked ");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("type name"), "NAME");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#68A65C");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['slacked_deliverables'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Have you slacked deliverables to ");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("type channel OR thread name"), "NAME");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#68A65C");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['high_mysore_signup'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Mysore signup is ");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("type here!"), "NAME");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['high_sprint_log_contains'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Sprint Log Stories or Tasks contains");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("type here!"), "NAME");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#0066cc");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['high_sprint_updated'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Sprint Log not updated");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#0066cc");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+///////////////////////////
+
+Blockly.Blocks['time_subcategory'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("-----------------TIME----------------");
+    this.setColour("#000000");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['studio_subcategory'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("-----------------STUDIO----------------");
+    this.setColour("#000000");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['github_subcategory'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("-----------------GITHUB----------------");
+    this.setColour("#000000");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['sprint_log_subcategory'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("-----------------SPRINT_LOG----------------");
+    this.setColour("#000000");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['canvas_subcategory'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("-----------------CANVAS----------------");
+    this.setColour("#000000");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['slack_subcategory'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("-----------------SLACK----------------");
+    this.setColour("#000000");
  this.setTooltip("");
  this.setHelpUrl("");
   }
