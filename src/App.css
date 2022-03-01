@@ -1,9 +1,14 @@
 .fill-height {
-  height: calc(100vh - 114px);
+  height: calc((100vh - 114px)*0.75);
 }
 
 .one-third {
   height: calc((100vh - 114px) / 2);
+}
+
+.card {
+  height: 300px;
+  width: 1500px;
 }
 
 textarea {

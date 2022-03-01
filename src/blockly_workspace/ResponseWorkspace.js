@@ -32,10 +32,11 @@ export default function ResponseWorkspace() {
         <ReactBlockly
             toolboxCategories={responseToolbox}
             initialXml={initialXml}
-            wrapperDivClassName="one-third"
+            wrapperDivClassName="card"
             workspaceConfiguration={
             {
                 //theme: DarkTheme,
+                /*
                 zoom: {
                   controls: true,
                   wheel: true,
@@ -44,8 +45,9 @@ export default function ResponseWorkspace() {
                   minScale: 0.3,
                   scaleSpeed: 1.2,
                   pinch: true
-                },
+                },*/
             }
+            
             }
             workspaceDidChange={workspaceDidChange}
         />
