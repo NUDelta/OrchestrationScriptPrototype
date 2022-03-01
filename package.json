@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^12.1.10",
     "expo": "^41.0.0",
     "intersection-observer": "^0.12.0",
+    "lodash": "^4.17.21",
     "react": "^17.0.1",
     "react-blockly": "^6.0.1",
     "react-collapsible": "^2.8.4",

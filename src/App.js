@@ -13,6 +13,9 @@ import DetectorWorkspace from "./blockly_workspace/DetectorWorkspace";
 import ResponseWorkspace from "./blockly_workspace/ResponseWorkspace";
 import Grid from "@material-ui/core/Grid";
 import Select from "react-select";
+import map from "lodash/map";
+import range from "lodash/range";
+import { Paper } from "@material-ui/core";
 
 /*
 import ReactBlockly from "react-blockly";
@@ -79,13 +82,19 @@ export default function App() {
 
         <Grid item xs={9}>
 
-          <label style={{fontSize: "15px", marginBottom: 16}}>Step5: Detector<br/>Using your answer from Step3 as a guide, express the ineffective strategy you want to detect in the programming workspace below (if the detector expression is evaluated to true, the response prompt will be triggered)</label>
+          <label style={{fontSize: "15px", marginBottom: 16}}>Step5: Detector<br/>Using your answer from Step3 as a guide, create one or more ineffective strategy / slack message pairs with the if block in the Logic category to represent the condition you are detecting and the suggested action you wish to send.</label>
           <DetectorWorkspace />
 
           {/*
           <label style={{fontSize: "15px", marginBottom: 16}}>Step6: Response<br/>Using your answer from Step3 as a guide, express the response you would like to trigger to support the student across the venues/tools/processes in the DTR network if the detector expression is evaluated to true.</label>
           <ResponseWorkspace />
           */}
+          <label style={{fontSize: "15px", marginBottom: 16}}>Step6: Response<br/>Using your answer from Step3 as a guide, express one or more responses you would like to trigger to support the student across the venues/tools/processes in the DTR network if the detector expression is evaluated to true.(scroll to define more responses)</label>
+          <div style={{ width: "100%", overflow: "auto", display: "flex" }}>
+            {map(range(10), _ => (
+              <Container />
+            ))}
+          </div>
 
         </Grid>
 
@@ -94,3 +103,12 @@ export default function App() {
     </div>
   );
 }
+
+const Container = () => {
+  return (
+    <div style={{ height: "300px", width: "514px", margin: "16px" }}>
+      {/*<Paper style={{ height: "100%", width: "514px" }}>Hello</Paper>*/}
+      <ResponseWorkspace/>
+    </div>
+  );
+};
