@@ -21,6 +21,8 @@ import 'blockly/python';
   this.setHelpUrl("");
    }
   };
+//["has not finished deliverables", "student has not finished deliverables"], HOW WOULD THIS BE DETECTED IN sprint log?
+//["has spent a lot of time","has spent a lot of time"] ALSO unclear what this means
 
 Blockly.Blocks['sprint_log3'] = {
   init: function() {
@@ -32,13 +34,14 @@ Blockly.Blocks['sprint_log3'] = {
         .appendField("Sprint Log")
         .appendField(new Blockly.FieldDropdown([
           ["working on tech", "working on tech"],
-          ["working hard", "working hard"],
-        ["stories are not complete", "stories are not complete"],
-      ["has not finished anything", "student has not finished anything"],
           ["working on user testing", "working on user testing"],
           ["working on argumentation", "working on argumentation"],
-          ["has not finished deliverables", "student has not finished deliverables"],
-          ["has spent a lot of time","student has spent a lot of time"]]), "NAME");
+          ["1/4 through points", "1/4 through points"],
+          ["halfway through points", "halfway through points"],
+          ["3/4 through points", "3/4 through points"],
+          ["over points proportional to time elapsed in sprint", "over points proportional to time elapsed in sprint"],
+          ["at least one story is incomplete", "at least one story is incomplete"],
+          ["has not finished any tasks", "has not finished any tasks"]]), "NAME");
         this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("#0066cc");

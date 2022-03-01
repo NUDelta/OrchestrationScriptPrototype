@@ -15,9 +15,7 @@ Blockly.Blocks['if'] = {
         this.appendDummyInput()
             .appendField("saying");
         this.appendDummyInput()
-            .appendField(new Blockly.FieldTextInput("type suggesiton"), "NAME1");
-        this.appendDummyInput()
-            .appendField("at");
+            .appendField(new Blockly.FieldTextInput("type suggestion"), "NAME1");
         /*
         this.appendValueInput("message1")
             .setCheck("String")
@@ -30,17 +28,23 @@ Blockly.Blocks['if'] = {
         */
         this.setOutput(false);
         this.appendDummyInput()
-            .setAlign(Blockly.ALIGN_RIGHT)
-            .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"]]), "days")
-            .appendField("days")
-            .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["6","6"], ["12","12"]]), "hours")
-            .appendField("hours")
-            .appendField(new Blockly.FieldDropdown([["0","0"], ["5","5"], ["15","15"], ["30","30"], ["45","45"]]), "minutes")
-            .appendField("minutes")
-            .appendField(new Blockly.FieldDropdown([["after","after"], ["before","before"], ["at","at"]]), "relation");
+            .appendField("")
+            .appendField(new Blockly.FieldDropdown([
+              ["At", "At"],
+              ["Before", "Before"],
+              ["After","After"]]), "NAME4");
+            this.setInputsInline(false);
         this.appendDummyInput()
-            .appendField(new Blockly.FieldDropdown([["1st SIG","1st SIG"], ["2nd SIG","2nd SIG"], ["current sprint","current sprint"], ["last sprint","last sprint"], ["next sprint","next sprint"], ["1st Office Hour","1st Office Hour"], ["2nd Office Hour","2nd Office Hour"], ["1st Studio","1st Studio"], ["2nd Studio","2nd Studio"]]), "event");
-        this.setInputsInline(false);
+            .appendField("")
+            .appendField(new Blockly.FieldDropdown([
+              ["Half way through the sprint", "Half way through the sprint"],
+              ["The end of the sprint", "The end of the sprint"],
+            ["First SIG of sprint", "First SIG of sprint"],
+          ["First Studio of sprint", "First Studio of sprint"],
+              ["Second SIG of sprint", "Second SIG of sprint"],
+              ["Second Studio of sprint", "Second Studio of sprint"],
+              ["Second OH of sprint", "Second OH of sprint"]]), "NAME5");
+            this.setInputsInline(false);
         /*
         this.appendValueInput("do1")
             .setCheck(null)
@@ -357,6 +361,3 @@ Blockly.Blocks['situation_instance'] = {
 };
 
 Blockly.Python['situation_instance'] = function (block) { return ""; };
-
-
-
