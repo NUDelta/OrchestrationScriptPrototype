@@ -11,6 +11,8 @@ import "intersection-observer";
 import "react-pro-sidebar/dist/css/styles.css";
 //import {actionToolbox} from "./blockly_toolbox/detectionToolbox";
 import { responseToolbox } from "../blockly_toolbox/responseToolbox";
+import {Link, Route, Routes} from "react-router-dom";
+import Button from '@material-ui/core/Button';
 
 export default function ResponseWorkspace() {
 
@@ -32,7 +34,7 @@ export default function ResponseWorkspace() {
         <ReactBlockly
             toolboxCategories={responseToolbox}
             initialXml={initialXml}
-            wrapperDivClassName="card"
+            wrapperDivClassName="fill-height"
             workspaceConfiguration={
             {
                 //theme: DarkTheme,
@@ -51,6 +53,16 @@ export default function ResponseWorkspace() {
             }
             workspaceDidChange={workspaceDidChange}
         />
+        <Link to="/">
+            <Button 
+              variant="contained" 
+              onClick={() => {
+                //Blockly.mainWorkspace.clear()
+              }}
+            >
+            Add this learning strategy
+            </Button>
+        </Link>
       </div>
     );
 }

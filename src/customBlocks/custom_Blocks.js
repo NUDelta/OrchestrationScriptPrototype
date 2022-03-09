@@ -8,6 +8,15 @@ Blockly.Blocks['if'] = {
         this.appendValueInput("condition")
             //.setCheck("Boolean")
             .appendField("(input: condition)");
+        this.setOutput(false);
+        this.setColour(210);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['then'] = {
+    init: function () {
         this.appendDummyInput()
             .appendField("Then send a Slack message to");
         this.appendDummyInput()
@@ -16,16 +25,6 @@ Blockly.Blocks['if'] = {
             .appendField("saying");
         this.appendDummyInput()
             .appendField(new Blockly.FieldTextInput("type suggestion"), "NAME1");
-        /*
-        this.appendValueInput("message1")
-            .setCheck("String")
-            .appendField("         text - suggested actions");
-        this.appendValueInput("recipient")
-            .setCheck("String")
-            .appendField("         text - recipient's name");
-        this.appendDummyInput("time")
-            .appendField("         time block - when to send message");
-        */
         this.setOutput(false);
         this.appendDummyInput()
             .appendField("")
@@ -39,8 +38,8 @@ Blockly.Blocks['if'] = {
             .appendField(new Blockly.FieldDropdown([
               ["Half way through the sprint", "Half way through the sprint"],
               ["The end of the sprint", "The end of the sprint"],
-            ["First SIG of sprint", "First SIG of sprint"],
-          ["First Studio of sprint", "First Studio of sprint"],
+              ["First SIG of sprint", "First SIG of sprint"],
+              ["First Studio of sprint", "First Studio of sprint"],
               ["Second SIG of sprint", "Second SIG of sprint"],
               ["Second Studio of sprint", "Second Studio of sprint"],
               ["Second OH of sprint", "Second OH of sprint"]]), "NAME5");
@@ -57,7 +56,7 @@ Blockly.Blocks['if'] = {
             .appendField("(input: action)");
         */
         this.setOutput(false);
-        this.setColour(210);
+        this.setColour(20);
         this.setTooltip("");
         this.setHelpUrl("");
     }

@@ -20,6 +20,7 @@ const responseToolbox = [
       blocks: [{ type: "situation_instance" }],
     },
     */
+    /*
     {
       name: "Communication",
       colour: "#998362",
@@ -42,6 +43,12 @@ const responseToolbox = [
         { type: "time" },
       ],
     },
+    */
+   {
+      name: "Response",
+      colour: "#998362",
+      blocks: [{type: "then"}],
+   },
     /*
     {
       name: "Modifier",
