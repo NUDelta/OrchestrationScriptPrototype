@@ -39,7 +39,10 @@ Blockly.Blocks['sprint_log3'] = {
           ["1/4 through points", "1/4 through points"],
           ["halfway through points", "halfway through points"],
           ["3/4 through points", "3/4 through points"],
-          ["over points proportional to time elapsed in sprint", "over points proportional to time elapsed in sprint"],
+          ["hours spent on tech", "hours spent on tech"],
+          ["hours spent on design", "hours spent on design"],
+          ["hours spent on research", "hours spent on research"],
+          ["over points on a story", "over points on a story"],
           ["at least one story is incomplete", "at least one story is incomplete"],
           ["has not finished any tasks", "has not finished any tasks"]]), "NAME");
         this.setInputsInline(true);
@@ -49,7 +52,6 @@ Blockly.Blocks['sprint_log3'] = {
  this.setHelpUrl("");
   }
  };
-
 
 Blockly.Blocks['high_by_end_of_sprint'] = {
   init: function() {
