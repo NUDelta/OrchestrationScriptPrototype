@@ -36,7 +36,7 @@ export default function DetectorWorkspace() {
         <ReactBlockly
             toolboxCategories={detectionToolbox}
             initialXml={initialXml}
-            wrapperDivClassName="fill-height"
+            wrapperDivClassName="fill-height75"
             workspaceConfiguration={
             {
                 /*

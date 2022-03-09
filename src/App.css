@@ -1,5 +1,9 @@
-.fill-height {
+.fill-height75 {
   height: calc((100vh - 114px)*0.75);
+}
+
+.fill-height {
+  height: calc((100vh - 114px));
 }
 
 .one-third {
