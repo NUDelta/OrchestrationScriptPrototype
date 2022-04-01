@@ -55,11 +55,7 @@ export default function App() {
   );
 }
 
-function callApi() {
-  fetch('https://orchestrationscript.herokuapp.com/', { method: 'GET' })
-      .then(data => data.json())
-      .then(json => alert(JSON.stringify(json)))
-}
+
 
 
 /*
