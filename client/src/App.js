@@ -18,6 +18,8 @@ import range from "lodash/range";
 import {Link, Route, Routes} from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import Home from "./components/Home";
+import Create from "./components/create";
+import Edit from "./components/edit";
 
 /*
 import ReactBlockly from "react-blockly";
@@ -44,6 +46,9 @@ export default function App() {
       <Routes>
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/learning_strategy" element={<ResponseWorkspace/>}/>
+        <Route path="/edit/:id" element={<Edit />} />
+        <Route path="/create" element={<Create />} />
+        
       </Routes>
     </div>
 

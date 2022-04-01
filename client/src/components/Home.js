@@ -15,8 +15,9 @@ import Grid from "@material-ui/core/Grid";
 import Select from "react-select";
 import map from "lodash/map";
 import range from "lodash/range";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import Button from '@material-ui/core/Button';
+import RecordList from "../components/recordList";
 
 const options = [
   { value: "km", label: "Knowledge Maps" },
@@ -89,10 +90,16 @@ export default function Home() {
 
               }}>Add a new learning strategy</Button>
           </Link>
+          <Link to="/create">
+            <Button variant="contained" onClick={() => {
+              }}>ADD TEST SCRIPT</Button>
+          </Link>
 
         </Grid>
 
       </Grid>
+
+      <RecordList/>
 
     </div>
   );
