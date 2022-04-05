@@ -53,12 +53,9 @@ const detectionToolbox = [
 
         {type: 'high_halfway_through_sprint'},
         {type: 'high_by_end_of_sprint'},
-        {type: 'before_first_sig_of_sprint'},
-        {type: 'before_first_studio_of_sprint'},
-        {type: 'before_first_oh_of_sprint'},
-        {type: 'before_second_sig_of_sprint'},
-        {type: 'before_second_studio_of_sprint'},
-        {type: 'before_second_oh_of_sprint'},
+        {type: 'before_next_sig'},
+        {type: 'before_next_studio'},
+        {type: 'before_next_oh'},
 
         {type: 'studio_subcategory'},
         {type: 'high_pr_request'},
@@ -78,11 +75,12 @@ const detectionToolbox = [
         {type: 'sprint_log3'},
         {type: 'high_sprint_log_contains'},
         {type: 'high_sprint_updated'},
+        {type: 'high_sprint_updated2'},
         //canvas
         {type: 'canvas_subcategory'},
         {type: 'high_canvas_update'},
         {type: 'high_new_argument'},
-        
+
       ]
     },
     /*
@@ -98,8 +96,8 @@ const detectionToolbox = [
       ]
 
     },
-    
-   
+
+
     {
       name: "Resources",
       colour: "#CEABFA",
@@ -115,7 +113,7 @@ const detectionToolbox = [
 
       ]
     },
-    
+
     {
       name: "Functions",
       colour: "#D3FFCE",
