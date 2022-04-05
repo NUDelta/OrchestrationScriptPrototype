@@ -43,7 +43,10 @@ Blockly.Blocks['sprint_log3'] = {
           ["hours spent on design", "hours spent on design"],
           ["hours spent on research", "hours spent on research"],
           ["over points on a story", "over points on a story"],
+          ["at least one task is complete", "at least one task is complete"],
           ["at least one story is incomplete", "at least one story is incomplete"],
+          ["at least one story is complete", "at least one story is complete"],
+          ["all stories completed", "all stories completed"],
           ["has not finished any tasks", "has not finished any tasks"]]), "NAME");
         this.setInputsInline(true);
     this.setOutput(true, null);
@@ -135,7 +138,7 @@ Blockly.Blocks['high_new_argument'] = {
   }
 };
 
-Blockly.Blocks['before_first_sig_of_sprint'] = {
+/*Blockly.Blocks['before_first_sig_of_sprint'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("before first SIG of sprint");
@@ -145,8 +148,21 @@ Blockly.Blocks['before_first_sig_of_sprint'] = {
  this.setTooltip("");
  this.setHelpUrl("");
   }
+};*/
+
+Blockly.Blocks['before_next_sig'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("before next SIG");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
 };
-Blockly.Blocks['before_first_studio_of_sprint'] = {
+
+/*Blockly.Blocks['before_first_studio_of_sprint'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("before first Studio of sprint");
@@ -156,8 +172,21 @@ Blockly.Blocks['before_first_studio_of_sprint'] = {
  this.setTooltip("");
  this.setHelpUrl("");
   }
+};*/
+
+Blockly.Blocks['before_next_studio'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("before next Studio");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
 };
-Blockly.Blocks['before_first_oh_of_sprint'] = {
+
+/*Blockly.Blocks['before_first_oh_of_sprint'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("before first OH of sprint");
@@ -167,8 +196,21 @@ Blockly.Blocks['before_first_oh_of_sprint'] = {
  this.setTooltip("");
  this.setHelpUrl("");
   }
+};*/
+
+Blockly.Blocks['before_next_oh'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("before next OH");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
 };
-Blockly.Blocks['before_second_sig_of_sprint'] = {
+
+/*Blockly.Blocks['before_second_sig_of_sprint'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("before second SIG of sprint");
@@ -200,7 +242,7 @@ Blockly.Blocks['before_second_oh_of_sprint'] = {
  this.setTooltip("");
  this.setHelpUrl("");
   }
-};
+};*/
 
 Blockly.Blocks['slacked_someone'] = {
   init: function() {
@@ -261,6 +303,18 @@ Blockly.Blocks['high_sprint_updated'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Sprint Log not updated");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#0066cc");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['high_sprint_updated2'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Sprint Log updated");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("#0066cc");
