@@ -4,7 +4,13 @@ import 'blockly/python';
 Blockly.Blocks['if'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("If ");
+            .appendField("Situation ID")
+            .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","OPTIONNAME"], ["5","OPTIONNAME"], ["6","OPTIONNAME"], ["7","OPTIONNAME"], ["8","OPTIONNAME"]]), "ID dropdown");
+        this.appendDummyInput()
+            .appendField("Situation name: ")
+            .appendField(new Blockly.FieldTextInput("type name"), "situation_name");
+        this.appendDummyInput()
+            .appendField("If");
         this.appendValueInput("condition")
             //.setCheck("Boolean")
             .appendField("(input: condition)");
@@ -18,9 +24,12 @@ Blockly.Blocks['if'] = {
 Blockly.Blocks['then'] = {
     init: function () {
         this.appendDummyInput()
+            .appendField("Corresponding to situation ID: ")
+            .appendField(new Blockly.FieldTextInput("type one or more IDs (comma separated)"), "situation_ID");
+        this.appendDummyInput()
             .appendField("Then send a Slack message to");
         this.appendDummyInput()
-            .appendField(new Blockly.FieldTextInput("type name"), "NAME");
+            .appendField(new Blockly.FieldTextInput("type student name"), "NAME");
         this.appendDummyInput()
             .appendField("saying");
         this.appendDummyInput()

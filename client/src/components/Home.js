@@ -82,6 +82,8 @@ export default function Home() {
             ))}
           </div>
             */}
+          
+          {/*
         
           <label style={{fontSize: "15px", marginBottom: 16}}>Step6: Response<br/>Using your answer from Step3 as a guide, express one or more responses you would like to trigger to support the student across the venues/tools/processes in the DTR network if the detector expression is evaluated to true.</label>
           <div/>
@@ -90,16 +92,21 @@ export default function Home() {
 
               }}>Add a new learning strategy</Button>
           </Link>
-          <Link to="/create">
-            <Button variant="contained" onClick={() => {
-              }}>ADD TEST SCRIPT</Button>
-          </Link>
+          
+
+          */}
 
         </Grid>
 
       </Grid>
-
+      
+      {/*
+      <Link to="/create">
+            <Button variant="contained" onClick={() => {
+              }}>ADD TEST SCRIPT</Button>
+      </Link>
       <RecordList/>
+      */}
 
     </div>
   );

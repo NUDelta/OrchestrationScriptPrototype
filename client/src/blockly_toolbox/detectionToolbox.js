@@ -52,6 +52,7 @@ const detectionToolbox = [
         {type: 'time_subcategory'},
 
         {type: 'high_halfway_through_sprint'},
+        {type: 'midweek'},
         {type: 'high_by_end_of_sprint'},
         {type: 'before_next_sig'},
         {type: 'before_next_studio'},
@@ -79,10 +80,12 @@ const detectionToolbox = [
         //canvas
         {type: 'canvas_subcategory'},
         {type: 'high_canvas_update'},
+        {type: 'high_canvas_update2'},
         {type: 'high_new_argument'},
 
       ]
     },
+    
     /*
     {
       name: "Tools",
@@ -158,6 +161,18 @@ const detectionToolbox = [
       blocks: [
         { type: "time" },
       ],
+    },
+    {
+      name: "",
+      colour: "#FFFFFF",
+      blocks: [
+
+      ],
+    },
+    {
+      name: "Response",
+      colour: "#998362",
+      blocks: [{type: "then"}],
     },
     /*
     {

@@ -42,6 +42,7 @@ Blockly.Blocks['sprint_log3'] = {
           ["hours spent on tech", "hours spent on tech"],
           ["hours spent on design", "hours spent on design"],
           ["hours spent on research", "hours spent on research"],
+          ["hours spent on argumentation", "hours spent on argumentation"],
           ["over points on a story", "over points on a story"],
           ["at least one task is complete", "at least one task is complete"],
           ["at least one story is incomplete", "at least one story is incomplete"],
@@ -111,6 +112,17 @@ Blockly.Blocks['high_canvas_update'] = {
  this.setHelpUrl("");
   }
 };
+Blockly.Blocks['high_canvas_update2'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Canvas updated");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#0066cc");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 Blockly.Blocks['high_learn_nothing'] = {
   init: function() {
     this.appendDummyInput()
@@ -154,6 +166,18 @@ Blockly.Blocks['before_next_sig'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("before next SIG");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['midweek'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("midway through week");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("#cc9900");
