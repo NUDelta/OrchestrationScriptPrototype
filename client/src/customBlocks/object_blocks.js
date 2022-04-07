@@ -10,10 +10,6 @@ import 'blockly/python';
          .appendField(new Blockly.FieldDropdown([
            ["num lines code committed", "num lines code committed"],
            ["num branches created", "num branches created"]]), "NAME");
-     this.appendDummyInput()
-         .appendField(new Blockly.FieldDropdown([["student1", "student1"],
-                                                 ["student2", "student2"],
-                                                 ["All", "All"]]), "NAME");
          this.setInputsInline(true);
      this.setOutput(true, null);
      this.setColour(110);
@@ -33,10 +29,6 @@ Blockly.Blocks['slack'] = {
         .appendField("Slack")
         .appendField(new Blockly.FieldDropdown([
           ["num unique people messaged", "num unique people messaged"]]), "NAME");
-    this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["student1", "student1"],
-                                                ["student2", "student2"],
-                                                ["All", "All"]]), "NAME");
         this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour(110);
@@ -45,5 +37,32 @@ Blockly.Blocks['slack'] = {
   }
  };
 
+ Blockly.Blocks['high_pr_request'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Last Studio PR Request Contained");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("type here!"), "NAME");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#0066cc");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['high_mysore_signup'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Last Studio Mysore Signup Contained ");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("type here!"), "NAME");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#0066cc");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
 
 Blockly.Python['slack'] = function (block) { return "...";};

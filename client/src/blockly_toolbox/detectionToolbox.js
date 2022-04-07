@@ -45,22 +45,33 @@ const detectionToolbox = [
 
     },
     {
-      name: "Venues",
+      name: "Time / Venues",
       colour: "#cc9900",
       blocks: [
         //sprint
+        {type: 'time_modifier_subcategory'},
+        {type: 'at'},
+        {type: 'before'},
+        {type: 'after'},
+        {type: 'amount_time_modifier'},
         {type: 'time_subcategory'},
-
+        {type: 'high_by_beginning_of_sprint'},
         {type: 'high_halfway_through_sprint'},
         {type: 'midweek'},
         {type: 'high_by_end_of_sprint'},
         {type: 'before_next_sig'},
-        {type: 'before_next_studio'},
         {type: 'before_next_oh'},
+        {type: 'before_next_studio'},
+        {type: 'sunday'},
+        {type: 'monday'},
+        {type: 'tuesday'},
+        {type: 'wednesday'},
+        {type: 'thursday'},
+        {type: 'friday'},
+        {type: 'saturday'},
+        
 
-        {type: 'studio_subcategory'},
-        {type: 'high_pr_request'},
-        {type: 'high_mysore_signup'},
+        //{type: 'studio_subcategory'},
       ]
 
     },
@@ -82,6 +93,10 @@ const detectionToolbox = [
         {type: 'high_canvas_update'},
         {type: 'high_canvas_update2'},
         {type: 'high_new_argument'},
+        //studio
+        {type: 'studio_subcategory'},
+        {type: 'high_pr_request'},
+        {type: 'high_mysore_signup'},
 
       ]
     },
@@ -154,14 +169,14 @@ const detectionToolbox = [
         { type: "set" },
         { type: "concept_variable" }],
     },
-
+/*
     {
       name: "Time",
       colour: "#F08080",
       blocks: [
         { type: "time" },
       ],
-    },
+    },*/
     {
       name: "",
       colour: "#FFFFFF",

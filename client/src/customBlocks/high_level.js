@@ -6,10 +6,6 @@ import 'blockly/python';
  Blockly.Blocks['github3'] = {
    init: function() {
      this.appendDummyInput()
-         .appendField(new Blockly.FieldDropdown([["team", "team"],
-                                                 ["student1", "student1"],
-                                                 ["student2", "student2"]]), "NAME");
-     this.appendDummyInput()
          .appendField("Github")
          .appendField(new Blockly.FieldDropdown([
            ["working on tech", "working on tech"]]), "NAME");
@@ -26,10 +22,6 @@ import 'blockly/python';
 
 Blockly.Blocks['sprint_log3'] = {
   init: function() {
-    this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["team", "team"],
-                                                ["student1", "student1"],
-                                                ["student2", "student2"]]), "NAME");
     this.appendDummyInput()
         .appendField("Sprint Log")
         .appendField(new Blockly.FieldDropdown([
@@ -57,10 +49,21 @@ Blockly.Blocks['sprint_log3'] = {
   }
  };
 
+ Blockly.Blocks['high_by_beginning_of_sprint'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Beginning of Sprint");
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks['high_by_end_of_sprint'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("By the end of sprint");
+        .appendField("End of Sprint");
     this.setOutput(true, null);
     this.setColour("#cc9900");
  this.setTooltip("");
@@ -70,26 +73,84 @@ Blockly.Blocks['high_by_end_of_sprint'] = {
 Blockly.Blocks['high_halfway_through_sprint'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Half way through the sprint");
+        .appendField("Middle of Sprint");
     this.setOutput(true, null);
     this.setColour("#cc9900");
  this.setTooltip("");
  this.setHelpUrl("");
   }
 };
-Blockly.Blocks['high_pr_request'] = {
+Blockly.Blocks['sunday'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("PR request contains");
-    this.appendDummyInput()
-        .appendField(new Blockly.FieldTextInput("type here!"), "NAME");
-    this.setInputsInline(true);
+        .appendField("Sunday");
     this.setOutput(true, null);
     this.setColour("#cc9900");
  this.setTooltip("");
  this.setHelpUrl("");
   }
 };
+Blockly.Blocks['monday'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Monday");
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['tuesday'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Tuesday");
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['wednesday'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Wednesday");
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['thursday'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Thursday");
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['friday'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Friday");
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.Blocks['saturday'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Saturday");
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks['high_deliverables'] = {
   init: function() {
     this.appendDummyInput()
@@ -137,7 +198,7 @@ Blockly.Blocks['high_learn_nothing'] = {
 Blockly.Blocks['high_new_argument'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Student has new");
+        .appendField("Has new");
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([["design","design"], ["interface","interface"], ["system","system"]]), "argumentation");
     this.appendDummyInput()
@@ -162,10 +223,18 @@ Blockly.Blocks['high_new_argument'] = {
   }
 };*/
 
+/*
+["Beginning of Sprint", "Beginning of Sprint"],
+            ["Middle of Sprint", "Middle of Sprint"],
+            ["End of Sprint", "End of Sprint"],*/
+            
+            
+            
+
 Blockly.Blocks['before_next_sig'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("before next SIG");
+        .appendField("SIG");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("#cc9900");
@@ -177,7 +246,7 @@ Blockly.Blocks['before_next_sig'] = {
 Blockly.Blocks['midweek'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("midway through week");
+        .appendField("Middle of Week");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("#cc9900");
@@ -201,7 +270,7 @@ Blockly.Blocks['midweek'] = {
 Blockly.Blocks['before_next_studio'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("before next Studio");
+        .appendField("Studio");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("#cc9900");
@@ -225,7 +294,7 @@ Blockly.Blocks['before_next_studio'] = {
 Blockly.Blocks['before_next_oh'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("before next OH");
+        .appendField("Office Hour");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("#cc9900");
@@ -295,19 +364,7 @@ Blockly.Blocks['slacked_deliverables'] = {
   }
 };
 
-Blockly.Blocks['high_mysore_signup'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Mysore signup is ");
-    this.appendDummyInput()
-        .appendField(new Blockly.FieldTextInput("type here!"), "NAME");
-    this.setInputsInline(true);
-    this.setOutput(true, null);
-    this.setColour("#cc9900");
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
+
 
 Blockly.Blocks['high_sprint_log_contains'] = {
   init: function() {
@@ -347,12 +404,83 @@ Blockly.Blocks['high_sprint_updated2'] = {
   }
 };
 
+Blockly.Blocks['at'] = {
+  init: function() {
+    this.appendValueInput("At")
+        .setCheck(null)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("At");
+    this.setInputsInline(false);
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['before'] = {
+  init: function() {
+    this.appendValueInput("Before")
+        .setCheck(null)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("Before");
+    this.setInputsInline(false);
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['after'] = {
+  init: function() {
+    this.appendValueInput("After")
+        .setCheck(null)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("After");
+    this.setInputsInline(false);
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['amount_time_modifier'] = {
+  init: function() {
+    this.appendValueInput("amount_time_modifier")
+        .setCheck(null)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"]]), "days")
+        .appendField("days")
+        .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["6","6"], ["12","12"]]), "hours")
+        .appendField("hours")
+        .appendField(new Blockly.FieldDropdown([["0","0"], ["5","5"], ["15","15"], ["30","30"], ["45","45"]]), "minutes")
+        .appendField("minutes")
+        .appendField(new Blockly.FieldDropdown([["At","At"], ["Before","Before"], ["After","After"]]), "relation");
+    this.setOutput(true, null);
+    this.setColour("#cc9900");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 ///////////////////////////
 
 Blockly.Blocks['time_subcategory'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("-----------------TIME----------------");
+        .appendField("-----POINTS IN TIME-----");
+    this.setColour("#000000");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['time_modifier_subcategory'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("--OPTIONAL TIME MODIFIERS--");
     this.setColour("#000000");
  this.setTooltip("");
  this.setHelpUrl("");
@@ -393,6 +521,16 @@ Blockly.Blocks['canvas_subcategory'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("-----------------CANVAS----------------");
+    this.setColour("#000000");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['studio_subcategory'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("-----------------STUDIO----------------");
     this.setColour("#000000");
  this.setTooltip("");
  this.setHelpUrl("");

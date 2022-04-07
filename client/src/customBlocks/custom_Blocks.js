@@ -36,6 +36,14 @@ Blockly.Blocks['then'] = {
             .appendField(new Blockly.FieldTextInput("type suggestion"), "NAME1");
         this.setOutput(false);
         this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_LEFT)
+        .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"]]), "days")
+        .appendField("days")
+        .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["6","6"], ["12","12"]]), "hours")
+        .appendField("hours")
+        .appendField(new Blockly.FieldDropdown([["0","0"], ["5","5"], ["15","15"], ["30","30"], ["45","45"]]), "minutes")
+        .appendField("minutes");
+        this.appendDummyInput()
             .appendField("")
             .appendField(new Blockly.FieldDropdown([
               ["At", "At"],
@@ -45,13 +53,21 @@ Blockly.Blocks['then'] = {
         this.appendDummyInput()
             .appendField("")
             .appendField(new Blockly.FieldDropdown([
-              ["Half way through the sprint", "Half way through the sprint"],
-              ["The end of the sprint", "The end of the sprint"],
-              ["First SIG of sprint", "First SIG of sprint"],
-              ["First Studio of sprint", "First Studio of sprint"],
-              ["Second SIG of sprint", "Second SIG of sprint"],
-              ["Second Studio of sprint", "Second Studio of sprint"],
-              ["Second OH of sprint", "Second OH of sprint"]]), "NAME5");
+              ["Beginning of Sprint", "Beginning of Sprint"],
+              ["Middle of Sprint", "Middle of Sprint"],
+              ["Middle of Week", "Middle of Week"],
+              ["End of Sprint", "End of Sprint"],
+              ["SIG", "SIG"],
+              ["Office Hour", "Office Hour"],
+              ["Studio", "Studio"], 
+              ["Sunday", "Sunday"],
+              ["Monday", "Monday"],
+              ["Tuesday", "Tuesday"],
+              ["Wednesday", "Wednesday"],
+              ["Thursday", "Thursday"],
+              ["Friday", "Friday"],
+              ["Saturday", "Saturday"]    
+              ]), "NAME5");
             this.setInputsInline(false);
         /*
         this.appendValueInput("do1")

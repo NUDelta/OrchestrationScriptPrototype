@@ -14,9 +14,25 @@ Blockly.Blocks['time'] = {
         .appendField("hours")
         .appendField(new Blockly.FieldDropdown([["0","0"], ["5","5"], ["15","15"], ["30","30"], ["45","45"]]), "minutes")
         .appendField("minutes")
-        .appendField(new Blockly.FieldDropdown([["after","after"], ["before","before"], ["at","at"]]), "relation");
+        .appendField(new Blockly.FieldDropdown([["At","At"], ["Before","Before"], ["After","After"]]), "relation");
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["1st SIG","1st SIG"], ["2nd SIG","2nd SIG"], ["current sprint","current sprint"], ["last sprint","last sprint"], ["next sprint","next sprint"], ["1st Office Hour","1st Office Hour"], ["2nd Office Hour","2nd Office Hour"], ["1st Studio","1st Studio"], ["2nd Studio","2nd Studio"]]), "event");
+        .appendField(new Blockly.FieldDropdown([
+            ["Beginning of Sprint", "Beginning of Sprint"],
+            ["Middle of Sprint", "Middle of Sprint"],
+            ["Middle of Week", "Middle of Week"],
+            ["End of Sprint", "End of Sprint"],
+            ["SIG","SIG"], 
+            ["Office Hour","Office Hour"], 
+            ["Studio","Studio"],
+            ["Sunday", "Sunday"],
+            ["Monday", "Monday"],
+            ["Tuesday", "Tuesday"],
+            ["Wednesday", "Wednesday"],
+            ["Thursday", "Thursday"],
+            ["Friday", "Friday"],
+            ["Saturday", "Saturday"]
+            
+          ]), "event");
     this.setOutput(true, null);
     this.setColour(330);
  this.setTooltip("");
