@@ -60,14 +60,16 @@ export default function Home() {
         <Grid item xs={3}>
 
           <Scaffolding />
-          <label style={{fontSize: "15px"}}>Step4: Please select or write in text which student(s) and/or project groups(s) you want to detect this ineffective strategy for.</label>
-          <Select options = {options} style={{fontSize: "15px", marginTop: 10}} placeholder = "Choose a project group/student" isMulti/>
+          
 
         </Grid>
 
         <Grid item xs={9}>
 
-          <label style={{fontSize: "15px", marginBottom: 16}}>Step5: Detector<br/>Using your answer from Step3 as a guide, create one or more ineffective strategy / slack message pairs with the if block in the Logic category to represent the condition you are detecting and the suggested action you wish to send.</label>
+          <label style={{fontSize: "15px"}}>Step4: Please select or write in text which student(s) and/or project groups(s) you want to detect this ineffective strategy for.</label><br/>
+          <Select options = {options} style={{fontSize: "15px", marginTop: 10}} placeholder = "Choose a project group/student" isMulti/><br/>
+
+          <label style={{fontSize: "15px", marginBottom: 16}}>Step5: Detector and Response<br/>Using your answer from Step3 as a guide, create one or more ineffective strategy / slack message pairs (connect them with IDs) with the if block in the Logic category to represent the condition you are detecting and the suggested one or multiple actions you wish to send.</label>
           <DetectorWorkspace />
 
           {/*
