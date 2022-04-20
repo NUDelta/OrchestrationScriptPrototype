@@ -14,6 +14,10 @@ Blockly.Blocks['if'] = {
         this.appendValueInput("condition")
             //.setCheck("Boolean")
             .appendField("(input: condition)");
+        this.appendDummyInput()
+            .appendField("[reminder: you can break down your situation");
+        this.appendDummyInput()
+            .appendField("into multiple situation blocks]");
         this.setOutput(false);
         this.setColour(210);
         this.setTooltip("");
@@ -24,12 +28,21 @@ Blockly.Blocks['if'] = {
 Blockly.Blocks['then'] = {
     init: function () {
         this.appendDummyInput()
-            .appendField("Corresponding to situation ID: ")
-            .appendField(new Blockly.FieldTextInput("type one or more IDs (comma separated)"), "situation_ID");
+            .appendField("In relation to situation ID: ")
+            .appendField(new Blockly.FieldTextInput("type one or more IDs"), "situation_ID");
         this.appendDummyInput()
             .appendField("Then send a Slack message to");
         this.appendDummyInput()
             .appendField(new Blockly.FieldTextInput("type student name"), "NAME");
+        this.appendDummyInput()
+            .appendField("Consider these support strategies: ");
+        this.appendDummyInput()
+            .appendField("Venues ")
+            .appendField(new Blockly.FieldDropdown([["None","none"], ["Office Hour","oh"], ["SIG","sig"], ["Pair Research","pr"], ["LIP/Mysore","lip"], ["Status Update","su"]]), "venues")
+            .appendField(" People ")
+            .appendField(new Blockly.FieldDropdown([["None","none"], ["Project Channel","pc"], ["SIG Channel","sc"], ["SIG mentor","sm"], ["On-boarding mentor","om"], ["Help-tech channel","hc"], ["Haoqi","hq"]]), "people")
+            .appendField(" Tools ")
+            .appendField(new Blockly.FieldDropdown([["None","none"], ["Sprint log","sl"], ["PRC","prc"], ["RRC","rrc"], ["Compass","cps"], ["Mysore templates","mt"], ["IPM","ipm"], ["Github","gh"], ["Learning modules","lm"], ["DTR meeting log","ml"]]), "tools");
         this.appendDummyInput()
             .appendField("saying");
         this.appendDummyInput()
@@ -68,7 +81,12 @@ Blockly.Blocks['then'] = {
               ["Friday", "Friday"],
               ["Saturday", "Saturday"]    
               ]), "NAME5");
-            this.setInputsInline(false);
+            this.appendDummyInput("check1")
+              .appendField(new Blockly.FieldCheckbox("FALSE"), "check1")
+              .appendField("does this strategy align with the situation?");
+            this.appendDummyInput()
+              .appendField("[reminder: you can add more than one strategy]");
+              this.setInputsInline(false);
         /*
         this.appendValueInput("do1")
             .setCheck(null)
