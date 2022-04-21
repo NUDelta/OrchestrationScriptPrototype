@@ -156,18 +156,38 @@ Blockly.Blocks['slack_message'] = {
     this.appendDummyInput()
         .appendField(new Blockly.FieldTextInput("type question"), "NAME1");
     this.appendDummyInput()
-        .appendField("at");
-    this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_RIGHT)
+        .setAlign(Blockly.ALIGN_LEFT)
         .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["6","6"]]), "days")
         .appendField("days")
         .appendField(new Blockly.FieldDropdown([["0","0"], ["1","1"], ["2","2"], ["3","3"], ["6","6"], ["12","12"]]), "hours")
         .appendField("hours")
         .appendField(new Blockly.FieldDropdown([["0","0"], ["5","5"], ["15","15"], ["30","30"], ["45","45"]]), "minutes")
-        .appendField("minutes")
-        .appendField(new Blockly.FieldDropdown([["after","after"], ["before","before"], ["at","at"]]), "relation");
+        .appendField("minutes");
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["1st SIG","1st SIG"], ["2nd SIG","2nd SIG"], ["current sprint","current sprint"], ["last sprint","last sprint"], ["next sprint","next sprint"], ["1st Office Hour","1st Office Hour"], ["2nd Office Hour","2nd Office Hour"], ["1st Studio","1st Studio"], ["2nd Studio","2nd Studio"]]), "event");
+        .appendField("")
+        .appendField(new Blockly.FieldDropdown([
+            ["At", "At"],
+            ["Before", "Before"],
+            ["After","After"]]), "NAME4");
+        this.setInputsInline(false);
+    this.appendDummyInput()
+        .appendField("")
+        .appendField(new Blockly.FieldDropdown([
+            ["Beginning of Sprint", "Beginning of Sprint"],
+            ["Middle of Sprint", "Middle of Sprint"],
+            ["Middle of Week", "Middle of Week"],
+            ["End of Sprint", "End of Sprint"],
+            ["SIG", "SIG"],
+            ["Office Hour", "Office Hour"],
+            ["Studio", "Studio"], 
+            ["Sunday", "Sunday"],
+            ["Monday", "Monday"],
+            ["Tuesday", "Tuesday"],
+            ["Wednesday", "Wednesday"],
+            ["Thursday", "Thursday"],
+            ["Friday", "Friday"],
+            ["Saturday", "Saturday"]    
+            ]), "NAME5");
     this.setInputsInline(false);
     this.appendDummyInput()
         .appendField(", then check if this message contains: ");

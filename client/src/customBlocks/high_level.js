@@ -198,11 +198,32 @@ Blockly.Blocks['high_learn_nothing'] = {
 Blockly.Blocks['high_new_argument'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Has new");
+    .appendField("PRC: Has new");
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["design","design"], ["interface","interface"], ["system","system"]]), "argumentation");
+        .appendField(new Blockly.FieldDropdown([["gap in canvas which is risky", "gap in canvas which is risky"], 
+        ["focus for sprint", "focus for sprint"],["problem statement", "problem statement"], ["design argument","design argument"], 
+        ["interface model","interface model"], ["system model","system model"], 
+         ["study design", "study design"], ["testing takeaways", "testing takeaways"]]), "argumentation");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#0066cc");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['high_new_argument_rrc'] = {
+  init: function() {
     this.appendDummyInput()
-        .appendField("argument");
+        .appendField("RRC: Has new");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["research audience", "research audience"],
+        ["class of problems", "class of problems"],
+        ["existing approaches", "existing approaches"], ["research question", "research question"],
+        ["conceptual contribution", "conceptual contribution"], ["technical contribution", "technical contribution"],
+        ["synthesis tree", "synthesis tree"], ["study design", "study design"], ["core takeaways", "core takeaways"], 
+        ["revised understanding of conceptual and technical approach", "revised understanding of conceptual and technical approach"],
+      ["future work", "future work"]]), "argumentation");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("#0066cc");

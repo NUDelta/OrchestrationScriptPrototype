@@ -93,6 +93,7 @@ const detectionToolbox = [
         {type: 'high_canvas_update'},
         {type: 'high_canvas_update2'},
         {type: 'high_new_argument'},
+        {type: 'high_new_argument_rrc'},
         //studio
         {type: 'studio_subcategory'},
         {type: 'high_pr_request'},
