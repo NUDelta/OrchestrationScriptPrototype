@@ -17,8 +17,8 @@ export default function Scaffolding() {
         {/* 
         <label style={{fontSize: "15px"}}>Step3: Restate more concisely the <br/>1) the ineffective working or learning strategy you are trying to detect and <br/>2) 2 or more ways you would like to support the student to implement the effective strategy by getting support from appropriate venues/tools/people/processes in the DTR network?</label>
         */}
-        <label style={{fontSize: "15px"}}>Step3: Based on your answers for step 1 and 2, write pseudocode for both the situation and the support strategy. <br/>There's no need to get all the details in the pseudocode here, please refer to the example below. </label>
-        <textarea style={{ height: "20vh", width: "100%", fontSize: "15px", marginTop: 10, marginBottom: 16, resize: "vertical" }} value = {q3}></textarea>
+        <label style={{fontSize: "15px"}}>Step3: Based on your answers for step 1 and 2, write pseudocode for both the situation and the support strategy. <br/>There's no need to get all the details in the pseudocode here, please refer to the example below. <br/>Situation: when this happens<br/>Strategy: do this, at this venue/time</label>
+        <textarea style={{ height: "20vh", width: "100%", fontSize: "15px", marginTop: 10, marginBottom: 16, resize: "vertical" }}></textarea>
 
       </div>
     );
