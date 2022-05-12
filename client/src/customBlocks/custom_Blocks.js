@@ -30,6 +30,7 @@ Blockly.Blocks['then'] = {
         this.appendDummyInput()
             .appendField("In relation to situation ID: ")
             .appendField(new Blockly.FieldTextInput("type one or more IDs"), "situation_ID");
+        /*
         this.appendDummyInput()
             .appendField("(Consider these resources when writing message)");
         this.appendDummyInput()
@@ -39,6 +40,7 @@ Blockly.Blocks['then'] = {
             .appendField(new Blockly.FieldDropdown([["None","none"], ["Project Channel","pc"], ["SIG Channel","sc"], ["SIG mentor","sm"], ["On-boarding mentor","om"], ["Help-tech channel","hc"], ["Haoqi","hq"]]), "people")
             .appendField(" Tools ")
             .appendField(new Blockly.FieldDropdown([["None","none"], ["Sprint log","sl"], ["PRC","prc"], ["RRC","rrc"], ["Compass","cps"], ["Mysore templates","mt"], ["IPM","ipm"], ["Github","gh"], ["Learning modules","lm"], ["DTR meeting log","ml"]]), "tools");
+        */
         this.appendDummyInput()
             .appendField("Then send a Slack message to");
         this.appendDummyInput()
@@ -81,6 +83,9 @@ Blockly.Blocks['then'] = {
               ["Friday", "Friday"],
               ["Saturday", "Saturday"]    
               ]), "NAME5");
+            this.appendDummyInput("reflect")
+                .appendField("Please go to step 6 to reflect on this suggestion.");
+            /*
             this.appendDummyInput("check1")
               .appendField(new Blockly.FieldCheckbox("FALSE"), "check1")
               .appendField("would this strategy help your student");
@@ -92,6 +97,7 @@ Blockly.Blocks['then'] = {
             this.appendDummyInput("name7")
               .appendField("in this situation? If so, add strategy blocks.")
             this.setInputsInline(false);
+            */
         /*
         this.appendValueInput("do1")
             .setCheck(null)
