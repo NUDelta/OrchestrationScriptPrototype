@@ -71,7 +71,7 @@ export default function Baseline() {
 
 
     const [code, setCode] = React.useState(
-        `if (){ //specify learning opportunity\n       //specify support strategies \n\n\n\n\n}`
+        `if (           \n\n//specify learning opportunity\n\n\n){ \n\n//specify support strategies \n\nsend_slack_message(string: name, string: message, time: when to send)\n\n\n\n}`
     );
 
     const [page, setPage] = React.useState(0);
@@ -111,12 +111,13 @@ export default function Baseline() {
         <Grid container spacing={5}>
 
             <Grid item xs={6}>
-            <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+            <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
                 <SearchBar
                     value={searched}
                     onChange={(searchVal) => requestSearch(searchVal)}
                     onCancelSearch={() => cancelSearch()}
                 />
+                <br/>
                 <TableContainer sx={{ maxHeight: 440 }}>
                     <Table aria-label="simple table" stickyHeader>
                     <TableHead>
@@ -155,10 +156,21 @@ export default function Baseline() {
                 />
                         
             </Paper>
+            <br/>
+            <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
+            <b>Time object: specify when you want to check a resource or execute an action</b>
+            <br />
+            <ul>
+                <li>Modifier: “at”, “before”, “after”, “* day * hours * minutes at/before/after”</li>
+                <li>Event: “beginning of sprint”, “middle of sprint”, “end of sprint”, “middle of week”, “SIG”, “office hour”, “studio”, “Sunday”, “Monday”, “Tuesday”, “Wednesday”, “Thursday”, “Friday”, “Saturday”</li>
+            </ul>
+            <p style={{fontStyle: "italic", fontSize: "12px"}}>class Time: <br/>&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, modifier, event):<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.modifier = modifier<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.event = event</p>
+            <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: Time(modifier = "at", event = "office hour")</p>
+            </Paper>
             </Grid>
         
             <Grid item xs={6}>
-            <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+            <Paper sx={{ width: '100%', overflow: 'hidden'}}>
                 <CodeEditor
                 value={code}
                 language="js"

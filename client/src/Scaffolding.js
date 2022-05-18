@@ -8,14 +8,14 @@ export default function Scaffolding() {
         <b>Step 1: reflect on situation to script for</b>
         <br />
         <label style={{fontSize: "15px"}}>Think back to a time when one of your students was not working or learning effectively this quarter. Describe what the student did and how you noticed it was happening.</label>
-        <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: example of a situation here</p>
+        <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: <br/>Students were <u>building prototype to polish</u>, and not actively thinking about how what they were building would help them test. I noticed this during <u>office hours</u> when they felt like they needed to build features but didn't have plans to test them. </p>
         <textarea style={{ height: "20vh", width: "100%", fontSize: "15px", marginBottom: 16, marginTop: 10, resize: "vertical" }}></textarea>
 
         <b>Step 2: reflect on strategy for the above situation</b>
         <br />
         <label style={{fontSize: "15px"}}>After you noticed the above situation, how did you support your student in practicing a more effective working or learning strategy?
         </label>
-        <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: example of a situation here</p>
+        <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: <br/>I encouraged them to <u>test the prototype</u> in its imperfect state so we could understand its implications. </p>
         <textarea style={{ height: "10vh", width: "100%", fontSize: "15px", marginBottom: 16, marginTop: 10, resize: "vertical" }}></textarea>
         
         {/* 
@@ -28,8 +28,8 @@ export default function Scaffolding() {
         <p style={{fontStyle: "italic", fontSize: "12px"}}>
           Example:
           <ul>
-            <li>Situation: <u>when</u> example happens</li>
-            <li>Strategy: <u>do</u> example <u>at</u> venue</li>
+            <li>Situation: <u>when</u> students are building prototype but do not have a plan to test it</li>
+            <li>Strategy: <u>send Slack message:</u> "Before you continue building on top of tech, could you test the ARGUMENTS faster in a lower fidelity" <u>at</u> 1 hour before SIG</li>
           </ul>
         </p>
 
