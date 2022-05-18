@@ -18,6 +18,7 @@ import range from "lodash/range";
 import {Link, NavLink} from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import RecordList from "../components/recordList";
+import Paper from '@material-ui/core/Paper';
 
 const options_projects = [
   { value: "km", label: "Knowledge Maps (Alexandra)" },
@@ -128,19 +129,29 @@ export default function Home() {
   
   console.log(combinedTargetOptions)
 
+
   return (
     <div style={{/*backgroundColor: '#1e1e1e',*/marginLeft:16, marginRight:16, marginTop:16,marginBottom:16}}>
+      <Link to="/baseline">
+          <Button variant="outlined" onClick={() => {
+          }}>Experiment/Control</Button>
+      </Link>
 
 
       <Grid container spacing={5}>
 
+        
         <Grid item xs={3}>
 
+          
+
           <Scaffolding />
+
           <b>Step 4: for whom should this script apply to?</b>
           <br />
           <label style={{fontSize: "15px"}}>Please select which student(s), projects(s), and/or SIG(s) you want this script to apply to.</label><br/>
           <Select options={combinedTargetOptions} style={{fontSize: "15px", marginTop: "20px"}} placeholder = "Choose who this script is for" isMulti/><br/>
+
           {/*
             <Select options = {options_projects} style={{fontSize: "15px", marginTop: 10}} placeholder = "Choose a project group" isMulti/><br/>
           <Select options = {options_undergrad_master} style={{fontSize: "15px", marginTop: 10}} placeholder = "Choose an undergrad/master's student" isMulti/><br/>
@@ -176,6 +187,7 @@ export default function Home() {
               
           <textarea style={{ height: "15vh", width: "100%", fontSize: "15px", marginBottom: 16, marginTop: 10, resize: "vertical" }}></textarea>
           <label style={{fontSize: "15px"}}>When you are done, return to step 5 to add any new support strategies you came up with. </label>
+
           {/*
           <label style={{fontSize: "15px", marginBottom: 16}}>Step6: Response<br/>Using your answer from Step3 as a guide, express the response you would like to trigger to support the student across the venues/tools/processes in the DTR network if the detector expression is evaluated to true.</label>
           <ResponseWorkspace />

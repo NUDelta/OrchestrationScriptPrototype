@@ -20,6 +20,7 @@ import Button from '@material-ui/core/Button';
 import Home from "./components/Home";
 import Create from "./components/create";
 import Edit from "./components/edit";
+import Baseline from "./components/baseline";
 
 /*
 import ReactBlockly from "react-blockly";
@@ -45,6 +46,7 @@ export default function App() {
     <div style={{/*backgroundColor: '#1e1e1e',*/marginLeft:16, marginRight:16, marginTop:16,marginBottom:16}}>
       <Routes>
         <Route exact path="/" element={<Home/>}/>
+        <Route exact path="/baseline" element={<Baseline/>}/>
         <Route exact path="/learning_strategy" element={<ResponseWorkspace/>}/>
         <Route path="/edit/:id" element={<Edit />} />
         <Route path="/create" element={<Create />} />
