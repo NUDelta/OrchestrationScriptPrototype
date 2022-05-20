@@ -34,6 +34,20 @@ const detectionToolbox = [
       ],
     },
     {
+      name: "Concepts",
+      colour: "#D3FFCE",
+      blocks: [
+        { type: "set" },
+        { type: "concept_variable" }],
+    },
+    {
+      name: "",
+      colour: "#FFFFFF",
+      blocks: [
+
+      ],
+    },
+    {
       name: "People",
       colour: "#68A65C",
       blocks: [
@@ -69,7 +83,7 @@ const detectionToolbox = [
         {type: 'thursday'},
         {type: 'friday'},
         {type: 'saturday'},
-        
+
 
         //{type: 'studio_subcategory'},
       ]
@@ -101,7 +115,7 @@ const detectionToolbox = [
 
       ]
     },
-    
+
     /*
     {
       name: "Tools",
@@ -163,13 +177,7 @@ const detectionToolbox = [
       ],
     },
     */
-    {
-      name: "Concepts",
-      colour: "#D3FFCE",
-      blocks: [
-        { type: "set" },
-        { type: "concept_variable" }],
-    },
+
 /*
     {
       name: "Time",
