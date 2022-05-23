@@ -92,8 +92,12 @@ const Strategy = () => {
   </div>;
 };
 
-const Hi = () => {
-  return <div> <label>asd</label> </div>
+const Hi1 = () => {
+  return <div> <label>hi1</label> </div>
+}
+
+const Hi2 = () => {
+    return <div> <label>hi2</label> </div>
 }
 
 const SituationStrategyPair = () => {
@@ -133,7 +137,17 @@ export default function Baseline() {
         `{ \n\n//define a support strategy \n\nsend_slack_message(string: name, string: message, time: when to send)\n\n\n\n}`
     );
 
+    //const [document, setDocument] = React.useState();
 
+    /*
+    const onButton1Click = event => {
+        setDocument(<Hi1/>);
+    }
+
+    const onButton2Click = event => {
+        setDocument(<Hi2/>);
+    }
+    */
 
 
     const [pairList, setPairList] = useState([]);
@@ -175,27 +189,22 @@ export default function Baseline() {
     return (
     
     <div style={{/*backgroundColor: '#1e1e1e',*/marginLeft:16, marginRight:16, marginTop:16,marginBottom:16}}>
-        <Link to="/">
-            <Button variant="outlined" onClick={() => {
-            }}>Experiment/Control</Button>\
-        </Link>
         <Grid container spacing={5}>
-            <Grid item xs={2}>
-              <SideBar/>
-            </Grid>
-            <Grid item xs={4}>
+
+            <Grid item xs={6}>
             <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
+                
+                
+
                 <SearchBar
                     value={searched}
                     onChange={(searchVal) => requestSearch(searchVal)}
                     onCancelSearch={() => cancelSearch()}
                 />
                 <br/>
-                <Link to='/hi'>Circle</Link>
-                <Routes>
-                  <Route path='/hi' component={Hi} />
-                </Routes>
-                {/*<TableContainer sx={{ maxHeight: 440 }}>
+
+                
+                <TableContainer sx={{ maxHeight: 440 }}>
                     <Table aria-label="simple table" stickyHeader>
                     <TableHead>
                         <TableRow>
@@ -222,7 +231,7 @@ export default function Baseline() {
                     </Table>
                 </TableContainer>
 
-                /*<TablePagination
+                <TablePagination
                     rowsPerPageOptions={[10, 25, 100]}
                     component="div"
                     count={rows.length}
@@ -230,12 +239,12 @@ export default function Baseline() {
                     page={page}
                     onPageChange={handleChangePage}
                     onRowsPerPageChange={handleChangeRowsPerPage}
-                />*/}
+                />
 
             </Paper>
             <br/>
 
-            {/*<Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
+            <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
             <b>Time object: specify when you want to check a resource or execute an action</b>
             <br />
             <ul>
@@ -244,7 +253,7 @@ export default function Baseline() {
             </ul>
             <p style={{fontStyle: "italic", fontSize: "12px"}}>class Time: <br/>&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, modifier, event):<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.modifier = modifier<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.event = event</p>
             <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: Time(modifier = "at", event = "office hour")</p>
-            </Paper>*/}
+            </Paper>
 
 
             </Grid>

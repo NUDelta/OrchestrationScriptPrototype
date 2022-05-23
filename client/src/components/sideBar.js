@@ -25,6 +25,7 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import SearchBar from "./SearchBar";
 
+/*
 const styles = {
   list: {
     width: 250,
@@ -36,18 +37,64 @@ const styles = {
     paddingLeft: '30px'
   },
 };
+
+const Hi1 = () => {
+  return <div> <label>hi1</label> </div>
+}
+
+const Hi2 = () => {
+    return <div> <label>hi2</label> </div>
+}
+
+
+
+
+
+
+
+const OnItemClick = (event, key) => {
+  setDocument(documentDict[key]);
+}
+
+
+var myDocument = null;
+
+
+
 class SideBar extends Component {
   constructor( props ) {
     super( props )
-    this.state = {}
+    this.state = {
+      document: <Hi1/>
+    }
   }
 // this method sets the current state of a menu item i.e whether it is in expanded or collapsed or a collapsed state
 handleClick( item ) {
+    console.log(item)
     this.setState( prevState => (
       { [ item ]: !prevState[ item ] }
     ) )
   }
-// if the menu item doesn't have any child, this method simply returns a clickable menu item that redirects to any location and if there is no child this method uses recursion to go until the last level of children and then returns the item by the first condition.
+
+handleItemClick(key){
+  console.log(key)
+  this.setState({
+    document: this.state.document = documentDict[key]
+  })
+}
+
+documentDict = {
+  item1: <Hi1/>,
+  item2: <Hi2/>
+};
+
+
+// if the menu item doesn't have any child, 
+// this method simply returns a clickable menu item 
+// that redirects to any location and if there is no child 
+// this method uses recursion to go until the last level of children 
+// and then returns the item by the first condition.
+
 handler( children ) {
     const { classes } = this.props
     const { state } = this
@@ -58,6 +105,7 @@ return children.map( ( subOption ) => {
             <ListItem
               button
               key={ subOption.name }>
+              <Button onClick={()=>this.handleItemClick(subOption.url)}>{subOption.name}</Button>
               <Link
                 to={ subOption.url }
                 className={ classes.links }>
@@ -97,31 +145,42 @@ return children.map( ( subOption ) => {
 render() {
     const { classes, drawerOpen, menuOptions } = this.props
     return (
-      <div className={classes.list}>
-        <Drawer
-          variant="persistent"
-          anchor="left"
-          open
-          classes={ { paper: classes.list } }>
-          <div>
-            <List>
-              <ListItem
-                key="menuHeading"
-                divider
-                disableGutters
-              >
-                <ListItemText
-                className={ classes.menuHeader }
-                  inset
-                  primary="Nested Menu"
-                />
-              </ListItem>
-            { this.handler( sideBarItems.data ) }
-            </List>
-          </div>
-        </Drawer>
+      <div>
+        <Grid container spacing={5}>
+          <Grid item xs={4}>
+            <div className={classes.list}>
+              <Drawer
+                variant="persistent"
+                anchor="left"
+                open
+                classes={ { paper: classes.list } }>
+                <div>
+                  <List>
+                    <ListItem
+                      key="menuHeading"
+                      divider
+                      disableGutters
+                    >
+                      <ListItemText
+                      className={ classes.menuHeader }
+                        inset
+                        primary="Nested Menu"
+                      />
+                    </ListItem>
+                  { this.handler( sideBarItems.data ) }
+                  </List>
+                </div>
+              </Drawer>
+            </div>`
+          </Grid>
+          <Grid item xs={8}>
+            {myDocument}
+          </Grid>
+        </Grid>
       </div>
     )
   }
 }
 export default withStyles(styles)(SideBar)
+
+*/

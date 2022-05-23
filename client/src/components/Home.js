@@ -132,10 +132,6 @@ export default function Home() {
 
   return (
     <div style={{/*backgroundColor: '#1e1e1e',*/marginLeft:16, marginRight:16, marginTop:16,marginBottom:16}}>
-      <Link to="/baseline">
-          <Button variant="outlined" onClick={() => {
-          }}>Experiment/Control</Button>
-      </Link>
 
 
       <Grid container spacing={5}>

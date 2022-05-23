@@ -2,11 +2,11 @@
   "data" : [
     {
         "name": "Tools",
-        "url": "/hi2"
+        "url": "item1"
     },
     {
       "name": "People",
-      "url": "/item2"
+      "url": "item2"
     },
     {
       "name": "Venues",
@@ -14,10 +14,6 @@
         {
           "name": "Child31",
           "url": "/hi"
-        },
-        {
-          "name": "Child32",
-          "url": "/child32"
         },
         {
           "name": "Child32",
