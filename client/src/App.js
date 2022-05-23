@@ -15,7 +15,7 @@ import Grid from "@material-ui/core/Grid";
 import Select from "react-select";
 import map from "lodash/map";
 import range from "lodash/range";
-import {Link, Route, Routes} from "react-router-dom";
+import {Link, Route, Routes, BrowserRouter} from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import Home from "./components/Home";
 import Create from "./components/create";
@@ -42,7 +42,6 @@ import { Paper } from "@material-ui/core";
 export default function App() {
 
   return (
-
     <div style={{/*backgroundColor: '#1e1e1e',*/marginLeft:16, marginRight:16, marginTop:16,marginBottom:16}}>
       <Routes>
         <Route exact path="/" element={<Home/>}/>
@@ -50,10 +49,9 @@ export default function App() {
         <Route exact path="/learning_strategy" element={<ResponseWorkspace/>}/>
         <Route path="/edit/:id" element={<Edit />} />
         <Route path="/create" element={<Create />} />
-        
+
       </Routes>
     </div>
-
   );
 }
 
@@ -64,7 +62,7 @@ export default function App() {
 const Container = () => {
   return (
     <div style={{ height: "300px", width: "514px", margin: "16px" }}>
-      
+
       <ResponseWorkspace/>
     </div>
   );

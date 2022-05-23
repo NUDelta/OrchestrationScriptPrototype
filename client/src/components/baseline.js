@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import {Link, NavLink} from "react-router-dom";
+
+import {Link, NavLink, Routes, Route, BrowserRouter} from "react-router-dom";
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import Button from '@material-ui/core/Button';
 import Grid from "@material-ui/core/Grid";
@@ -12,13 +13,14 @@ import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import SearchBar from "./SearchBar";
+import SideBar from './sideBar'
 
 //import MaterialTable from "material-table";
 
 function createData(name, input, output, type) {
     return { name, input, output, type };
    }
-     
+
 const originalRows = [
 createData("Sprint_log.working_on_tech", "none", "boolean", "tools"),
 createData("Sprint_log.working_on_user_testing", "none", "boolean", "tools"),
@@ -66,13 +68,81 @@ createData("have_you_slacked_deliverables_to()", "string: channel/thread name", 
 createData("send_question_and_ask()", "string: name, string: question, string: time, string: keyword", "boolean", "people"),
 ];
 
+const initialStrategy = `{ \n\n//define a support strategy \n\nsend_slack_message(string: name, string: message, time: when to send)\n\n\n\n}`
+
+const initialSituation = `if (           \n\n//specify a learning opportunity\n\n\n)`
+
+const Strategy = () => {
+  return <div>
+  <Paper sx={{ width: '100%', overflow: 'hidden'}}>
+      <CodeEditor
+      value={initialStrategy}
+      language="js"
+      placeholder="Please enter JS code."
+      padding={15}
+      style={{
+          fontSize: 20,
+          backgroundColor: "#f5f5f5",
+          fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
+      }}
+      />
+      <br/>
+
+  </Paper>
+  </div>;
+};
+
+const Hi = () => {
+  return <div> <label>asd</label> </div>
+}
+
+const SituationStrategyPair = () => {
+  const [strategyList, setStrategyList] = useState([]);
+  const onStrategyButtonClick = event => {
+    setStrategyList(strategyList.concat(<Strategy key={strategyList.length} />));
+  };
+  return <div>
+  <Paper sx={{ width: '100%', overflow: 'hidden'}}>
+      <CodeEditor
+      value={initialSituation}
+      language="js"
+      placeholder="Please enter JS code."
+      padding={15}
+      style={{
+          fontSize: 20,
+          backgroundColor: "#f5f5f5",
+          fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
+      }}
+      />
+      <br/>
+
+  </Paper>
+  <br/>
+  {strategyList}
+  <Button variant="outlined" onClick={onStrategyButtonClick}>Add strategy</Button>
+   </div>;
+};
 
 export default function Baseline() {
 
 
-    const [code, setCode] = React.useState(
-        `if (           \n\n//specify learning opportunity\n\n\n){ \n\n//specify support strategies \n\nsend_slack_message(string: name, string: message, time: when to send)\n\n\n\n}`
+    const [situation, setSituation] = React.useState(
+        `if (           \n\n//specify a learning opportunity\n\n\n)`
     );
+    const [strategy, setStrategy] = React.useState(
+        `{ \n\n//define a support strategy \n\nsend_slack_message(string: name, string: message, time: when to send)\n\n\n\n}`
+    );
+
+
+
+
+    const [pairList, setPairList] = useState([]);
+
+
+
+    const onPairButtonClick = event => {
+      setPairList(pairList.concat(<SituationStrategyPair key={pairList.length} />));
+    }
 
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -101,16 +171,19 @@ export default function Baseline() {
         setSearched("");
         requestSearch(searched);
     };
-    
+
     return (
+    
     <div style={{/*backgroundColor: '#1e1e1e',*/marginLeft:16, marginRight:16, marginTop:16,marginBottom:16}}>
         <Link to="/">
             <Button variant="outlined" onClick={() => {
-            }}>Experiment/Control</Button>
+            }}>Experiment/Control</Button>\
         </Link>
         <Grid container spacing={5}>
-
-            <Grid item xs={6}>
+            <Grid item xs={2}>
+              <SideBar/>
+            </Grid>
+            <Grid item xs={4}>
             <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
                 <SearchBar
                     value={searched}
@@ -118,7 +191,11 @@ export default function Baseline() {
                     onCancelSearch={() => cancelSearch()}
                 />
                 <br/>
-                <TableContainer sx={{ maxHeight: 440 }}>
+                <Link to='/hi'>Circle</Link>
+                <Routes>
+                  <Route path='/hi' component={Hi} />
+                </Routes>
+                {/*<TableContainer sx={{ maxHeight: 440 }}>
                     <Table aria-label="simple table" stickyHeader>
                     <TableHead>
                         <TableRow>
@@ -129,7 +206,7 @@ export default function Baseline() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {rows 
+                        {rows
                         .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                         .map((row) => (
                         <TableRow key={row.number}>
@@ -144,8 +221,8 @@ export default function Baseline() {
                     </TableBody>
                     </Table>
                 </TableContainer>
-                
-                <TablePagination
+
+                /*<TablePagination
                     rowsPerPageOptions={[10, 25, 100]}
                     component="div"
                     count={rows.length}
@@ -153,11 +230,12 @@ export default function Baseline() {
                     page={page}
                     onPageChange={handleChangePage}
                     onRowsPerPageChange={handleChangeRowsPerPage}
-                />
-                        
+                />*/}
+
             </Paper>
             <br/>
-            <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
+
+            {/*<Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
             <b>Time object: specify when you want to check a resource or execute an action</b>
             <br />
             <ul>
@@ -166,27 +244,21 @@ export default function Baseline() {
             </ul>
             <p style={{fontStyle: "italic", fontSize: "12px"}}>class Time: <br/>&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, modifier, event):<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.modifier = modifier<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.event = event</p>
             <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: Time(modifier = "at", event = "office hour")</p>
-            </Paper>
+            </Paper>*/}
+
+
             </Grid>
-        
+
             <Grid item xs={6}>
-            <Paper sx={{ width: '100%', overflow: 'hidden'}}>
-                <CodeEditor
-                value={code}
-                language="js"
-                placeholder="Please enter JS code."
-                onChange={(evn) => setCode(evn.target.value)}
-                padding={15}
-                style={{
-                    fontSize: 20,
-                    backgroundColor: "#f5f5f5",
-                    fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
-                }}
-                />
-            </Paper>
+            {pairList}
+
+            <Button variant="outlined" onClick={onPairButtonClick}>Add Situation Strategy Pair</Button>
+
+
+
             </Grid>
         </Grid>
-       
+
     </div>
     );
   }
