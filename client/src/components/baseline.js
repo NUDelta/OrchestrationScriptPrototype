@@ -13,7 +13,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import SearchBar from "./SearchBar";
-import SideBar from './sideBar'
+import SideBar from './sideBar';
+import APIList from "./apiList";
+
 
 //import MaterialTable from "material-table";
 
@@ -92,14 +94,6 @@ const Strategy = () => {
   </div>;
 };
 
-const Hi1 = () => {
-  return <div> <label>hi1</label> </div>
-}
-
-const Hi2 = () => {
-    return <div> <label>hi2</label> </div>
-}
-
 const SituationStrategyPair = () => {
   const [strategyList, setStrategyList] = useState([]);
   const onStrategyButtonClick = event => {
@@ -126,6 +120,8 @@ const SituationStrategyPair = () => {
   <Button variant="outlined" onClick={onStrategyButtonClick}>Add strategy</Button>
    </div>;
 };
+
+
 
 export default function Baseline() {
 
@@ -186,16 +182,20 @@ export default function Baseline() {
         requestSearch(searched);
     };
 
+
     return (
     
     <div style={{/*backgroundColor: '#1e1e1e',*/marginLeft:16, marginRight:16, marginTop:16,marginBottom:16}}>
         <Grid container spacing={5}>
+            
 
             <Grid item xs={6}>
+                <APIList/>
+            {/*
             <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
                 
                 
-
+                
                 <SearchBar
                     value={searched}
                     onChange={(searchVal) => requestSearch(searchVal)}
@@ -255,7 +255,7 @@ export default function Baseline() {
             <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: Time(modifier = "at", event = "office hour")</p>
             </Paper>
 
-
+            */}
             </Grid>
 
             <Grid item xs={6}>
