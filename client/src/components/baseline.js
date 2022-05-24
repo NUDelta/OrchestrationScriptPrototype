@@ -88,18 +88,17 @@ const Strategy = () => {
           fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
       }}
       />
-      <br/>
-
   </Paper>
   </div>;
 };
 
 const SituationStrategyPair = () => {
-  const [strategyList, setStrategyList] = useState([]);
+  const [strategyList, setStrategyList] = useState([<Strategy key={0}/>]);
   const onStrategyButtonClick = event => {
     setStrategyList(strategyList.concat(<Strategy key={strategyList.length} />));
   };
   return <div>
+  <Paper sx={{ width: '100%', overflow: 'hidden', padding: 16}}>
   <Paper sx={{ width: '100%', overflow: 'hidden'}}>
       <CodeEditor
       value={initialSituation}
@@ -112,12 +111,11 @@ const SituationStrategyPair = () => {
           fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
       }}
       />
-      <br/>
-
   </Paper>
   <br/>
   {strategyList}
   <Button variant="outlined" onClick={onStrategyButtonClick}>Add strategy</Button>
+  </Paper>
    </div>;
 };
 
@@ -146,7 +144,7 @@ export default function Baseline() {
     */
 
 
-    const [pairList, setPairList] = useState([]);
+    const [pairList, setPairList] = useState([<SituationStrategyPair key={0} />]);
 
 
 
@@ -260,7 +258,7 @@ export default function Baseline() {
 
             <Grid item xs={6}>
             {pairList}
-
+            <br/>
             <Button variant="outlined" onClick={onPairButtonClick}>Add Situation Strategy Pair</Button>
 
 
