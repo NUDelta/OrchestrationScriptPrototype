@@ -29,36 +29,36 @@ function CustomizeTime (){
 function Communication (){
     return <div> 
         <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
-            <b>Title</b>
+            <b>have_you_slacked()</b>
             <br />
             <ul>
-                <li>Description: </li>
-                <li>Input: </li>
-                <li>Output: </li>
+                <li>Description: this function returns wheher your mentee has sent a slack message to a person</li>
+                <li>Input: string(name)	</li>
+                <li>Output: boolean</li>
             </ul>
-            <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: </p>
+            <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: have_you_slacked("Haoqi")</p>
         </Paper>
         <br/>
         <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
-            <b>Title</b>
+            <b>have_you_slacked_deliverables_to()</b>
             <br />
             <ul>
-                <li>Description: </li>
-                <li>Input: </li>
-                <li>Output: </li>
+                <li>Description: this function returns whether your mentee has sent deliverable to a given Slack channel or thread</li>
+                <li>Input: string(channel/thread name)</li>
+                <li>Output: boolean</li>
             </ul>
-            <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: </p>
+            <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: have_you_slacked_deliverables_to("sig-not")</p>
         </Paper>
         <br/>
         <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
-            <b>Title</b>
+            <b>send_question_and_ask()</b>
             <br />
             <ul>
-                <li>Description: </li>
-                <li>Input: </li>
+                <li>Description: this function sends a question to a person at a specified time and return whether their answer contain one or more keywords</li>
+                <li>Input: string(name), string(question), Time(time), string(one or more keywords)</li>
                 <li>Output: </li>
             </ul>
-            <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: </p>
+            <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: send_question_and_ask("Jason", "What deliverables have you planned for this sprint?", Time("One hour before", "Office Hour"), "takeaways")</p>
         </Paper>
     </div>
 }
