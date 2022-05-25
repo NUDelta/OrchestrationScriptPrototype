@@ -202,6 +202,18 @@ function SprintLog (){
         createData("Sprint_log.working_on_tech", "none", "boolean", "tools"),
         createData("Sprint_log.working_on_user_testing", "none", "boolean", "tools"),
         createData("Sprint_log.working_on_argumentation", "none", "boolean", "tools"),
+        createData("Sprint_log.zero_point_planned", "none", "boolean", "tools"),
+        createData("Sprint_log.one_forth_points_planned", "none", "boolean", "tools"),
+        createData("Sprint_log.half_points_planned", "none", "boolean", "tools"),
+        createData("Sprint_log.three_forth_points_planned", "none", "boolean", "tools"),
+        createData("Sprint_log.all_points_planned", "none", "boolean", "tools"),
+        createData("Sprint_log.points_planned_design", "none", "int", "tools"),
+        createData("Sprint_log.points_planned_tech", "none", "int", "tools"),
+        createData("Sprint_log.points_planned_research", "none", "int", "tools"),
+        createData("Sprint_log.one_forth_points_spent", "none", "boolean", "tools"),
+        createData("Sprint_log.half_points_spent", "none", "boolean", "tools"),
+        createData("Sprint_log.three_forth_points_spent", "none", "boolean", "tools"),
+        createData("Sprint_log.total_points_spent", "none", "int", "tools"),
         createData("Sprint_log.one_fourth_through_points", "none", "boolean", "tools"),
         createData("Sprint_log.halfway_through_points", "none", "boolean", "tools"),
         createData("Sprint_log.three_fourths_through_points", "none", "boolean", "tools"),
@@ -218,6 +230,8 @@ function SprintLog (){
         createData("Sprint_log.stories_or_tasks.contains()", "string", "boolean", "tools"),
         createData("Sprint_log.not_updated", "none", "boolean", "tools"),
         createData("Sprint_log.updated", "none", "boolean", "tools"),
+        createData("Sprint_log.number_of_tasks", "none", "int", "tools"),
+        createData("Sprint_log.number_of_stories", "none", "int", "tools"),
     ];
 
     const [page, setPage] = React.useState(0);
@@ -301,6 +315,7 @@ function Prc (){
         createData("PRC_has_new.system_model", "none", "boolean", "tools"),
         createData("PRC_has_new.study_design", "none", "boolean", "tools"),
         createData("PRC_has_new.testing_takeaways", "none", "boolean", "tools"),
+        createData("End_of_quarter_plan", "none", "String", "tools"),
     ];
 
     const [page, setPage] = React.useState(0);

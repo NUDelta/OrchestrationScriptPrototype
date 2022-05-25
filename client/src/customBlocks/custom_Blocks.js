@@ -25,6 +25,26 @@ Blockly.Blocks['if'] = {
     }
 };
 
+Blockly.Blocks['execute_all'] = {
+    init: function () {
+        this.appendValueInput("name")
+            .setCheck(null)
+            .appendField("Execute all");
+        this.appendValueInput("set")
+            .setCheck(null);
+        this.setInputsInline(true);
+        this.setColour(20);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.Python['execute_all'] = function (block) {
+    return "...";
+};
+
+
+
 Blockly.Blocks['then'] = {
     init: function () {
         this.appendDummyInput()
@@ -44,7 +64,7 @@ Blockly.Blocks['then'] = {
         this.appendDummyInput()
             .appendField("Then send a Slack message to");
         this.appendDummyInput()
-            .appendField(new Blockly.FieldTextInput("type mentor or mentee name"), "NAME");
+            .appendField(new Blockly.FieldTextInput("type name of recipient"), "NAME");
         this.appendDummyInput()
             .appendField("saying");
         this.appendDummyInput()
@@ -83,6 +103,13 @@ Blockly.Blocks['then'] = {
               ["Friday", "Friday"],
               ["Saturday", "Saturday"]
               ]), "NAME5");
+        this.appendDummyInput()
+            .appendField("Execution mode: ")
+            .appendField(new Blockly.FieldDropdown([
+            ["Always execute", "Always execute"],
+            ["Ask me before this triggers", "Ask me before this triggers"],
+            ["Only executes if this is the first to be triggered", "Only executes if this is the first to be triggered"]
+            ]), "NAME6");
             this.appendDummyInput("reflect")
                 .appendField("Please go to step 6 to reflect on this suggestion.");
             /*
@@ -215,10 +242,11 @@ Blockly.Python['concept_variable'] = function (block) { return ""; };
 Blockly.Blocks['and'] = {
     init: function () {
         this.appendValueInput("left")
-        this.appendValueInput("right")
+        this.appendDummyInput()
             .appendField("AND");
+        this.appendValueInput("right")
             //.appendField("(output: boolean)");
-        this.setInputsInline(true);
+        this.setInputsInline(false);
         this.setOutput(true, null);
         this.setColour(210);
         this.setTooltip("");
@@ -231,12 +259,13 @@ Blockly.Python['and'] = function (block) { return ""; };
 Blockly.Blocks['or'] = {
     init: function () {
         this.appendValueInput("left")
-            .setCheck(null);
+            .setCheck(null)
+        this.appendDummyInput()
+            .appendField("OR");
         this.appendValueInput("right")
             .setCheck(null)
-            .appendField("OR");
             //.appendField("(output: boolean)");
-        this.setInputsInline(true);
+        this.setInputsInline(false);
         this.setOutput(true, null);
         this.setColour(210);
         this.setTooltip("");
@@ -250,10 +279,11 @@ Blockly.Blocks['addition'] = {
     init: function () {
         this.appendValueInput("left")
             .setCheck(null);
+        this.appendDummyInput()
+            .appendField("+");
         this.appendValueInput("right")
             .setCheck(null)
-            .appendField("+");
-        this.setInputsInline(true);
+        this.setInputsInline(false);
         this.setOutput(true, null);
         this.setColour(230);
         this.setTooltip("");
@@ -267,10 +297,12 @@ Blockly.Blocks['subtraction'] = {
     init: function () {
         this.appendValueInput("left")
             .setCheck(null);
+        this.appendDummyInput()
+            .appendField("-");
         this.appendValueInput("right")
             .setCheck(null)
-            .appendField("-");
-        this.setInputsInline(true);
+            
+        this.setInputsInline(false);
         this.setOutput(true, null);
         this.setColour(230);
         this.setTooltip("");
@@ -284,10 +316,11 @@ Blockly.Blocks['greater_than'] = {
     init: function() {
       this.appendValueInput("NAME")
           .setCheck(null);
+      this.appendDummyInput()
+          .appendField(">");
       this.appendValueInput("NAME")
           .setCheck(null)
-          .appendField(">");
-      this.setInputsInline(true);
+      this.setInputsInline(false);
       this.setOutput(true, null);
       this.setColour(230);
    this.setTooltip("");
@@ -301,10 +334,11 @@ Blockly.Blocks['greater_than'] = {
     init: function() {
       this.appendValueInput("NAME")
           .setCheck(null);
+      this.appendDummyInput()
+          .appendField("<");
       this.appendValueInput("NAME")
           .setCheck(null)
-          .appendField("<");
-      this.setInputsInline(true);
+      this.setInputsInline(false);
       this.setOutput(true, null);
       this.setColour(230);
    this.setTooltip("");

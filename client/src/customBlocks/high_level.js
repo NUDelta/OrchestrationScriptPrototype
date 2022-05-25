@@ -178,7 +178,9 @@ Blockly.Blocks['high_deliverables'] = {
 Blockly.Blocks['end_of_quarter_goal'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("End of quarter goal");
+        .appendField("End of quarter goal contains");
+      this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("type keyword"), "NAME1");
     this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("#0066cc");

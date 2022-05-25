@@ -47,7 +47,9 @@ const responseToolbox = [
    {
       name: "Response",
       colour: "#998362",
-      blocks: [{type: "then"}],
+      blocks: [
+        {type: "then"}, 
+        {type: "execute_all"},],
    },
     /*
     {
