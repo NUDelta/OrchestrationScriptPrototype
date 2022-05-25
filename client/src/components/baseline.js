@@ -70,9 +70,12 @@ createData("have_you_slacked_deliverables_to()", "string: channel/thread name", 
 createData("send_question_and_ask()", "string: name, string: question, string: time, string: keyword", "boolean", "people"),
 ];
 
-const initialStrategy = `{ \n\n//define a support strategy \n\nsend_slack_message(string: name, string: message, time: when to send)\n\n\n\n}`
+const initialStrategy = 'function supportStrategy() {\n// define a support strategy that runs when the evaluated situationDetector is true\nconst strategyName = "";\nconst message = "";\nconst time = Time(modifier: "", event: "");\n\n// deliver the support strategy\nsend_slack_message(strategyName, message, time);\n}'
 
-const initialSituation = `if (           \n\n//specify a learning opportunity\n\n\n)`
+const initialSituation = 'function situationDetector() {\n// specify a boolean condition for the situation  you want to detect using the API on the left\n  return true;\n}'
+
+
+
 
 const Strategy = () => {
   return <div>
@@ -83,7 +86,7 @@ const Strategy = () => {
       placeholder="Please enter JS code."
       padding={15}
       style={{
-          fontSize: 20,
+          fontSize: 18,
           backgroundColor: "#f5f5f5",
           fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
       }}
@@ -106,7 +109,7 @@ const SituationStrategyPair = () => {
       placeholder="Please enter JS code."
       padding={15}
       style={{
-          fontSize: 20,
+          fontSize: 18,
           backgroundColor: "#f5f5f5",
           fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace',
       }}
