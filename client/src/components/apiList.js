@@ -82,9 +82,6 @@ const useStyles = makeStyles((theme) => ({
                     <Collapse in={openPeople} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
                         <ListItem button className={classes.nested} onClick={()=>{handleUpdate("communication")}}>
-                            <ListItemIcon>
-                            <StarBorder />
-                            </ListItemIcon>
                             <ListItemText primary="Communication" />
                         </ListItem>
                         </List>
@@ -101,33 +98,23 @@ const useStyles = makeStyles((theme) => ({
                     <Collapse in={openVenues} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
                         <ListItem button className={classes.nested} onClick={()=>{handleUpdate("studio")}}>
-                            <ListItemIcon>
-                            <StarBorder />
-                            </ListItemIcon>
+
                             <ListItemText primary="Studio" />
                         </ListItem>
                         <ListItem button className={classes.nested} onClick={()=>{handleUpdate("sig")}}>
-                            <ListItemIcon>
-                            <StarBorder />
-                            </ListItemIcon>
+
                             <ListItemText primary="SIG" />
                         </ListItem>
                         <ListItem button className={classes.nested} onClick={()=>{handleUpdate("oh")}}>
-                            <ListItemIcon>
-                            <StarBorder />
-                            </ListItemIcon>
+
                             <ListItemText primary="Office Hour" />
                         </ListItem>
                         <ListItem button className={classes.nested} onClick={()=>{handleUpdate("other_time")}}>
-                            <ListItemIcon>
-                            <StarBorder />
-                            </ListItemIcon>
+
                             <ListItemText primary="Other points in time" />
                         </ListItem>
                         <ListItem button className={classes.nested} onClick={()=>{handleUpdate("time")}}>
-                            <ListItemIcon>
-                            <StarBorder />
-                            </ListItemIcon>
+
                             <ListItemText primary="Customized Time" />
                         </ListItem>
                         </List>
@@ -144,33 +131,23 @@ const useStyles = makeStyles((theme) => ({
                     <Collapse in={openTools} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
                         <ListItem button className={classes.nested} onClick={()=>{handleUpdate("sprint_log")}}>
-                            <ListItemIcon>
-                            <StarBorder />
-                            </ListItemIcon>
+
                             <ListItemText primary="Sprint Log" />
                         </ListItem>
                         <ListItem button className={classes.nested} onClick={()=>{handleUpdate("prc")}}>
-                            <ListItemIcon>
-                            <StarBorder />
-                            </ListItemIcon>
+
                             <ListItemText primary="PRC" />
                         </ListItem>
                         <ListItem button className={classes.nested} onClick={()=>{handleUpdate("rrc")}}>
-                            <ListItemIcon>
-                            <StarBorder />
-                            </ListItemIcon>
+
                             <ListItemText primary="RRC" />
                         </ListItem>
                         <ListItem button className={classes.nested} onClick={()=>{handleUpdate("github")}}>
-                            <ListItemIcon>
-                            <StarBorder />
-                            </ListItemIcon>
+
                             <ListItemText primary="Github" />
                         </ListItem>
                         <ListItem button className={classes.nested} onClick={()=>{handleUpdate("studio_tools")}}>
-                            <ListItemIcon>
-                            <StarBorder />
-                            </ListItemIcon>
+
                             <ListItemText primary="Studio Tools" />
                         </ListItem>
                         </List>
