@@ -126,7 +126,7 @@ const combinedTargetOptions = [
 ]
 
 export default function Home() {
-  
+
   console.log(combinedTargetOptions)
 
 
@@ -136,10 +136,10 @@ export default function Home() {
 
       <Grid container spacing={5}>
 
-        
+
         <Grid item xs={3}>
 
-          
+
 
           <Scaffolding />
 
@@ -163,7 +163,11 @@ export default function Home() {
 
           <b>Step 5: compose your situation detector and working/learning strategy</b>
           <br />
-          <label style={{fontSize: "15px", marginBottom: 16}}>Using your answer from Step 3 as a guide, create one or more ineffective strategy / slack message pairs (connect them with IDs) with the if block in the Logic category to represent the condition you are detecting and the suggested one or multiple actions you wish to send.</label>
+          <label style={{fontSize: "15px", marginBottom: 16}}>
+          Using your answer from Step 3 as a guide, create one or more situation / slack message pairs
+          (connect one situation to one or more slack message blocks with IDs) to represent the condition you are
+          detecting and the suggested one or multiple slack messages you wish to send.
+</label>
           <DetectorWorkspace />
 
           <b>Step 6: reflect and expand your construction</b>
@@ -180,9 +184,9 @@ export default function Home() {
               <Select options = {options_tools} style={{fontSize: "15px", marginTop: 10}} placeholder = "Tools" isMulti/>
             </Grid>
           </Grid>
-              
+
           <textarea style={{ height: "15vh", width: "100%", fontSize: "15px", marginBottom: 16, marginTop: 10, resize: "vertical" }}></textarea>
-          <label style={{fontSize: "15px"}}>When you are done, return to step 5 to add any new support strategies you came up with. </label>
+          <label style={{fontSize: "16px"}}><b>Step 7: When you are done, return to step 5 to add any new support strategies you came up with </b> </label>
 
           {/*
           <label style={{fontSize: "15px", marginBottom: 16}}>Step6: Response<br/>Using your answer from Step3 as a guide, express the response you would like to trigger to support the student across the venues/tools/processes in the DTR network if the detector expression is evaluated to true.</label>
@@ -196,9 +200,9 @@ export default function Home() {
             ))}
           </div>
             */}
-          
+
           {/*
-        
+
           <label style={{fontSize: "15px", marginBottom: 16}}>Step6: Response<br/>Using your answer from Step3 as a guide, express one or more responses you would like to trigger to support the student across the venues/tools/processes in the DTR network if the detector expression is evaluated to true.</label>
           <div/>
           <Link to="/learning_strategy" target="_blank">
@@ -206,14 +210,14 @@ export default function Home() {
 
               }}>Add a new learning strategy</Button>
           </Link>
-          
+
 
           */}
 
         </Grid>
 
       </Grid>
-      
+
       {/*
       <Link to="/create">
             <Button variant="contained" onClick={() => {
@@ -225,4 +229,3 @@ export default function Home() {
     </div>
   );
 }
-

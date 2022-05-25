@@ -28,9 +28,19 @@ Blockly.Blocks['sprint_log3'] = {
           ["working on tech", "working on tech"],
           ["working on user testing", "working on user testing"],
           ["working on argumentation", "working on argumentation"],
-          ["1/4 through points", "1/4 through points"],
-          ["halfway through points", "halfway through points"],
-          ["3/4 through points", "3/4 through points"],
+          ["0 points planned", "0 points planned"],
+          ["1/4 points planned", "1/4 points planned"],
+          ["1/2 points planned", "1/2 points planned"],
+          ["3/4 points planned", "3/4 points planned"],
+          ["all points planned", "all points planned"],
+          ["total points planned", "total points planned"],
+          ["points planned design", "points planned design"],
+          ["points planned tech", "points planned tech"],
+          ["points planned research", "points planned research"],
+          ["1/4 through points spent", "1/4 through points spent"],
+          ["halfway through points spent", "halfway through points spent"],
+          ["3/4 through points spent", "3/4 through points spent"],
+          ["total points spent", "total points spent"],
           ["hours spent on tech", "hours spent on tech"],
           ["hours spent on design", "hours spent on design"],
           ["hours spent on research", "hours spent on research"],
@@ -40,7 +50,9 @@ Blockly.Blocks['sprint_log3'] = {
           ["at least one story is incomplete", "at least one story is incomplete"],
           ["at least one story is complete", "at least one story is complete"],
           ["all stories completed", "all stories completed"],
-          ["has not finished any tasks", "has not finished any tasks"]]), "NAME");
+          ["has not finished any tasks", "has not finished any tasks"],
+          ["number of tasks", "number of tasks"],
+          ["number of stories", "number of stories"]]), "NAME");
         this.setInputsInline(true);
     this.setOutput(true, null);
     this.setColour("#0066cc");
@@ -162,6 +174,19 @@ Blockly.Blocks['high_deliverables'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['end_of_quarter_goal'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("End of quarter goal");
+    this.setInputsInline(true);
+    this.setOutput(true, null);
+    this.setColour("#0066cc");
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks['high_canvas_update'] = {
   init: function() {
     this.appendDummyInput()
@@ -200,9 +225,9 @@ Blockly.Blocks['high_new_argument'] = {
     this.appendDummyInput()
     .appendField("PRC: Has new");
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["gap in canvas which is risky", "gap in canvas which is risky"], 
-        ["focus for sprint", "focus for sprint"],["problem statement", "problem statement"], ["design argument","design argument"], 
-        ["interface model","interface model"], ["system model","system model"], 
+        .appendField(new Blockly.FieldDropdown([["gap in canvas which is risky", "gap in canvas which is risky"],
+        ["focus for sprint", "focus for sprint"],["problem statement", "problem statement"], ["design argument","design argument"],
+        ["interface model","interface model"], ["system model","system model"],
          ["study design", "study design"], ["testing takeaways", "testing takeaways"]]), "argumentation");
     this.setInputsInline(true);
     this.setOutput(true, null);
@@ -221,7 +246,7 @@ Blockly.Blocks['high_new_argument_rrc'] = {
         ["class of problems", "class of problems"],
         ["existing approaches", "existing approaches"], ["research question", "research question"],
         ["conceptual contribution", "conceptual contribution"], ["technical contribution", "technical contribution"],
-        ["synthesis tree", "synthesis tree"], ["study design", "study design"], ["core takeaways", "core takeaways"], 
+        ["synthesis tree", "synthesis tree"], ["study design", "study design"], ["core takeaways", "core takeaways"],
         ["revised understanding of conceptual and technical approach", "revised understanding of conceptual and technical approach"],
       ["future work", "future work"]]), "argumentation");
     this.setInputsInline(true);
@@ -248,9 +273,9 @@ Blockly.Blocks['high_new_argument_rrc'] = {
 ["Beginning of Sprint", "Beginning of Sprint"],
             ["Middle of Sprint", "Middle of Sprint"],
             ["End of Sprint", "End of Sprint"],*/
-            
-            
-            
+
+
+
 
 Blockly.Blocks['before_next_sig'] = {
   init: function() {

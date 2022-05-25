@@ -104,6 +104,7 @@ const detectionToolbox = [
         {type: 'high_sprint_updated2'},
         //canvas
         {type: 'canvas_subcategory'},
+        {type: 'end_of_quarter_goal'},
         {type: 'high_canvas_update'},
         {type: 'high_canvas_update2'},
         {type: 'high_new_argument'},

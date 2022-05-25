@@ -44,7 +44,7 @@ Blockly.Blocks['then'] = {
         this.appendDummyInput()
             .appendField("Then send a Slack message to");
         this.appendDummyInput()
-            .appendField(new Blockly.FieldTextInput("type student name"), "NAME");
+            .appendField(new Blockly.FieldTextInput("type mentor or mentee name"), "NAME");
         this.appendDummyInput()
             .appendField("saying");
         this.appendDummyInput()
@@ -74,14 +74,14 @@ Blockly.Blocks['then'] = {
               ["End of Sprint", "End of Sprint"],
               ["SIG", "SIG"],
               ["Office Hour", "Office Hour"],
-              ["Studio", "Studio"], 
+              ["Studio", "Studio"],
               ["Sunday", "Sunday"],
               ["Monday", "Monday"],
               ["Tuesday", "Tuesday"],
               ["Wednesday", "Wednesday"],
               ["Thursday", "Thursday"],
               ["Friday", "Friday"],
-              ["Saturday", "Saturday"]    
+              ["Saturday", "Saturday"]
               ]), "NAME5");
             this.appendDummyInput("reflect")
                 .appendField("Please go to step 6 to reflect on this suggestion.");
