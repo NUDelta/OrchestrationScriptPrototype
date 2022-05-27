@@ -8,12 +8,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
 import PeopleIcon from '@material-ui/icons/People';
 import ForumIcon from '@material-ui/icons/Forum';
 import BuildIcon from '@material-ui/icons/Build';
@@ -59,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     const handleUpdate = (key) => {setRightPanel(dict[key]);};
 
     return (
-        <div style={{/*backgroundColor: '#1e1e1e',*/marginLeft:16, marginRight:16, marginTop:16,marginBottom:16}}>
+        <div style={{marginLeft:16, marginRight:16, marginTop:16,marginBottom:16}}>
             <Grid container spacing={5}>
                 <Grid item xs={4}>
                 <List

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Grid from "@material-ui/core/Grid";
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -29,36 +28,38 @@ function CustomizeTime (){
 function Communication (){
     return <div> 
         <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
-            <b>have_you_slacked()</b>
-            <br />
-            <ul>
-                <li>Description: this function returns wheher your mentee has sent a slack message to a person</li>
-                <li>Input: string(name)	</li>
-                <li>Output: boolean</li>
-            </ul>
-            <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: have_you_slacked("Haoqi")</p>
-        </Paper>
-        <br/>
-        <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
-            <b>have_you_slacked_deliverables_to()</b>
-            <br />
-            <ul>
-                <li>Description: this function returns whether your mentee has sent deliverable to a given Slack channel or thread</li>
-                <li>Input: string(channel/thread name)</li>
-                <li>Output: boolean</li>
-            </ul>
-            <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: have_you_slacked_deliverables_to("sig-not")</p>
-        </Paper>
-        <br/>
-        <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
-            <b>send_question_and_ask()</b>
-            <br />
-            <ul>
-                <li>Description: this function sends a question to a person at a specified time and return whether their answer contain one or more keywords</li>
-                <li>Input: string(name), string(question), Time(time), string(one or more keywords)</li>
-                <li>Output: </li>
-            </ul>
-            <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: send_question_and_ask("Jason", "What deliverables have you planned for this sprint?", Time("One hour before", "Office Hour"), "takeaways")</p>
+            <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
+                <b>have_you_slacked()</b>
+                <br />
+                <ul>
+                    <li>Description: this function returns wheher your mentee has sent a slack message to a person</li>
+                    <li>Input: string(name)	</li>
+                    <li>Output: boolean</li>
+                </ul>
+                <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: have_you_slacked("Haoqi")</p>
+            </Paper>
+            <br/>
+            <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
+                <b>have_you_slacked_deliverables_to()</b>
+                <br />
+                <ul>
+                    <li>Description: this function returns whether your mentee has sent deliverable to a given Slack channel or thread</li>
+                    <li>Input: string(channel/thread name)</li>
+                    <li>Output: boolean</li>
+                </ul>
+                <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: have_you_slacked_deliverables_to("sig-not")</p>
+            </Paper>
+            <br/>
+            <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
+                <b>send_question_and_ask()</b>
+                <br />
+                <ul>
+                    <li>Description: this function sends a question to a person at a specified time and return whether their answer contain one or more keywords</li>
+                    <li>Input: string(name), string(question), Time(time), string(one or more keywords)</li>
+                    <li>Output: </li>
+                </ul>
+                <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: send_question_and_ask("Jason", "What deliverables have you planned for this sprint?", Time("One hour before", "Office Hour"), "takeaways")</p>
+            </Paper>
         </Paper>
     </div>
 }
@@ -490,24 +491,27 @@ function Github (){
 function StudioTools (){
     return <div> 
         <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
-            <b>last_studio_pr_request_contained()</b>
-            <br />
-            <ul>
-                <li>Description: returns whether your mentee's last pair research request contains one or more keywords</li>
-                <li>Input: String</li>
-                <li>Output: boolean</li>
-            </ul>
-            <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: last_studio_pr_request_contained("javascript, react")</p>
-        </Paper>
-        <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
-            <b>last_studio_mysore_signup_contained()</b>
-            <br />
-            <ul>
-                <li>Description: returns whether your mentee's last LIP signup contains one or more keywords</li>
-                <li>Input: String</li>
-                <li>Output: boolean</li>
-            </ul>
-            <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: last_studio_mysore_signup_contained("interface")</p>
+            <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
+                <b>last_studio_pr_request_contained()</b>
+                <br />
+                <ul>
+                    <li>Description: returns whether your mentee's last pair research request contains one or more keywords</li>
+                    <li>Input: String</li>
+                    <li>Output: boolean</li>
+                </ul>
+                <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: last_studio_pr_request_contained("javascript, react")</p>
+            </Paper>
+            <br/>
+            <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
+                <b>last_studio_mysore_signup_contained()</b>
+                <br />
+                <ul>
+                    <li>Description: returns whether your mentee's last LIP signup contains one or more keywords</li>
+                    <li>Input: String</li>
+                    <li>Output: boolean</li>
+                </ul>
+                <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: last_studio_mysore_signup_contained("interface")</p>
+            </Paper>
         </Paper>
     </div>
 }

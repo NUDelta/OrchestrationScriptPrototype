@@ -1,85 +1,20 @@
 import React, { useState } from "react";
-
-import {Link, NavLink, Routes, Route, BrowserRouter} from "react-router-dom";
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import Button from '@material-ui/core/Button';
 import Grid from "@material-ui/core/Grid";
 import Paper from '@material-ui/core/Paper';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TablePagination from '@material-ui/core/TablePagination';
-import TableRow from '@material-ui/core/TableRow';
-import SearchBar from "./SearchBar";
-import SideBar from './sideBar';
 import APIList from "./apiList";
+import Collapse from '@material-ui/core/Collapse';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
 
-
-//import MaterialTable from "material-table";
-
-function createData(name, input, output, type) {
-    return { name, input, output, type };
-   }
-
-const originalRows = [
-createData("Sprint_log.working_on_tech", "none", "boolean", "tools"),
-createData("Sprint_log.working_on_user_testing", "none", "boolean", "tools"),
-createData("Sprint_log.working_on_argumentation", "none", "boolean", "tools"),
-createData("Sprint_log.one_fourth_through_points", "none", "boolean", "tools"),
-createData("Sprint_log.halfway_through_points", "none", "boolean", "tools"),
-createData("Sprint_log.three_fourths_through_points", "none", "boolean", "tools"),
-createData("Sprint_log.hours_spent_on_tech", "none", "int", "tools"),
-createData("Sprint_log.hours_spent_on_design", "none", "int", "tools"),
-createData("Sprint_log.hours_spent_on_research", "none", "int", "tools"),
-createData("Sprint_log.hours_spent_on_argumentation", "none", "int", "tools"),
-createData("Sprint_log.over_points_on_a_story", "none", "boolean", "tools"),
-createData("Sprint_log.at_least_one_task _is_complete", "none", "boolean", "tools"),
-createData("Sprint_log.at_least_one_story_is_incomplete", "none", "boolean", "tools"),
-createData("Sprint_log.at_least_one_story_is_complete", "none", "boolean", "tools"),
-createData("Sprint_log.all_stories_completed", "none", "boolean", "tools"),
-createData("Sprint_log.has_not_finished_any_tasks", "none", "boolean", "tools"),
-createData("Sprint_log.stories_or_tasks.contains()", "string", "boolean", "tools"),
-createData("Sprint_log.not_updated", "none", "boolean", "tools"),
-createData("Sprint_log.updated", "none", "boolean", "tools"),
-createData("Canvas.not_updated", "none", "boolean", "tools"),
-createData("Canvas.updated", "none", "boolean", "tools"),
-createData("PRC_has_new.gap_in_canvas_which_is_risky", "none", "boolean", "tools"),
-createData("PRC_has_new.focus_for_sprint", "none", "boolean", "tools"),
-createData("PRC_has_new.problem_statement", "none", "boolean", "tools"),
-createData("PRC_has_new.interface_model", "none", "boolean", "tools"),
-createData("PRC_has_new.system_model", "none", "boolean", "tools"),
-createData("PRC_has_new.study_design", "none", "boolean", "tools"),
-createData("PRC_has_new.testing_takeaways", "none", "boolean", "tools"),
-createData("RRC_has_new.research_audience", "none", "boolean", "tools"),
-createData("RRC_has_new.class_of_problems", "none", "boolean", "tools"),
-createData("RRC_has_new.existing_approaches", "none", "boolean", "tools"),
-createData("RRC_has_new.research_question", "none", "boolean", "tools"),
-createData("RRC_has_new.conceptual_contribution", "none", "boolean", "tools"),
-createData("RRC_has_new.technical_contribution", "none", "boolean", "tools"),
-createData("RRC_has_new.synthesis_tree", "none", "boolean", "tools"),
-createData("RRC_has_new.study_design", "none", "boolean", "tools"),
-createData("RRC_has_new.core_takeaways", "none", "boolean", "tools"),
-createData("RRC_has_new.revised_understanding_of_conceptual_and_technical_approach", "none", "boolean", "tools"),
-createData("RRC_has_new.future_work", "none", "boolean", "tools"),
-createData("last_studio_pr_request_contained()", "string", "boolean", "tools"),
-createData("last_studio_mysore_signup_contained()", "string", "boolean", "tools"),
-createData("have_you_slacked()", "string: name", "boolean", "people"),
-createData("have_you_slacked_deliverables_to()", "string: channel/thread name", "boolean", "people"),
-createData("send_question_and_ask()", "string: name, string: question, string: time, string: keyword", "boolean", "people"),
-];
-
-const initialStrategy = 'function supportStrategy() {\n// define a support strategy that runs when the evaluated situationDetector is true\nconst strategyName = "";\nconst message = "";\nconst time = Time(modifier: "", event: "");\n\n// deliver the support strategy\nsend_slack_message(strategyName, message, time);\n}'
+const initialStrategy = 'function supportStrategy() {\n// define a support strategy that runs when the evaluated situationDetector is true\n  const strategyName = "";\n  const message = "";\n  const time = Time(modifier: "", event: "");\n\n// deliver the support strategy\n  send_slack_message(strategyName, message, time);\n}'
 
 const initialSituation = 'function situationDetector() {\n// specify a boolean condition for the situation  you want to detect using the API on the left\n  return true;\n}'
 
-
-
-
 const Strategy = () => {
   return <div>
-  <Paper sx={{ width: '100%', overflow: 'hidden'}}>
+  <Paper sx={{ width: '100%', overflow: 'hidden'}} style={{ padding: 8}}>
       <CodeEditor
       value={initialStrategy}
       language="js"
@@ -95,14 +30,22 @@ const Strategy = () => {
   </div>;
 };
 
+const initialStrategyList = [<Strategy key={0}/>];
+
 const SituationStrategyPair = () => {
-  const [strategyList, setStrategyList] = useState([<Strategy key={0}/>]);
+  const [strategyList, setStrategyList] = useState(initialStrategyList);
   const onStrategyButtonClick = event => {
     setStrategyList(strategyList.concat(<Strategy key={strategyList.length} />));
   };
+  const [openCollapse, setOpenCollapse] = React.useState(true);
+  const onCollapseButtonClick = event => {
+    setOpenCollapse(!openCollapse);
+};
   return <div>
-  <Paper sx={{ width: '100%', overflow: 'hidden', padding: 16}}>
-  <Paper sx={{ width: '100%', overflow: 'hidden'}}>
+  <Button variant="outlined" onClick={onCollapseButtonClick} style={{width:"100%"}}>{openCollapse ? <ExpandLess /> : <ExpandMore />}</Button>
+  <Collapse in={openCollapse} timeout="auto" unmountOnExit>
+  <Paper sx={{ width: '100%', overflow: 'hidden', padding: 16}} style={{ padding: 8}}>
+  <Paper sx={{ width: '100%', overflow: 'hidden'}} style={{ padding: 8}}>
       <CodeEditor
       value={initialSituation}
       language="js"
@@ -119,156 +62,30 @@ const SituationStrategyPair = () => {
   {strategyList}
   <Button variant="outlined" onClick={onStrategyButtonClick}>Add strategy</Button>
   </Paper>
+  </Collapse>
    </div>;
 };
 
-
-
 export default function Baseline() {
 
-
-    const [situation, setSituation] = React.useState(
-        `if (           \n\n//specify a learning opportunity\n\n\n)`
-    );
-    const [strategy, setStrategy] = React.useState(
-        `{ \n\n//define a support strategy \n\nsend_slack_message(string: name, string: message, time: when to send)\n\n\n\n}`
-    );
-
-    //const [document, setDocument] = React.useState();
-
-    /*
-    const onButton1Click = event => {
-        setDocument(<Hi1/>);
-    }
-
-    const onButton2Click = event => {
-        setDocument(<Hi2/>);
-    }
-    */
-
-
     const [pairList, setPairList] = useState([<SituationStrategyPair key={0} />]);
-
-
 
     const onPairButtonClick = event => {
       setPairList(pairList.concat(<SituationStrategyPair key={pairList.length} />));
     }
 
-    const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
-    const handleChangePage = (event, newPage) => {
-        setPage(newPage);
-    };
-
-    const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(+event.target.value);
-        setPage(0);
-    };
-
-    const [rows, setRows] = useState(originalRows);
-    const [searched, setSearched] = useState("");
-    //const classes = useStyles();
-
-    const requestSearch = (searchedVal) => {
-        const filteredRows = originalRows.filter((row) => {
-        return row.name.toLowerCase().includes(searchedVal.toLowerCase());
-        });
-        setRows(filteredRows);
-    };
-
-    const cancelSearch = () => {
-        setSearched("");
-        requestSearch(searched);
-    };
-
-
     return (
-    
-    <div style={{/*backgroundColor: '#1e1e1e',*/marginLeft:16, marginRight:16, marginTop:16,marginBottom:16}}>
+    <div style={{marginLeft:16, marginRight:16, marginTop:16,marginBottom:16}}>
         <Grid container spacing={5}>
-            
-
             <Grid item xs={6}>
                 <APIList/>
-            {/*
-            <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
-                
-                
-                
-                <SearchBar
-                    value={searched}
-                    onChange={(searchVal) => requestSearch(searchVal)}
-                    onCancelSearch={() => cancelSearch()}
-                />
-                <br/>
-
-                
-                <TableContainer sx={{ maxHeight: 440 }}>
-                    <Table aria-label="simple table" stickyHeader>
-                    <TableHead>
-                        <TableRow>
-                        <TableCell>Function name</TableCell>
-                        <TableCell align="right">Input</TableCell>
-                        <TableCell align="right">Output</TableCell>
-                        <TableCell align="right">Type</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {rows
-                        .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                        .map((row) => (
-                        <TableRow key={row.number}>
-                            <TableCell component="th" scope="row">
-                            {row.name}
-                            </TableCell>
-                            <TableCell align="right">{row.input}</TableCell>
-                            <TableCell align="right">{row.output}</TableCell>
-                            <TableCell align="right">{row.type}</TableCell>
-                        </TableRow>
-                        ))}
-                    </TableBody>
-                    </Table>
-                </TableContainer>
-
-                <TablePagination
-                    rowsPerPageOptions={[10, 25, 100]}
-                    component="div"
-                    count={rows.length}
-                    rowsPerPage={rowsPerPage}
-                    page={page}
-                    onPageChange={handleChangePage}
-                    onRowsPerPageChange={handleChangeRowsPerPage}
-                />
-
-            </Paper>
-            <br/>
-
-            <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{ padding: 8}}>
-            <b>Time object: specify when you want to check a resource or execute an action</b>
-            <br />
-            <ul>
-                <li>Modifier: “at”, “before”, “after”, “* day * hours * minutes at/before/after”</li>
-                <li>Event: “beginning of sprint”, “middle of sprint”, “end of sprint”, “middle of week”, “SIG”, “office hour”, “studio”, “Sunday”, “Monday”, “Tuesday”, “Wednesday”, “Thursday”, “Friday”, “Saturday”</li>
-            </ul>
-            <p style={{fontStyle: "italic", fontSize: "12px"}}>class Time: <br/>&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, modifier, event):<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.modifier = modifier<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.event = event</p>
-            <p style={{fontStyle: "italic", fontSize: "12px"}}>Example: Time(modifier = "at", event = "office hour")</p>
-            </Paper>
-
-            */}
             </Grid>
-
             <Grid item xs={6}>
             {pairList}
             <br/>
             <Button variant="outlined" onClick={onPairButtonClick}>Add Situation Strategy Pair</Button>
-
-
-
             </Grid>
         </Grid>
-
     </div>
     );
   }
