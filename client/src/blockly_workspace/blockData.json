@@ -1,4 +1,5 @@
 {
+    /** Logic **/
     "if": {
         "blockText": "Situation ID Situation Name If input: condition you can break down your situation into multiple situation blocks",
         "blockRelevantDropdownValues": [],
@@ -11,4 +12,195 @@
         "otherContent": "! ~ - negative",
         "blockDocstring": ""
     }
+    "and": {
+        "blockText": "and",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "+ add addition two 2 & both",
+        "blockDocstring": ""
+    }
+    "or": {
+        "blockText": "or",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "either only one 1",
+        "blockDocstring": ""
+    }
+
+    /** Math **/
+    "addition": { // considered this to be the block with two attached blocks, not with only one
+        "blockText": "+",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "addition plus and",
+        "blockDocstring": ""
+    }
+    "subtraction": {// considered this to be the block with two attached blocks, not with only one
+        "blockText": "-",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "subtraction minus",
+        "blockDocstring": ""
+    }
+    "abs": {
+        "blockText": "abs",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "absolute modulus positive",
+        "blockDocstring": ""
+    }
+    "greater_than": {
+        "blockText": ">",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "greater than compare greatest",
+        "blockDocstring": ""
+    }
+    "less_than": {
+        "blockText": "<",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "less than compare smallest",
+        "blockDocstring": ""
+    }
+
+    /** Concepts **/
+    "set": { // check if this is the right block
+        "blockText": "set to",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "2 concepts",
+        "blockDocstring": ""
+    }
+    "concept_variable": {
+        "blockText": "concept variable",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "idea situation case",
+        "blockDocstring": ""
+    }
+
+    /** People **/
+    "slacked_someone": {
+        "blockText": "have you slacked",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "name someone check slack message",
+        "blockDocstring": ""
+    }
+    "slacked_deliverables": {
+        "blockText": "have you slacked deliverables to",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "slack message channel thread",
+        "blockDocstring": ""
+    }
+    "slack_message": {
+        "blockText": "send a slack message to asking days hours minutes then check if this message contains",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "check keyword ask question schedule message",
+        "blockDocstring": ""
+    }
+
+    /** Time / Venues **/
+    "at": {
+        "blockText": "at",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "on day time",
+        "blockDocstring": ""
+    }
+    "before": {
+        "blockText": "before",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "day time",
+        "blockDocstring": ""
+    }
+    "after": {
+        "blockText": "after",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "day time",
+        "blockDocstring": ""
+    }
+    "time": {
+        "blockText": "days hours minutes",
+        "blockRelevantDropdownValues": ["at", "before", "after"],
+        "otherContent": "time",
+        "blockDocstring": ""
+    }
+    "high_by_beginning_of_sprint": {
+        "blockText": "beginning of sprint",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "start",
+        "blockDocstring": ""
+    }
+    "high_halfway_through_sprint": {
+        "blockText": "middle of sprint",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "midway mid-way halfway half-way",
+        "blockDocstring": ""
+    }
+    "midweek": {
+        "blockText": "middle of week",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "midway mid-way halfway half-way",
+        "blockDocstring": ""
+    }
+    "high_by_end_of_sprint": {
+        "blockText": "end of sprint",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "finish",
+        "blockDocstring": ""
+    }
+    "before_next_sig": {
+        "blockText": "SIG",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "Special Interest Group",
+        "blockDocstring": ""
+    }
+    "before_next_oh": {
+        "blockText": "office hour",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "oh",
+        "blockDocstring": ""
+    }
+    "before_next_studio": {
+        "blockText": "studio",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "",
+        "blockDocstring": ""
+    }
+    "sunday": {
+        "blockText": "sunday",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "",
+        "blockDocstring": ""
+    }
+    "monday": {
+        "blockText": "monday",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "",
+        "blockDocstring": ""
+    }
+    "tuesday": {
+        "blockText": "tuesday",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "",
+        "blockDocstring": ""
+    }
+    "wednesday": {
+        "blockText": "wednesday",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "",
+        "blockDocstring": ""
+    }
+    "thursday": {
+        "blockText": "thursday",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "",
+        "blockDocstring": ""
+    }
+    "friday": {
+        "blockText": "friday",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "",
+        "blockDocstring": ""
+    }
+    "saturday": {
+        "blockText": "saturday",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "",
+        "blockDocstring": ""
+    }
+    
+    /** Tools **/
+
 }
