@@ -1,5 +1,4 @@
 {
-    /** Logic **/
     "if": {
         "blockText": "Situation ID Situation Name If input: condition you can break down your situation into multiple situation blocks",
         "blockRelevantDropdownValues": [],
@@ -11,196 +10,280 @@
         "blockRelevantDropdownValues": [],
         "otherContent": "! ~ - negative",
         "blockDocstring": ""
-    }
+    },
     "and": {
         "blockText": "and",
         "blockRelevantDropdownValues": [],
         "otherContent": "+ add addition two 2 & both",
         "blockDocstring": ""
-    }
+    },
     "or": {
         "blockText": "or",
         "blockRelevantDropdownValues": [],
         "otherContent": "either only one 1",
         "blockDocstring": ""
-    }
-
-    /** Math **/
-    "addition": { // considered this to be the block with two attached blocks, not with only one
+    },
+    "addition": {
         "blockText": "+",
         "blockRelevantDropdownValues": [],
         "otherContent": "addition plus and",
         "blockDocstring": ""
-    }
-    "subtraction": {// considered this to be the block with two attached blocks, not with only one
+    },
+    "subtraction": {
         "blockText": "-",
         "blockRelevantDropdownValues": [],
         "otherContent": "subtraction minus",
         "blockDocstring": ""
-    }
+    },
     "abs": {
         "blockText": "abs",
         "blockRelevantDropdownValues": [],
         "otherContent": "absolute modulus positive",
         "blockDocstring": ""
-    }
+    },
     "greater_than": {
         "blockText": ">",
         "blockRelevantDropdownValues": [],
         "otherContent": "greater than compare greatest",
         "blockDocstring": ""
-    }
+    },
     "less_than": {
         "blockText": "<",
         "blockRelevantDropdownValues": [],
         "otherContent": "less than compare smallest",
         "blockDocstring": ""
-    }
-
-    /** Concepts **/
-    "set": { // check if this is the right block
+    },
+    "set": {
         "blockText": "set to",
         "blockRelevantDropdownValues": [],
         "otherContent": "2 concepts",
         "blockDocstring": ""
-    }
+    },
     "concept_variable": {
         "blockText": "concept variable",
         "blockRelevantDropdownValues": [],
         "otherContent": "idea situation case",
         "blockDocstring": ""
-    }
-
-    /** People **/
+    },
     "slacked_someone": {
         "blockText": "have you slacked",
         "blockRelevantDropdownValues": [],
         "otherContent": "name someone check slack message",
         "blockDocstring": ""
-    }
+    },
     "slacked_deliverables": {
         "blockText": "have you slacked deliverables to",
         "blockRelevantDropdownValues": [],
         "otherContent": "slack message channel thread",
         "blockDocstring": ""
-    }
+    },
     "slack_message": {
         "blockText": "send a slack message to asking days hours minutes then check if this message contains",
         "blockRelevantDropdownValues": [],
         "otherContent": "check keyword ask question schedule message",
         "blockDocstring": ""
-    }
-
-    /** Time / Venues **/
+    },
     "at": {
         "blockText": "at",
         "blockRelevantDropdownValues": [],
         "otherContent": "on day time",
         "blockDocstring": ""
-    }
+    },
     "before": {
         "blockText": "before",
         "blockRelevantDropdownValues": [],
         "otherContent": "day time",
         "blockDocstring": ""
-    }
+    },
     "after": {
         "blockText": "after",
         "blockRelevantDropdownValues": [],
         "otherContent": "day time",
         "blockDocstring": ""
-    }
+    },
     "time": {
         "blockText": "days hours minutes",
         "blockRelevantDropdownValues": ["at", "before", "after"],
         "otherContent": "time",
         "blockDocstring": ""
-    }
+    },
     "high_by_beginning_of_sprint": {
         "blockText": "beginning of sprint",
         "blockRelevantDropdownValues": [],
         "otherContent": "start",
         "blockDocstring": ""
-    }
+    },
     "high_halfway_through_sprint": {
         "blockText": "middle of sprint",
         "blockRelevantDropdownValues": [],
         "otherContent": "midway mid-way halfway half-way",
         "blockDocstring": ""
-    }
+    },
     "midweek": {
         "blockText": "middle of week",
         "blockRelevantDropdownValues": [],
         "otherContent": "midway mid-way halfway half-way",
         "blockDocstring": ""
-    }
+    },
     "high_by_end_of_sprint": {
         "blockText": "end of sprint",
         "blockRelevantDropdownValues": [],
         "otherContent": "finish",
         "blockDocstring": ""
-    }
+    },
     "before_next_sig": {
         "blockText": "SIG",
         "blockRelevantDropdownValues": [],
         "otherContent": "Special Interest Group",
         "blockDocstring": ""
-    }
+    },
     "before_next_oh": {
         "blockText": "office hour",
         "blockRelevantDropdownValues": [],
         "otherContent": "oh",
         "blockDocstring": ""
-    }
+    },
     "before_next_studio": {
         "blockText": "studio",
         "blockRelevantDropdownValues": [],
         "otherContent": "",
         "blockDocstring": ""
-    }
+    },
     "sunday": {
         "blockText": "sunday",
         "blockRelevantDropdownValues": [],
         "otherContent": "",
         "blockDocstring": ""
-    }
+    },
     "monday": {
         "blockText": "monday",
         "blockRelevantDropdownValues": [],
         "otherContent": "",
         "blockDocstring": ""
-    }
+    },
     "tuesday": {
         "blockText": "tuesday",
         "blockRelevantDropdownValues": [],
         "otherContent": "",
         "blockDocstring": ""
-    }
+    },
     "wednesday": {
         "blockText": "wednesday",
         "blockRelevantDropdownValues": [],
         "otherContent": "",
         "blockDocstring": ""
-    }
+    },
     "thursday": {
         "blockText": "thursday",
         "blockRelevantDropdownValues": [],
         "otherContent": "",
         "blockDocstring": ""
-    }
+    },
     "friday": {
         "blockText": "friday",
         "blockRelevantDropdownValues": [],
         "otherContent": "",
         "blockDocstring": ""
-    }
+    },
     "saturday": {
         "blockText": "saturday",
         "blockRelevantDropdownValues": [],
         "otherContent": "",
         "blockDocstring": ""
-    }
-    
-    /** Tools **/
-
+    },
+    "github3": {
+        "blockText": "github",
+        "blockRelevantDropdownValues": ["working on tech"],
+        "otherContent": "",
+        "blockDocstring": ""
+    },
+    "sprint_log3": {
+        "blockText": "sprint log",
+        "blockRelevantDropdownValues": ["working on tech", "working on user testing", "working on argumentation", "0 points planned", "1/4 points planned", "1/2 points planned", "3/4 points planned", "all points planned", "total points planned", "points planned design", "points planned tech", "points planned research", "1/4 through points spent", "halfway through points spent", "3/4 through points spent", "total points spent", "hours spent on tech", "hours spent on design", "hours spent on research", "hours spent on argumentation", "over points on a story", "at least one task is complete", "at least one story is incomplete"," at least one story is complete", "all stories completed", "has not finished any tasks", "number of tasks", "number of stories"],
+        "otherContent": "",
+        "blockDocstring": ""
+    },
+    "high_sprint_log_contains": {
+        "blockText": "Sprint Log Stories or Tasks contains type here!",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "",
+        "blockDocstring": ""
+    },
+    "high_sprint_updated": {
+        "blockText": "Sprint Log not updated",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "",
+        "blockDocstring": ""
+    },
+    "high_sprint_updated2": {
+        "blockText": "Sprint Log updated",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "",
+        "blockDocstring": ""
+    },
+    "high_pr_request": {
+        "blockText": "Last Studio PR Request Contained type here!",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "",
+        "blockDocstring": ""
+    },
+    "high_mysore_signup": {
+        "blockText": "Last Studio Mysore signup Contained type here!",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "sign-up",
+        "blockDocstring": ""
+    },
+    "end_of_quarter_goal": {
+        "blockText": "End of quarter goal contains type keyword",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "",
+        "blockDocstring": ""
+    },
+    "high_canvas_update": {
+        "blockText": "Canvas not updated",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "",
+        "blockDocstring": ""
+    },
+    "high_canvas_update2": {
+        "blockText": "Canvas updated",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "",
+        "blockDocstring": ""
+    },
+    "high_new_argument": {
+        "blockText": "PRC: Has new",
+        "blockRelevantDropdownValues": ["gap in canvas which is risky", "focus for sprint”, “problem statement", "design argument", "interface model", "system model", "study design", "testing takeaways", "argumentation"],
+        "otherContent": "",
+        "blockDocstring": ""
+    },
+    "high_new_argument_rrc": {
+        "blockText": "RRC: Has new",
+        "blockRelevantDropdownValues": ["research audience", "class of problems", "existing approaches", "research question", "conceptual contribution", "technical contribution", "synthesis tree", "study design", "core takeaways", "revised understanding of conceptual and technical approach", "future work", "argumentation"],
+        "otherContent": "",
+        "blockDocstring": ""
+    },
+    "then": {
+        "blockText": "In relation to situation ID: type one or more IDs Then send a Slack message to type name of recipient saying type suggestion days hours minutes Execution mode: Please go to step 6 to reflect on this suggestion.",
+        "blockRelevantDropdownValues": ["At", "Before", "After",
+        "Beginning of Sprint", 
+        "Middle of Sprint",
+        "Middle of Week",
+        "End of Sprint",
+        "SIG",
+        "Office Hour",
+        "Studio",
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Always execute",
+        "Ask me before this triggers",
+        "Only executes if this is the first to be triggered"],
+        "otherContent": "",
+        "blockDocstring": ""
+    }           
 }
