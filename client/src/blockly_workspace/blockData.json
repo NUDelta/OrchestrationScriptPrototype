@@ -1,0 +1,14 @@
+{
+    "if": {
+        "blockText": "Situation ID Situation Name If input: condition you can break down your situation into multiple situation blocks",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "check when upon",
+        "blockDocstring": ""
+    },
+    "not": {
+        "blockText": "not",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "! ~ - negative",
+        "blockDocstring": ""
+    }
+}

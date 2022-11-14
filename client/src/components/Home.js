@@ -129,7 +129,6 @@ export default function Home() {
 
   console.log(combinedTargetOptions)
 
-
   return (
     <div style={{/*backgroundColor: '#1e1e1e',*/marginLeft:16, marginRight:16, marginTop:16,marginBottom:16}}>
 
@@ -168,7 +167,7 @@ export default function Home() {
           (connect one situation to one or more slack message blocks with IDs) to represent the condition you are
           detecting and the suggested one or multiple slack messages you wish to send.
 </label>
-          <DetectorWorkspace />
+          <DetectorWorkspace/>
 
           <b>Step 6: reflect and expand your construction</b>
           <br />
