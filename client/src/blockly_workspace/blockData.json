@@ -17,6 +17,18 @@
         "otherContent": "+ add addition two 2 & both",
         "blockDocstring": ""
     },
+    "logic_compare": {
+        "blockText": "",
+        "blockRelevantDropdownValues": ["<", ">", ">=", "<=", "="],
+        "otherContent": "compare ==",
+        "blockDocstring": ""
+    },
+    "text": {
+        "blockText": "",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "text input words",
+        "blockDocstring": ""
+    },
     "or": {
         "blockText": "or",
         "blockRelevantDropdownValues": [],
@@ -33,6 +45,18 @@
         "blockText": "-",
         "blockRelevantDropdownValues": [],
         "otherContent": "subtraction minus",
+        "blockDocstring": ""
+    },
+    "math_round": {
+        "blockText": "",
+        "blockRelevantDropdownValues": ["round", "round up", "round down"],
+        "otherContent": "nearest",
+        "blockDocstring": ""
+    },
+    "math_number": {
+        "blockText": "",
+        "blockRelevantDropdownValues": [],
+        "otherContent": "number",
         "blockDocstring": ""
     },
     "abs": {
