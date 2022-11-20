@@ -218,7 +218,7 @@
     "github3": {
         "blockText": "github",
         "blockRelevantDropdownValues": ["working on tech"],
-        "otherContent": "",
+        "otherContent": "circus",
         "blockDocstring": ""
     },
     "sprint_log3": {

@@ -1,10 +1,8 @@
 import "../App.css";
-import "../customBlocks/custom_Blocks";
-import {blockTextContent} from "../customBlocks/custom_Blocks";
 import React from "react";
 import ReactBlockly from "react-blockly";
 import { BlocklyWorkspace } from "react-blockly";
-import blockData from './blockData.json';
+import blockSearchData from './blockSearchData.json';
 import Blockly from "blockly";
 import "../customBlocks/communication_blocks";
 import "../customBlocks/function_blocks";
@@ -12,6 +10,8 @@ import "../customBlocks/time_blocks";
 import "../customBlocks/resource_block";
 import "../customBlocks/object_blocks";
 import "../customBlocks/high_level";
+import "../customBlocks/custom_Blocks";
+import {blockTextContent} from "../customBlocks/custom_Blocks";
 import "intersection-observer";
 import "react-pro-sidebar/dist/css/styles.css";
 //import {toolboxCategories} from "./blockly_toolbox/detectionToolbox";
@@ -54,8 +54,8 @@ export default function DetectorWorkspace() {
           console.log(`type: ` + type + `bTC[type]:` + blockTextContent[type]);
 
           let text = undefined;
-          if (blockData[type]) {
-            const textValues = Object.values(blockData[type]);
+          if (blockSearchData[type]) {
+            const textValues = Object.values(blockSearchData[type]);
             const dropdownText = textValues[1].join(" ");
             text = textValues[0] + dropdownText + textValues[2] + textValues[3];
           }
