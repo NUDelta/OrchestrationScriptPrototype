@@ -5,7 +5,7 @@
     "If", "(input: condition)", "[reminder: you can break down your situation into multiple situation blocks]"],
     "color": "#5C81A6",
     "category": "Logic",
-    "extraSearchText": "",
+    "extraSearchText": "check when upon",
     "tooltip": "",
     "output": true,
     "inputsInline": false
@@ -16,7 +16,7 @@
             {"blockInput": "to", "check": "String"}]],
         "color": "#D3FFCE",
         "category": "Concepts",
-        "extraSearchText": "",
+        "extraSearchText": "idea situation case",
         "tooltip": "",
         "output": true,
         "inputsInline": true

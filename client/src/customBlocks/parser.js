@@ -44,3 +44,34 @@ const values = Object.values(blocks);
 for (let i=0; i<values.length; i++) {
     parseBlock(values[i]);
 }
+
+let blockSearchData = {};
+values.forEach((block) => {
+    let str = block["extraSearchText"];
+    const blockText = block["blockContent"];
+    for (let i = 0; i<blockText.length; i++) {
+        const line = blockText[i];
+        if (typeof line === "string") {
+            str += line;
+        }
+        else {
+            for(let j=0; j<line.length; j++) {
+                const word = line[j];
+                if (typeof word === "string") {
+                    str += word;
+                }
+                else {
+                    if (word["dropdown"]) {
+                        str += word["dropdown"].join("");
+                    }
+                    else if (word["textInput"]) {
+                        str += word["textInput"];
+                    }
+                }
+            }
+        }
+    }
+    blockSearchData[block.name] = str;
+})
+
+export default blockSearchData;

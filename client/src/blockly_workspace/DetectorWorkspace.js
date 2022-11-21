@@ -2,7 +2,7 @@ import "../App.css";
 import React from "react";
 import ReactBlockly from "react-blockly";
 import { BlocklyWorkspace } from "react-blockly";
-import blockSearchData from './blockSearchData.json';
+import blockSearchData from '../customBlocks/parser';
 import Blockly from "blockly";
 import "../customBlocks/parser"
 //import "../customBlocks/communication_blocks";
@@ -52,12 +52,7 @@ export default function DetectorWorkspace() {
 
           // get the text!
 
-          let text = undefined;
-          if (blockSearchData[type]) {
-            const textValues = Object.values(blockSearchData[type]);
-            const dropdownText = textValues[1].join(" ");
-            text = textValues[0] + dropdownText + textValues[2] + textValues[3];
-          }
+          let text = blockSearchData[type];
 
           if (searchString.length > 0
             && text && text.toLowerCase().includes(searchString.toLowerCase())) {
