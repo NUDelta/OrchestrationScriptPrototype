@@ -1,6 +1,6 @@
 import "./App.css";
 import "./customBlocks/custom_Blocks";
-import {React} from "react";
+import React from "react";
 import "./customBlocks/communication_blocks";
 import "./customBlocks/function_blocks";
 import "./customBlocks/time_blocks";

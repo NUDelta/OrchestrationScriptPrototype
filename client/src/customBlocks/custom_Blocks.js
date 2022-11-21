@@ -1,6 +1,8 @@
 import Blockly from 'blockly';
 import 'blockly/python';
 
+let blockText = {};
+
 Blockly.Blocks['if'] = {
     init: function () {
         this.appendDummyInput()
@@ -38,7 +40,9 @@ Blockly.Blocks['execute_all'] = {
         this.setHelpUrl("");
     }
 };
-
+blockText['execute_all'] = `
+execute all
+`
 Blockly.Python['execute_all'] = function (block) {
     return "...";
 };
@@ -142,7 +146,12 @@ Blockly.Blocks['then'] = {
         this.setHelpUrl("");
     }
 };
-
+blockText['if'] = `
+if then
+`
+blockText['then'] = `
+if then
+`
 Blockly.Python['if'] = function (block) {
     return "...";
 };
@@ -159,7 +168,9 @@ Blockly.Blocks['not'] = {
         this.setHelpUrl("");
     }
 };
-
+blockText['not'] = `
+not !
+`
 Blockly.Python['not'] = function (block) {
     return "...";
 };
@@ -177,7 +188,9 @@ Blockly.Blocks['new_boundary_function'] = {
         this.setHelpUrl("");
     }
 };
-
+blockText['new_boundary_function'] = `
+boundary function
+`
 Blockly.Python['new_boundary_function'] = function (block) {
     var text_name = block.getFieldValue('Name');
     var statements_content = Blockly.Python.statementToCode(block, 'Content');
@@ -198,7 +211,9 @@ Blockly.Blocks['return'] = {
         this.setHelpUrl("");
     }
 };
-
+blockText['return'] = `
+return
+`
 Blockly.Python['return'] = function (block) {
     var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
@@ -220,7 +235,9 @@ Blockly.Blocks['set'] = {
         this.setHelpUrl("");
     }
 };
-
+blockText['set'] = `
+set
+`
 Blockly.Python['set'] = function (block) { return ""; };
 
 Blockly.Blocks['concept_variable'] = {
@@ -236,7 +253,9 @@ Blockly.Blocks['concept_variable'] = {
         this.setHelpUrl("");
     }
 };
-
+blockText['concept_variable'] = `
+concept variable set
+`
 Blockly.Python['concept_variable'] = function (block) { return ""; };
 
 Blockly.Blocks['and'] = {
@@ -253,7 +272,9 @@ Blockly.Blocks['and'] = {
         this.setHelpUrl("");
     }
 };
-
+blockText['and'] = `
+and &
+`
 Blockly.Python['and'] = function (block) { return ""; };
 
 Blockly.Blocks['or'] = {
@@ -272,7 +293,9 @@ Blockly.Blocks['or'] = {
         this.setHelpUrl("");
     }
 };
-
+blockText['or'] = `
+or
+`
 Blockly.Python['or'] = function (block) { return ""; };
 
 Blockly.Blocks['addition'] = {
@@ -290,7 +313,9 @@ Blockly.Blocks['addition'] = {
         this.setHelpUrl("");
     }
 };
-
+blockText['addition'] = `
+addition plus +
+`
 Blockly.Python['addition'] = function (block) { return ""; };
 
 Blockly.Blocks['subtraction'] = {
@@ -309,7 +334,9 @@ Blockly.Blocks['subtraction'] = {
         this.setHelpUrl("");
     }
 };
-
+blockText['subtraction'] = `
+subtraction minus -
+`
 Blockly.Python['subtraction'] = function (block) { return ""; };
 
 Blockly.Blocks['greater_than'] = {
@@ -327,7 +354,9 @@ Blockly.Blocks['greater_than'] = {
    this.setHelpUrl("");
     }
   };
-
+  blockText['greater_than'] = `
+greater than >
+`
   Blockly.Python['greater_than'] = function (block) { return ""; };
 
   Blockly.Blocks['less_than'] = {
@@ -345,7 +374,9 @@ Blockly.Blocks['greater_than'] = {
    this.setHelpUrl("");
     }
   };
-
+blockText['less_than'] = `
+less than < NAME
+`
   Blockly.Python['less_than'] = function (block) { return ""; };
 
 
@@ -361,7 +392,9 @@ Blockly.Blocks['abs'] = {
         this.setHelpUrl("");
     }
 };
-
+blockText['abs'] = `
+Abs NAME
+`
 Blockly.Python['abs'] = function (block) {
     return "...";
 };
@@ -378,7 +411,9 @@ Blockly.Blocks['negative'] = {
         this.setHelpUrl("");
     }
 };
-
+blockText['negative'] = `
+negative
+`
 Blockly.Python['negative'] = function (block) {
     return "...";
 };
@@ -396,7 +431,9 @@ Blockly.Blocks['individual'] = {
         this.setHelpUrl("");
     }
 };
-
+blockText['individual'] = `
+individual student
+`
 Blockly.Python['individual'] = function (block) { return ""; };
 
 Blockly.Blocks['project_group'] = {
@@ -412,7 +449,9 @@ Blockly.Blocks['project_group'] = {
         this.setHelpUrl("");
     }
 };
-
+blockText['project_group'] = `
+project group
+`
 Blockly.Python['project_group'] = function (block) { return ""; };
 
 Blockly.Blocks['situation'] = {
@@ -430,7 +469,9 @@ Blockly.Blocks['situation'] = {
         this.setHelpUrl("");
     }
 };
-
+blockText['situation'] = `
+Situation(boolean)
+`
 Blockly.Python['situation'] = function (block) { return ""; };
 
 Blockly.Blocks['situation_instance'] = {
@@ -446,5 +487,9 @@ Blockly.Blocks['situation_instance'] = {
         this.setHelpUrl("");
     }
 };
-
+blockText['situation_instance'] = `
+Situation NAME situation instance
+`
 Blockly.Python['situation_instance'] = function (block) { return ""; };
+
+export const blockTextContent = blockText;
