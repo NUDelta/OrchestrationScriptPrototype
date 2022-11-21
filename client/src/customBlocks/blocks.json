@@ -1,11 +1,24 @@
 {"if": {
     "name": "if",
     "blockContent": [["Situation ID", {"dropdown": ["1", "2", "3", "4", "5", "6", "7", "8"]}],
-    ["Situation name: ", {"input": "type name"}],
+    ["Situation name: ", {"textInput": "type name", "varName": "situation_name"}],
     "If", "(input: condition)", "[reminder: you can break down your situation into multiple situation blocks]"],
-    "color": "#0011ff",
+    "color": "#5C81A6",
     "category": "Logic",
     "extraSearchText": "",
-    "type": "imperative"
+    "tooltip": "",
+    "output": true,
+    "inputsInline": false
+    },
+    "concept_variable": {
+        "name": "concept_variable",
+        "blockContent": [["Set", {"blockInput": "set", "check": "String"}, "to",
+            {"blockInput": "to", "check": "String"}]],
+        "color": "#D3FFCE",
+        "category": "Concepts",
+        "extraSearchText": "",
+        "tooltip": "",
+        "output": true,
+        "inputsInline": true
     }
 }

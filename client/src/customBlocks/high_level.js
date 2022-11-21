@@ -2,26 +2,6 @@ import Blockly from 'blockly';
 import 'blockly/python';
 import blocks from './blocks.json';
 
-/*const parseBlock = (block) => {
-  Blockly.Blocks[block["name"]] = {
-    init: function() {
-      this.appendDummyInput()
-          .appendField("Github")
-          .appendField(new Blockly.FieldDropdown([
-            ["working on tech", "working on tech"]]), "NAME");
-      this.setInputsInline(true);
-      this.setOutput(true, null);
-      this.setColour(block["color"]);
-   this.setTooltip("");
-   this.setHelpUrl("");
-    }
-   };
-}
-
-parseBlocks();*/
-
-
-
  Blockly.Blocks['github3'] = {
    init: function() {
      this.appendDummyInput()

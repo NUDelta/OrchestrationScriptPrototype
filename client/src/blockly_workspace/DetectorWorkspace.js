@@ -4,14 +4,14 @@ import ReactBlockly from "react-blockly";
 import { BlocklyWorkspace } from "react-blockly";
 import blockSearchData from './blockSearchData.json';
 import Blockly from "blockly";
-import "../customBlocks/communication_blocks";
-import "../customBlocks/function_blocks";
-import "../customBlocks/time_blocks";
-import "../customBlocks/resource_block";
-import "../customBlocks/object_blocks";
-import "../customBlocks/high_level";
-import "../customBlocks/custom_Blocks";
-import {blockTextContent} from "../customBlocks/custom_Blocks";
+import "../customBlocks/parser"
+//import "../customBlocks/communication_blocks";
+//import "../customBlocks/function_blocks";
+//import "../customBlocks/time_blocks";
+//import "../customBlocks/resource_block";
+//import "../customBlocks/object_blocks";
+//import "../customBlocks/high_level";
+//import "../customBlocks/custom_Blocks";
 import "intersection-observer";
 import "react-pro-sidebar/dist/css/styles.css";
 //import {toolboxCategories} from "./blockly_toolbox/detectionToolbox";
@@ -51,7 +51,6 @@ export default function DetectorWorkspace() {
           const type = category.blocks[j].type; // string, (eventually) key of our JSON object
 
           // get the text!
-          console.log(`type: ` + type + `bTC[type]:` + blockTextContent[type]);
 
           let text = undefined;
           if (blockSearchData[type]) {
