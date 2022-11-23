@@ -169,7 +169,14 @@ export default function Home() {
 </label>
           <DetectorWorkspace/>
 
-          <b>Step 6: reflect and expand your construction</b>
+          <b>Step 6: Consider how well you're modeling the situation, and if you're automating things that should be decided by humans.</b>
+          <label style={{fontSize: "15px"}}>
+            Have you checked the tips above for writing an effective script? Make sure you aren’t automating too much and recognize that the script detector is only an imperfect model of the situation.
+          </label>
+
+          <br/>
+          <br/>
+          <b>Step 7: reflect and expand your construction</b>
           <br />
           <label style={{fontSize: "15px"}}>In an ideal world, what are some other ways you would have supported them to implement the effective strategy by getting support from appropriate venues/tools/people/processes in the DTR network? Consider one or more of the following resources while writing new support strategies. </label>
           <Grid container spacing={5}>
@@ -185,7 +192,7 @@ export default function Home() {
           </Grid>
 
           <textarea style={{ height: "15vh", width: "100%", fontSize: "15px", marginBottom: 16, marginTop: 10, resize: "vertical" }}></textarea>
-          <label style={{fontSize: "16px"}}><b>Step 7: When you are done, return to step 5 to add any new support strategies you came up with </b> </label>
+          <label style={{fontSize: "16px"}}><b>Step 8: When you are done, return to step 5 to add any new support strategies you came up with </b> </label>
 
           {/*
           <label style={{fontSize: "15px", marginBottom: 16}}>Step6: Response<br/>Using your answer from Step3 as a guide, express the response you would like to trigger to support the student across the venues/tools/processes in the DTR network if the detector expression is evaluated to true.</label>
