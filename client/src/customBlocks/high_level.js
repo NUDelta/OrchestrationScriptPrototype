@@ -1,5 +1,24 @@
 import Blockly from 'blockly';
 import 'blockly/python';
+import blocks from './blocks.json';
+
+/*const parseBlock = (block) => {
+  Blockly.Blocks[block["name"]] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("Github")
+          .appendField(new Blockly.FieldDropdown([
+            ["working on tech", "working on tech"]]), "NAME");
+      this.setInputsInline(true);
+      this.setOutput(true, null);
+      this.setColour(block["color"]);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+   };
+}
+
+parseBlocks();*/
 
 
 
@@ -12,7 +31,7 @@ import 'blockly/python';
 
          this.setInputsInline(true);
      this.setOutput(true, null);
-     this.setColour("#0066cc");
+     this.setColour("#00FF00");
   this.setTooltip("");
   this.setHelpUrl("");
    }
@@ -530,6 +549,7 @@ Blockly.Blocks['time_modifier_subcategory'] = {
     this.appendDummyInput()
         .appendField("--OPTIONAL TIME MODIFIERS--");
     this.setColour("#000000");
+ this.setOutput(true, null);
  this.setTooltip("");
  this.setHelpUrl("");
   }

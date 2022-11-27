@@ -1,8 +1,8 @@
 import "../App.css";
-import "../customBlocks/custom_Blocks";
 import React from "react";
 import ReactBlockly from "react-blockly";
 import { BlocklyWorkspace } from "react-blockly";
+import blockSearchData from './blockSearchData.json';
 import Blockly from "blockly";
 import "../customBlocks/communication_blocks";
 import "../customBlocks/function_blocks";
@@ -10,6 +10,8 @@ import "../customBlocks/time_blocks";
 import "../customBlocks/resource_block";
 import "../customBlocks/object_blocks";
 import "../customBlocks/high_level";
+import "../customBlocks/custom_Blocks";
+import {blockTextContent} from "../customBlocks/custom_Blocks";
 import "intersection-observer";
 import "react-pro-sidebar/dist/css/styles.css";
 //import {toolboxCategories} from "./blockly_toolbox/detectionToolbox";
@@ -31,10 +33,51 @@ export default function DetectorWorkspace() {
         */
     }
 
+    const [searchStr, setSearchStr] = React.useState("");
+
+    const filterDetectionToolbox = (toolbox, searchString) => {
+      let newToolbox = [...toolbox];
+
+      const newCategory = {
+        name: "Search Results",
+        colour: "#990000",
+        blocks: []
+      };
+
+      // go thru all blocks, put copies of the matches into newCategory
+      for (let i = 0; i<toolbox.length; i++) {
+        const category = toolbox[i];
+        for (let j=0; j<category.blocks.length; j++) {
+          const type = category.blocks[j].type; // string, (eventually) key of our JSON object
+
+          // get the text!
+          console.log(`type: ` + type + `bTC[type]:` + blockTextContent[type]);
+
+          let text = undefined;
+          if (blockSearchData[type]) {
+            const textValues = Object.values(blockSearchData[type]);
+            const dropdownText = textValues[1].join(" ");
+            text = textValues[0] + dropdownText + textValues[2] + textValues[3];
+          }
+
+          if (searchString.length > 0
+            && text && text.toLowerCase().includes(searchString.toLowerCase())) {
+            newCategory.blocks.push({type: type});
+          }
+        }
+      }
+      
+      newToolbox.unshift(newCategory);
+      return newToolbox;
+    }
+
     return (
       <div style = {{marginBottom: 16, marginTop: 10}}>
+        Filter blocks: <input onChange={(e) => setSearchStr(e.target.value)}></input>
+        <br/>
+        Current string: {searchStr}
         <ReactBlockly
-            toolboxCategories={detectionToolbox}
+            toolboxCategories={filterDetectionToolbox(detectionToolbox, searchStr)}
             initialXml={initialXml}
             wrapperDivClassName="fill-height"
             workspaceConfiguration={
