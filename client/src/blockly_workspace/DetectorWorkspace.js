@@ -90,6 +90,7 @@ export default function DetectorWorkspace() {
             Tips for Good Scripts
           </button>
         </span>
+        <h2>Follow this guide to write good scripts:</h2>
         <h3>Step {step}</h3>
         <p>{steps[step - 1]}</p>
         <span>
