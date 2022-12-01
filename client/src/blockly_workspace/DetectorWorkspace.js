@@ -79,6 +79,9 @@ export default function DetectorWorkspace() {
       alert(`Think about how human input and automatic scripts can work together instead of automating everything. Human input is good for making decisions and evaluating open-ended input/qualitative situations; automatic scripts are good for detecting data in real time, but there are usually only indicators of a situation, without surefire guarantees.`);
     }
 
+    const [step, setStep] = React.useState(1);
+    const steps = ["hi", "there", "all"];
+
     return (
       <div style = {{marginBottom: 16, marginTop: 10}}>
         Filter blocks: <input onChange={(e) => setSearchStr(e.target.value)}></input>
@@ -86,6 +89,17 @@ export default function DetectorWorkspace() {
           <button onClick={showTips}>
             Tips for Good Scripts
           </button>
+        </span>
+        <h3>Step {step}</h3>
+        <p>{steps[step - 1]}</p>
+        <span>
+          {step > 1 && <button onClick={()=>setStep(step - 1)}>
+            Back
+          </button>}
+          {step < steps.length && <button onClick={()=>setStep(step + 1)}
+          style = {step > 1 ? {marginLeft: 200} : {}}>
+            Next
+          </button>}
         </span>
         <br/>
         <br/>
