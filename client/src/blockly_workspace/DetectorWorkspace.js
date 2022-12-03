@@ -80,7 +80,27 @@ export default function DetectorWorkspace() {
     }
 
     const [step, setStep] = React.useState(1);
-    const steps = ["hi", "there", "all"];
+    const steps = [[`How are you going to detect this situation?`,
+    `Think about the situation that you want to detect in order to trigger your script. Do you want to trigger the script at a particular time? Before/after a particular meeting (venue)? Based on particular updates (or inactivity) on a particular tool like the sprint log or canvas?
+    
+    `,`Example: If your student is building prototype but does not have a plan to test it, you can potential detect this by checking their sprint log to see what they are working on or by asking your student a question on slack and checking their answer to it, or by checking both
+    `],
+    [`Construct the detector`,
+    `Now, arrange those blocks, combined with a situation block and perhaps conditional logic under the “Logic” tab, to construct a detector for your situation. 
+    `,`Example: you could attach the “slack question” block to the situation block, and have the question block ask “what do you plan on working on this week?”, and check if the response contains “work on prototype”.
+    `],
+    [`Check your detector for false positives
+
+    `,`Think about reasons why your detector could fail by getting triggered when you wouldn’t want it to be. Do the signals/conditions you’re using always imply that the situation you’re detecting has actually occurred? If not, try adding a human check.
+    
+    `,`For example, a slack question block checking if a response contains “working on prototype” could get triggered if the student says they’re working on a low-fidelity prototype for a basic user test (rather than spending their time on a high-fidelity prototype without testing), or if a student says they’re *not* working on a prototype! Because of this, it’s often best to either requires categorical responses (specify “(y/n)” or exactly what phrase for the mentee to use in the question, then check for that), or to manually review the open-ended student response, rather than trying to assume what an open-ended response would look like. You can also pair a human-triggered signal with another tool to try and avoid this!
+    `],
+  [`Check your detector for false negatives
+
+  `,`Think about reasons why your detector could fail by not getting triggered when you would want it to trigger.
+  
+  `,`Example: Students don’t always respond to Slack messages or update their canvases/logs. If your detector is only relying solely on one of these signals, it might fall short in some situations
+  `]];
 
     return (
       <div style = {{marginBottom: 16, marginTop: 10}}>
@@ -92,7 +112,9 @@ export default function DetectorWorkspace() {
         </span>
         <h2>Follow this guide to write good scripts:</h2>
         <h3>Step {step}</h3>
-        <p>{steps[step - 1]}</p>
+        <p>{steps[step - 1].map((x) => {
+          return <p>{x}</p>;
+        })}</p>
         <span>
           {step > 1 && <button onClick={()=>setStep(step - 1)}>
             Back
