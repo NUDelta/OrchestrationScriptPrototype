@@ -55,6 +55,7 @@ const detectionToolbox = [
         {type: 'slacked_someone'},
         {type: 'slacked_deliverables'},
         {type: 'slack_message'},
+        {type: 'receive_message'}
       ]
 
     },

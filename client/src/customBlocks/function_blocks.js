@@ -214,6 +214,33 @@ Blockly.Blocks['slack_message'] = {
   }
 };
 
+Blockly.Blocks['receive_message'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("Received a slack message containing the text");
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldTextInput("type keyword"), "NAME2");
+      /*
+      this.appendValueInput("message")
+          .setCheck(null)
+          .appendField("         text - question to ask");
+      this.appendValueInput("time")
+          .setCheck(null)
+          .appendField("         time block - when to send");
+      this.appendValueInput("message")
+          .setCheck(null)
+          .appendField("         text - recipient's name");
+      this.appendDummyInput("output: text - recipient's response")
+          .appendField("(output: text - recipient's response)");
+      */
+      this.setInputsInline(false);
+      this.setOutput(true, null);
+      this.setColour(120);
+      this.setTooltip("");
+      this.setHelpUrl("");
+    }
+  };
+
 Blockly.Python['slack_message'] = function (block) {
     return "...";
 };
